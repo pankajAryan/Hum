@@ -7,8 +7,11 @@
 //
 
 #import "HomePagerViewController.h"
+#import "HomeListVC.h"
 
 @interface HomePagerViewController () <GUITabPagerDataSource, GUITabPagerDelegate>
+
+@property (nonatomic) NSArray *arrayOfVC;
 
 @end
 
@@ -17,8 +20,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIStoryboard *homeStory = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
+    
+    HomeListVC *vcJam = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC"];
+    vcJam.homeListVCType = HomeListVCTypeJams;
+    
+    HomeListVC *vcDiversions = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC"];
+    vcDiversions.homeListVCType = HomeListVCTypeDiversions;
+    
+    HomeListVC *vcVIPMovements = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC"];
+    vcVIPMovements.homeListVCType = HomeListVCTypeVIPMovements;
+    
+    HomeListVC *vcSuggestions = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC"];
+    vcSuggestions.homeListVCType = HomeListVCTypeSuggestions;
+    
+    self.arrayOfVC = [NSArray arrayWithObjects:vcJam,vcDiversions,vcVIPMovements,vcSuggestions,nil];
+    
     [self setDataSource:self];
     [self setDelegate:self];
+    [self reloadData];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,7 +60,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self reloadData];
 }
 
 #pragma mark - Tab Pager Data Source
@@ -48,11 +69,8 @@
 }
 
 - (UIViewController *)viewControllerForIndex:(NSInteger)index {
-    UIViewController *vc = [UIViewController new];
-    [[vc view] setBackgroundColor:[UIColor colorWithRed:arc4random_uniform(255) / 255.0f
-                                                  green:arc4random_uniform(255) / 255.0f
-                                                   blue:arc4random_uniform(255) / 255.0f alpha:1]];
-    return vc;
+   
+    return self.arrayOfVC[index];
 }
 
 // Implement either viewForTabAtIndex: or titleForTabAtIndex:

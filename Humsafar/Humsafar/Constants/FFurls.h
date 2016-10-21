@@ -29,6 +29,10 @@
 
 #define GetStates           @"/getStateList/"
 #define GetDistricts        @"/getDistrictList/"
+
+#define GetAlertsForCategory  @"/getAlertsForCategory/"
+
+
 /*
 
  @Path("/service")

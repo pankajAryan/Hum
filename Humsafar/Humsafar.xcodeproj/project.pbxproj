@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B781D6E31DBAB4F2001627F1 /* HomeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B781D6E21DBAB4F2001627F1 /* HomeListVC.m */; };
 		CE0596BA1DB65E92001E62A9 /* GUITabPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596B71DB65E92001E62A9 /* GUITabPagerViewController.m */; };
 		CE0596BB1DB65E92001E62A9 /* GUITabScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596B91DB65E92001E62A9 /* GUITabScrollView.m */; };
 		CE0596BE1DB6628D001E62A9 /* HomePagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596BD1DB6628D001E62A9 /* HomePagerViewController.m */; };
@@ -79,6 +80,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B781D6E11DBAB4F2001627F1 /* HomeListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListVC.h; sourceTree = "<group>"; };
+		B781D6E21DBAB4F2001627F1 /* HomeListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListVC.m; sourceTree = "<group>"; };
 		CE0596B61DB65E92001E62A9 /* GUITabPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUITabPagerViewController.h; sourceTree = "<group>"; };
 		CE0596B71DB65E92001E62A9 /* GUITabPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUITabPagerViewController.m; sourceTree = "<group>"; };
 		CE0596B81DB65E92001E62A9 /* GUITabScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUITabScrollView.h; sourceTree = "<group>"; };
@@ -214,6 +217,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B781D6E01DBAB4BE001627F1 /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				B781D6E11DBAB4F2001627F1 /* HomeListVC.h */,
+				B781D6E21DBAB4F2001627F1 /* HomeListVC.m */,
+			);
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
 		CE0596B51DB65E92001E62A9 /* GUITabPager */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +324,7 @@
 				CE2B39C11DAE736B00B266E1 /* RegisterViewController.m */,
 				CE2B39C61DAE7B2F00B266E1 /* SideManuPanel */,
 				CE2B39C71DAE7B7E00B266E1 /* Home.storyboard */,
+				B781D6E01DBAB4BE001627F1 /* HomeVC */,
 				CE2B39C31DAE7A1000B266E1 /* HomeViewController.h */,
 				CE2B39C41DAE7A1000B266E1 /* HomeViewController.m */,
 				CE0596BC1DB6628D001E62A9 /* HomePagerViewController.h */,
@@ -637,6 +650,7 @@
 				CE0596C51DB6655E001E62A9 /* FFModelManager.m in Sources */,
 				CE2B39EC1DAE7FCB00B266E1 /* UIImage+Scale.m in Sources */,
 				CE2B39F01DAE7FCB00B266E1 /* UIView+FF.m in Sources */,
+				B781D6E31DBAB4F2001627F1 /* HomeListVC.m in Sources */,
 				CE2B3A231DAE812A00B266E1 /* TSMessage.m in Sources */,
 				CE0596BB1DB65E92001E62A9 /* GUITabScrollView.m in Sources */,
 				CE0596E21DB665B5001E62A9 /* AFURLSessionManager.m in Sources */,
