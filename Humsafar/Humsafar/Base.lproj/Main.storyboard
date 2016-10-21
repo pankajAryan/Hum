@@ -110,7 +110,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dmc-vK-a5u" kind="show" id="GEv-uv-UcY"/>
+                                    <segue destination="dmc-vK-a5u" kind="show" identifier="seguePushRegisterPage" id="GEv-uv-UcY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="---- citizen signup through Google ----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTL-68-Ouy">

@@ -25,7 +25,6 @@
 #define BASE_URL        @"http://128.199.129.241:8080/ShieldServer/rest/service"
 
 
-
 // 2. *********************|| Prefix By BASE_URL ||**************************************************** //
 
 #define GetStates           @"/getStateList/"
