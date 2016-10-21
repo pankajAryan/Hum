@@ -64,7 +64,18 @@
 
 #pragma mark- Button Actions
 - (IBAction)showStatePicker:(id)sender {
+   
+    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetDistricts withParameter:@{@"stateId":@"29"} onCompletion:^(eResponseType responseType, id response) {
+        
+        if (responseType == eResponseTypeSuccessJSON) {
+            arrayDistrictsData = [response objectForKey:kKEY_ResponseObject];
+        }else{
+            [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+            // [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+        }
+    }];
     
+    /*
     [_txtFieldName resignFirstResponder];
     [_txtFieldMobile resignFirstResponder];
     [_txtFieldEmail resignFirstResponder];
@@ -88,6 +99,8 @@
     } cancelBlock:^(ActionSheetStringPicker *picker) {
         NSLog(@"Block Picker Canceled");
     } origin:sender];
+    
+    */
 }
 
 - (IBAction)showDistrictPicker:(id)sender {

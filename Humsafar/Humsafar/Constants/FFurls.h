@@ -241,13 +241,7 @@ public ResponseVO<List<EmergencyVO>> getListOfOpenReportedEmergencies(@FormParam
     return ReportControllerImpl.getInstance().getListOfOpenReportedEmergencies(stateId);
 }
 
-@Path("/getStateList/")
-@POST
-@Produces(MediaType.APPLICATION_JSON)
-public ResponseVO<List<StateVO>> getStateList()
-{
-    return LocationControllerImpl.getInstance().getStateList();
-}
+
 
 @Path("/getDistrictList/")
 @POST

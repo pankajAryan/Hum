@@ -82,7 +82,7 @@
 }
 */
 
--(void)callWebServiceWithUrl:(NSString *)serviceUrl withParameter:(NSMutableDictionary *)parameters onCompletion:(void(^)(eResponseType responseType, id response))completionBlock {
+-(void)callWebServiceWithUrl:(NSString *)serviceUrl withParameter:(NSDictionary *)parameters onCompletion:(void(^)(eResponseType responseType, id response))completionBlock {
     
     @try {
         

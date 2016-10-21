@@ -55,7 +55,6 @@
 		CE2B39EE1DAE7FCB00B266E1 /* UINavigationItem+FF.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39E01DAE7FCB00B266E1 /* UINavigationItem+FF.m */; };
 		CE2B39F01DAE7FCB00B266E1 /* UIView+FF.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39E31DAE7FCB00B266E1 /* UIView+FF.m */; };
 		CE2B39F11DAE7FCB00B266E1 /* UIViewController+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39E51DAE7FCB00B266E1 /* UIViewController+Utility.m */; };
-		CE2B3A101DAE812A00B266E1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CE2B39F41DAE812A00B266E1 /* LICENSE */; };
 		CE2B3A111DAE812A00B266E1 /* NotificationBackgroundError.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2B39F71DAE812A00B266E1 /* NotificationBackgroundError.png */; };
 		CE2B3A121DAE812A00B266E1 /* NotificationBackgroundError@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2B39F81DAE812A00B266E1 /* NotificationBackgroundError@2x.png */; };
 		CE2B3A131DAE812A00B266E1 /* NotificationBackgroundErrorIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2B39F91DAE812A00B266E1 /* NotificationBackgroundErrorIcon.png */; };
@@ -76,10 +75,7 @@
 		CE2B3A221DAE812A00B266E1 /* TSBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B3A0A1DAE812A00B266E1 /* TSBlurView.m */; };
 		CE2B3A231DAE812A00B266E1 /* TSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B3A0C1DAE812A00B266E1 /* TSMessage.m */; };
 		CE2B3A241DAE812A00B266E1 /* TSMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B3A0E1DAE812A00B266E1 /* TSMessageView.m */; };
-		CE2B3A251DAE812A00B266E1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CE2B3A0F1DAE812A00B266E1 /* README.md */; };
 		CE2B3A2C1DAE823D00B266E1 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B3A291DAE823D00B266E1 /* HexColor.m */; };
-		CE2B3A2D1DAE823D00B266E1 /* LICENCE in Resources */ = {isa = PBXBuildFile; fileRef = CE2B3A2A1DAE823D00B266E1 /* LICENCE */; };
-		CE2B3A2E1DAE823D00B266E1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CE2B3A2B1DAE823D00B266E1 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -180,7 +176,6 @@
 		CE2B39E31DAE7FCB00B266E1 /* UIView+FF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FF.m"; sourceTree = "<group>"; };
 		CE2B39E41DAE7FCB00B266E1 /* UIViewController+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utility.h"; sourceTree = "<group>"; };
 		CE2B39E51DAE7FCB00B266E1 /* UIViewController+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utility.m"; sourceTree = "<group>"; };
-		CE2B39F41DAE812A00B266E1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CE2B39F71DAE812A00B266E1 /* NotificationBackgroundError.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotificationBackgroundError.png; sourceTree = "<group>"; };
 		CE2B39F81DAE812A00B266E1 /* NotificationBackgroundError@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NotificationBackgroundError@2x.png"; sourceTree = "<group>"; };
 		CE2B39F91DAE812A00B266E1 /* NotificationBackgroundErrorIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotificationBackgroundErrorIcon.png; sourceTree = "<group>"; };
@@ -204,11 +199,8 @@
 		CE2B3A0C1DAE812A00B266E1 /* TSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMessage.m; sourceTree = "<group>"; };
 		CE2B3A0D1DAE812A00B266E1 /* TSMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMessageView.h; sourceTree = "<group>"; };
 		CE2B3A0E1DAE812A00B266E1 /* TSMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMessageView.m; sourceTree = "<group>"; };
-		CE2B3A0F1DAE812A00B266E1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CE2B3A281DAE823D00B266E1 /* HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
 		CE2B3A291DAE823D00B266E1 /* HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColor.m; sourceTree = "<group>"; };
-		CE2B3A2A1DAE823D00B266E1 /* LICENCE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE; sourceTree = "<group>"; };
-		CE2B3A2B1DAE823D00B266E1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -450,9 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				CE2B3A261DAE823D00B266E1 /* HexColors */,
-				CE2B39F41DAE812A00B266E1 /* LICENSE */,
 				CE2B39F51DAE812A00B266E1 /* Pod */,
-				CE2B3A0F1DAE812A00B266E1 /* README.md */,
 			);
 			path = TSMessages;
 			sourceTree = "<group>";
@@ -507,8 +497,6 @@
 			isa = PBXGroup;
 			children = (
 				CE2B3A271DAE823D00B266E1 /* Classes */,
-				CE2B3A2A1DAE823D00B266E1 /* LICENCE */,
-				CE2B3A2B1DAE823D00B266E1 /* README.md */,
 			);
 			path = HexColors;
 			sourceTree = "<group>";
@@ -586,7 +574,6 @@
 				CE2B3A1B1DAE812A00B266E1 /* NotificationBackgroundWarning.png in Resources */,
 				CE2B3A1F1DAE812A00B266E1 /* NotificationButtonBackground.png in Resources */,
 				CE2B3A121DAE812A00B266E1 /* NotificationBackgroundError@2x.png in Resources */,
-				CE2B3A101DAE812A00B266E1 /* LICENSE in Resources */,
 				CE2B3A1C1DAE812A00B266E1 /* NotificationBackgroundWarning@2x.png in Resources */,
 				CE2B398C1DAE6D1F00B266E1 /* LaunchScreen.storyboard in Resources */,
 				CE2B3A1E1DAE812A00B266E1 /* NotificationBackgroundWarningIcon@2x.png in Resources */,
@@ -597,7 +584,6 @@
 				CE2B3A131DAE812A00B266E1 /* NotificationBackgroundErrorIcon.png in Resources */,
 				CE2B39871DAE6D1F00B266E1 /* Main.storyboard in Resources */,
 				CE2B3A111DAE812A00B266E1 /* NotificationBackgroundError.png in Resources */,
-				CE2B3A2D1DAE823D00B266E1 /* LICENCE in Resources */,
 				CE2B3A161DAE812A00B266E1 /* NotificationBackgroundMessage@2x.png in Resources */,
 				CE2B39C81DAE7B7E00B266E1 /* Home.storyboard in Resources */,
 				CE2B3A201DAE812A00B266E1 /* NotificationButtonBackground@2x.png in Resources */,
@@ -619,7 +605,6 @@
 				CE2B39E71DAE7FCB00B266E1 /* CLLocationManager+blocks.m in Sources */,
 				CE2B39EB1DAE7FCB00B266E1 /* UIFont+FF.m in Sources */,
 				CE2B39E91DAE7FCB00B266E1 /* NSString+device.m in Sources */,
-				CE2B3A251DAE812A00B266E1 /* README.md in Sources */,
 				CE2B39CE1DAE7D2C00B266E1 /* RootViewController.m in Sources */,
 				CE2B39EA1DAE7FCB00B266E1 /* UIColor+FF.m in Sources */,
 				CE2B3A221DAE812A00B266E1 /* TSBlurView.m in Sources */,
@@ -627,7 +612,6 @@
 				CE2B39A51DAE6F2D00B266E1 /* ActionSheetStringPicker.m in Sources */,
 				CE0596DD1DB665B5001E62A9 /* AFNetworkReachabilityManager.m in Sources */,
 				CE0596DE1DB665B5001E62A9 /* AFSecurityPolicy.m in Sources */,
-				CE2B3A2E1DAE823D00B266E1 /* README.md in Sources */,
 				CE2B3A2C1DAE823D00B266E1 /* HexColor.m in Sources */,
 				CE2B39811DAE6D1F00B266E1 /* AppDelegate.m in Sources */,
 				CE2B3A241DAE812A00B266E1 /* TSMessageView.m in Sources */,
