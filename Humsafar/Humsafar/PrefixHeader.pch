@@ -1,0 +1,32 @@
+//
+//  PrefixHeader.pch
+//  FabFurnish
+//
+//  Created by Avneesh.minocha on 04/05/15.
+//  Copyright (c) 2015 Bluerock eServices Pvt Ltd. All rights reserved.
+//
+
+#ifndef FabFurnish_PrefixHeader_pch
+#define FabFurnish_PrefixHeader_pch
+
+#import "FFConstant.h"
+#import "FFurls.h"
+//#import "SharedUtility.h"
+//#import "FFModelManager.h"
+// Categories
+#import "UIFont+FF.h"
+#import "NSString+device.h"
+#import "UIViewController+Utility.h"
+//#import "UILabel+Attribute.h"
+#import "UIColor+FF.h"
+#import "UIView+FF.h"
+#import "UINavigationItem+FF.h"
+//#import "UITextField+Validation.h"
+//#import "UITextView+Validation.h"
+
+// ThirdParty
+//#import <AFNetworking/UIKit+AFNetworking.h>
+#import "FFWebServiceHelper.h"
+
+
+#endif
