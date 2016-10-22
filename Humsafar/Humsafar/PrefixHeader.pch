@@ -23,6 +23,7 @@
 #import "UINavigationItem+FF.h"
 //#import "UITextField+Validation.h"
 //#import "UITextView+Validation.h"
+#import "CLLocationManager+blocks.h"
 
 // ThirdParty
 //#import <AFNetworking/UIKit+AFNetworking.h>
