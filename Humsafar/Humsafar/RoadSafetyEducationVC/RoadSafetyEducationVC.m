@@ -7,6 +7,7 @@
 //
 
 #import "RoadSafetyEducationVC.h"
+#import "WebViewController.h"
 
 @interface RoadSafetyEducationListTableViewCell : UITableViewCell
 
@@ -131,6 +132,16 @@
 
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSDictionary *dict = self.arrayList[indexPath.row];
+
+    WebViewController *webVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+    webVC.urlString = dict[@"mediaURL"];
+    
+    [self.navigationController presentViewController:webVC animated:YES completion:nil];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
