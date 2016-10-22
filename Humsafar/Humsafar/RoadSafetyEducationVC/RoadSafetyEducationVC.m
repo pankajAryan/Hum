@@ -73,6 +73,8 @@
     [self fetchDataListFromServer];
 }
 
+#pragma mark -
+
 -(void)fetchDataListFromServer {
     
     NSString *strCat = @"";

@@ -12,6 +12,7 @@
 #import "ProfileViewController.h"
 #import "HighwayServicesHomeVC.h"
 #import "RoadSafetyEducationHomeVC.h"
+#import "EmergencyContactsVC.h"
 
 #import "RESideMenu.h"
 #import "UIViewController+RESideMenu.h"
@@ -53,6 +54,12 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
+        case 1: {
+            EmergencyContactsVC *vc = (EmergencyContactsVC *)[UIViewController instantiateViewControllerWithIdentifier:@"EmergencyContactsVC" fromStoryboard:@"LeftMenuScenes"];
+            [homeController.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+
         case 2: {
             RoadSafetyEducationHomeVC *vc = (RoadSafetyEducationHomeVC *)[UIViewController instantiateViewControllerWithIdentifier:@"RoadSafetyEducationHomeVC" fromStoryboard:@"LeftMenuScenes"];
             [homeController.navigationController pushViewController:vc animated:YES];
