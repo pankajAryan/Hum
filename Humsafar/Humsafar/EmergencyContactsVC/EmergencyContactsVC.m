@@ -164,8 +164,13 @@
 
     BOOL isValide = NO;
     
-    for (ContactModel *model in self.arrayList) {
+    NSString *cont1 = @"";
+    NSString *cont2 = @"";
+    NSString *cont3 = @"";
+    
+    for (int i =0 ; i<self.arrayList.count;i++) {
         
+        ContactModel *model = self.arrayList[i];
         if (model.name.length != 0 || model.number.length != 0) {
             
             isValide = YES;
@@ -178,6 +183,21 @@
                 [self showAlert:@"Mobile must contain 10 characters!"];
                 return;
             }
+            
+            switch (i) {
+                case 0:
+                    cont1 = [NSString stringWithFormat:@"%@,%@",model.name,model.number];
+                    break;
+                case 1:
+                    cont2 = [NSString stringWithFormat:@"%@,%@",model.name,model.number];
+                    break;
+                case 2:
+                    cont3 = [NSString stringWithFormat:@"%@,%@",model.name,model.number];
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
     
@@ -186,7 +206,19 @@
         return;
     }
     
+    
+    
     // hit API
+    
+    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:AddUpdateEmergencyContacts withParameter:@{ @"userId" : @"14",@"contact1" : cont1,@"contact2" : cont2,@"contact3" : cont3,} onCompletion:^(eResponseType responseType, id response) {
+        
+        if (responseType == eResponseTypeSuccessJSON) {
+             [self showAlert:@"Updated successfully!"];
+        }else{
+            [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+            // [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+        }
+    }];
 }
 
 -(void)addBtnAction:(UIButton*)sender {
