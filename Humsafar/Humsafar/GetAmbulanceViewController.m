@@ -15,6 +15,7 @@
 }
 
 @property (nonatomic, strong) CLLocationManager *manager;
+@property (nonatomic) NSArray *arrayList;
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 
@@ -49,6 +50,7 @@
                 });
                 
                 //TODO: Fetch ambulance list
+                [self fetchAmbulanceData];
             }
             else
                 [self showAlert:@"Could not determine your location. Please check location settings."];
@@ -57,6 +59,20 @@
     else {
         [self showAlert:@"Please enable location services from settings."];
     }
+}
+
+-(void)fetchAmbulanceData {
+    
+    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetAmbulanceList withParameter:nil onCompletion:^(eResponseType responseType, id response) {
+        
+        if (responseType == eResponseTypeSuccessJSON) {
+            self.arrayList = [response objectForKey:kKEY_ResponseObject];
+            [self drawAmbulancesAtMap];
+        }else{
+            [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+            // [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+        }
+    }];
 }
 
 - (void)setupMapView {
@@ -96,21 +112,20 @@
 
 - (void)drawAmbulancesAtMap {
     
-//    for (HomeMapStoreModelResponseObject *fuelStationPin in fuelStationBase.responseObject) {
+    for (NSDictionary *dict in self.arrayList) {
         
         // Creates a marker in the center of the map.
         GMSMarker *marker = [[GMSMarker alloc] init];
-/*        marker.position = CLLocationCoordinate2DMake([fuelStationPin.lat doubleValue], [fuelStationPin.lon doubleValue]);
-        
- 
-  */
+        marker.position = CLLocationCoordinate2DMake([dict[@"lat"] doubleValue], [dict[@"lon"] doubleValue]);
+
         marker.title = @"Ambulance";
         marker.icon = nil;//[UIImage imageNamed:@""]; // ambulance image
         marker.snippet = nil;//[NSString stringWithFormat:@"%@",]; // ambulance text details as per android
         marker.appearAnimation = kGMSMarkerAnimationPop;
 //        marker.userData = fuelStationPin;
         marker.map = _mapView;
-//    }
+        
+    }
 }
 
 - (IBAction)back:(id)sender {

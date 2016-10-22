@@ -29,12 +29,10 @@
 
 #define GetStates           @"/getStateList/"
 #define GetDistricts        @"/getDistrictList/"
-
 #define GetAlertsForCategory  @"/getAlertsForCategory/"
 #define GetHighwayServices  @"/getHighwayFacilityListByType/"
-
 #define GetEducationContentForType  @"/getEducationContentForType/"
-
+#define GetAmbulanceList @"/getAmbulanceList/"
 
 
 /*
