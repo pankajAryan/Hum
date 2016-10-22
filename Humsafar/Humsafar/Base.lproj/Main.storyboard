@@ -389,6 +389,88 @@
             </objects>
             <point key="canvasLocation" x="744.375" y="242.95774647887325"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="oGT-Yd-jPJ">
+            <objects>
+                <viewController storyboardIdentifier="OTPViewController" id="RP7-IQ-0Ij" customClass="OTPViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DJu-6H-O91"/>
+                        <viewControllerLayoutGuide type="bottom" id="olh-NJ-Hdc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zbY-hM-Fjp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="slider_bg" translatesAutoresizingMaskIntoConstraints="NO" id="O5Z-M9-Guz"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the OTP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="597-Sg-PPw">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Nd0-Jp-vlw"/>
+                                    <constraint firstAttribute="width" constant="160" id="hfp-rR-lCa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S0B-MO-MfX">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="lw3-OC-Ozs"/>
+                                    <constraint firstAttribute="height" constant="30" id="uBY-vb-7BZ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09a-sb-LGP">
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.80913746050000002" blue="0.1201482279" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Verify">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="verifyOTP:" destination="RP7-IQ-0Ij" eventType="touchUpInside" id="otd-yt-EbJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLg-32-olc">
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.80913746050000002" blue="0.1201482279" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="dKV-3v-eK2"/>
+                                    <constraint firstAttribute="width" constant="143" id="nzk-tX-UAu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Resend">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resendOTP:" destination="RP7-IQ-0Ij" eventType="touchUpInside" id="4gG-cg-d5M"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="597-Sg-PPw" firstAttribute="leading" secondItem="S0B-MO-MfX" secondAttribute="leading" id="5dS-97-4gs"/>
+                            <constraint firstItem="fLg-32-olc" firstAttribute="top" secondItem="S0B-MO-MfX" secondAttribute="bottom" constant="45" id="DvK-js-233"/>
+                            <constraint firstItem="O5Z-M9-Guz" firstAttribute="top" secondItem="zbY-hM-Fjp" secondAttribute="top" id="J8a-EB-O6w"/>
+                            <constraint firstItem="fLg-32-olc" firstAttribute="centerX" secondItem="zbY-hM-Fjp" secondAttribute="centerX" constant="-72.5" id="LRS-cc-uR3"/>
+                            <constraint firstItem="09a-sb-LGP" firstAttribute="centerY" secondItem="fLg-32-olc" secondAttribute="centerY" id="N99-Eh-jzK"/>
+                            <constraint firstItem="09a-sb-LGP" firstAttribute="height" secondItem="fLg-32-olc" secondAttribute="height" id="Qqq-Tm-P2s"/>
+                            <constraint firstItem="09a-sb-LGP" firstAttribute="width" secondItem="fLg-32-olc" secondAttribute="width" id="Vd7-Jo-745"/>
+                            <constraint firstItem="O5Z-M9-Guz" firstAttribute="leading" secondItem="zbY-hM-Fjp" secondAttribute="leading" id="Wt8-Mu-D94"/>
+                            <constraint firstItem="S0B-MO-MfX" firstAttribute="centerX" secondItem="zbY-hM-Fjp" secondAttribute="centerX" id="chO-Pf-Xyn"/>
+                            <constraint firstAttribute="trailing" secondItem="O5Z-M9-Guz" secondAttribute="trailing" id="dOe-MD-dM0"/>
+                            <constraint firstItem="597-Sg-PPw" firstAttribute="top" secondItem="DJu-6H-O91" secondAttribute="bottom" constant="47" id="iB9-8r-qZO"/>
+                            <constraint firstItem="S0B-MO-MfX" firstAttribute="top" secondItem="597-Sg-PPw" secondAttribute="bottom" constant="14" id="n4k-lk-hkJ"/>
+                            <constraint firstItem="olh-NJ-Hdc" firstAttribute="top" secondItem="O5Z-M9-Guz" secondAttribute="bottom" id="zT0-g0-Dgm"/>
+                            <constraint firstItem="09a-sb-LGP" firstAttribute="leading" secondItem="fLg-32-olc" secondAttribute="trailing" constant="1" id="zfw-hz-LAo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="otpTextField" destination="S0B-MO-MfX" id="sbS-X7-pxy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yul-ff-gk5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1477.5" y="242.95774647887325"/>
+        </scene>
         <!--Root View Controller-->
         <scene sceneID="bRv-BU-C8h">
             <objects>

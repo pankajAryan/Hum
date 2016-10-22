@@ -8,6 +8,9 @@
 
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import "UITextField+Validation.h"
+#import "RootViewController.h"
+
 
 @interface LoginViewController () <GIDSignInDelegate, GIDSignInUIDelegate>
 
@@ -30,6 +33,40 @@
 #pragma mark - Login Actions
 
 - (IBAction)loginButtonDidTap:(id)sender {
+    
+    if (_txtFieldUsername.isEmptyField || _txtFieldPassword.isEmptyField) {
+        [self showAlert:@"All input fields are mandatory!"];
+    }
+//    else if (!_txtFieldUsername.isEmailValid) {
+//        [self showAlert:@"Invalid Email address!"];
+//    }
+    else {
+        
+        NSDictionary *paramsDict = @{@"userName": _txtFieldUsername.text, @"password": _txtFieldPassword.text, @"deviceOS":@"iOS"};
+        
+        [self showProgressHudWithMessage:@"Registering user"];
+        
+        [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:departmentLogin withParameter:paramsDict onCompletion:^(eResponseType responseType, id response) {
+            
+            [self hideProgressHudAfterDelay:0.1];
+            
+            if (responseType == eResponseTypeSuccessJSON)
+            {
+                [UIViewController saveDatatoUserDefault:[response objectForKey:@"responseObject"] forKey:@"userId"];
+                
+                RootViewController *VC = [RootViewController instantiateViewControllerWithIdentifier:@"RootViewController" fromStoryboard:@"Main"];
+                
+                [self.navigationController pushViewController:VC animated:YES];
+            }
+            else {
+                if (responseType != eResponseTypeNoInternet)
+                {
+                    //[self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+                    [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                }
+            }
+        }];
+    }
 }
 
 - (IBAction)googleSignInButtonDidTap:(id)sender {

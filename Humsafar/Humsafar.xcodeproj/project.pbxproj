@@ -96,6 +96,7 @@
 		CE9316611DBBB6D700A84A91 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316601DBBB6D700A84A91 /* AddressBook.framework */; };
 		CE9316631DBBB6DD00A84A91 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316621DBBB6DD00A84A91 /* SafariServices.framework */; };
 		CE9316651DBBB82400A84A91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE9316641DBBB82400A84A91 /* GoogleService-Info.plist */; };
+		CE9316691DBC0B7200A84A91 /* OTPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9316681DBC0B7200A84A91 /* OTPViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -255,6 +256,8 @@
 		CE9316621DBBB6DD00A84A91 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		CE9316641DBBB82400A84A91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE9316661DBBC71B00A84A91 /* Humsafar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Humsafar.entitlements; sourceTree = "<group>"; };
+		CE9316671DBC0B7200A84A91 /* OTPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPViewController.h; sourceTree = "<group>"; };
+		CE9316681DBC0B7200A84A91 /* OTPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -457,6 +460,8 @@
 				CE2B39BE1DAE72AB00B266E1 /* LoginViewController.m */,
 				CE2B39C01DAE736B00B266E1 /* RegisterViewController.h */,
 				CE2B39C11DAE736B00B266E1 /* RegisterViewController.m */,
+				CE9316671DBC0B7200A84A91 /* OTPViewController.h */,
+				CE9316681DBC0B7200A84A91 /* OTPViewController.m */,
 				B755B1FF1DBB752300C5F329 /* EmergencyContactsVC */,
 				B755B1F21DBB59C100C5F329 /* RoadSafetyEducationVC */,
 				B75DAF591DBB444D008B2D0F /* HighwayServicesVC */,
@@ -773,6 +778,7 @@
 				CE2B39AA1DAE6F2D00B266E1 /* UIViewController+RESideMenu.m in Sources */,
 				CE2B39BA1DAE71CC00B266E1 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				CE0596C51DB6655E001E62A9 /* FFModelManager.m in Sources */,
+				CE9316691DBC0B7200A84A91 /* OTPViewController.m in Sources */,
 				CE2B39EC1DAE7FCB00B266E1 /* UIImage+Scale.m in Sources */,
 				B755B1FE1DBB696C00C5F329 /* WebViewController.m in Sources */,
 				B75DAF5F1DBB444D008B2D0F /* HighwayServicesHomeVC.m in Sources */,

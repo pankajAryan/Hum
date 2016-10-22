@@ -27,14 +27,18 @@
 
 // 2. *********************|| Prefix By BASE_URL ||**************************************************** //
 
-#define GetStates           @"/getStateList/"
-#define GetDistricts        @"/getDistrictList/"
-#define GetAlertsForCategory  @"/getAlertsForCategory/"
-#define GetHighwayServices  @"/getHighwayFacilityListByType/"
+#define GetStates                   @"/getStateList/"
+#define GetDistricts                @"/getDistrictList/"
+#define GetAlertsForCategory        @"/getAlertsForCategory/"
+#define GetHighwayServices          @"/getHighwayFacilityListByType/"
 #define GetEducationContentForType  @"/getEducationContentForType/"
-#define GetAmbulanceList @"/getAmbulanceList/"
+#define GetAmbulanceList            @"/getAmbulanceList/"
 
-#define RegisterUser  @"/registerUser/"
+#define departmentLogin    @"/login/"
+
+#define RegisterUser    @"/registerUser/"
+#define RegenerateOtp   @"/generateOtp/"
+#define VerifyOtp       @"/verifyOtp/"
 
 /*
 

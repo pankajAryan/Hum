@@ -10,8 +10,9 @@
 #import "ActionSheetStringPicker.h"
 #import "UITextField+Validation.h"
 #import "UIViewController+Utility.h"
+#import "OTPViewController.h"
 
-@interface RegisterViewController () {
+@interface RegisterViewController () <UITextFieldDelegate> {
     
     NSDictionary *selectedStateInfo;
     NSString *selectedStateId;
@@ -171,9 +172,16 @@
 
                     [UIViewController saveDatatoUserDefault:_txtFieldName.text forKey:@"name"];
                     [UIViewController saveDatatoUserDefault:_txtFieldEmail.text forKey:@"email"];
-                    [UIViewController saveDatatoUserDefault:_imageUrl forKey:@"userImageUrl"];
+                    [UIViewController saveDatatoUserDefault:_imageUrl.absoluteString forKey:@"userImageUrl"];
                     [UIViewController saveDatatoUserDefault:selectedStateInfo forKey:@"selectedStateDict"];
+                    
+                    [UIViewController saveDatatoUserDefault:arrayStatesData forKey:@"state"];
                     [UIViewController saveDatatoUserDefault:arrayDistrictsData forKey:@"districts"];
+                    
+                    // Present OTP VC
+                    OTPViewController *VC = [OTPViewController instantiateViewControllerWithIdentifier:@"OTPViewController" fromStoryboard:@"Main"];
+                    VC.mobileNumber = _txtFieldMobile.text;
+                    [self.navigationController pushViewController:VC animated:YES];
                 }
                 else {
                     if (responseType != eResponseTypeNoInternet)
