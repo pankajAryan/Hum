@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F90CD5F1DBB963F00D8E5B1 /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F90CD5E1DBB963F00D8E5B1 /* ReportViewController.m */; };
+		7FB42B891DBB632B002E4209 /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB42B881DBB632B002E4209 /* CallViewController.m */; };
+		7FB42B8C1DBB6345002E4209 /* CallPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB42B8B1DBB6345002E4209 /* CallPagerViewController.m */; };
+		7FB42B8F1DBB69DD002E4209 /* CallListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB42B8E1DBB69DD002E4209 /* CallListVC.m */; };
 		B755B1F51DBB5A0C00C5F329 /* RoadSafetyEducationHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B755B1F41DBB5A0C00C5F329 /* RoadSafetyEducationHomeVC.m */; };
 		B755B1F81DBB5A3000C5F329 /* RoadSafetyEducationContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B755B1F71DBB5A3000C5F329 /* RoadSafetyEducationContainerVC.m */; };
 		B755B1FB1DBB5A5300C5F329 /* RoadSafetyEducationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B755B1FA1DBB5A5300C5F329 /* RoadSafetyEducationVC.m */; };
@@ -100,6 +104,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F90CD5D1DBB963F00D8E5B1 /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
+		7F90CD5E1DBB963F00D8E5B1 /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
+		7FB42B871DBB632B002E4209 /* CallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallViewController.h; sourceTree = "<group>"; };
+		7FB42B881DBB632B002E4209 /* CallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallViewController.m; sourceTree = "<group>"; };
+		7FB42B8A1DBB6345002E4209 /* CallPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallPagerViewController.h; sourceTree = "<group>"; };
+		7FB42B8B1DBB6345002E4209 /* CallPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallPagerViewController.m; sourceTree = "<group>"; };
+		7FB42B8D1DBB69DD002E4209 /* CallListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallListVC.h; sourceTree = "<group>"; };
+		7FB42B8E1DBB69DD002E4209 /* CallListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallListVC.m; sourceTree = "<group>"; };
 		B755B1F31DBB5A0C00C5F329 /* RoadSafetyEducationHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoadSafetyEducationHomeVC.h; sourceTree = "<group>"; };
 		B755B1F41DBB5A0C00C5F329 /* RoadSafetyEducationHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoadSafetyEducationHomeVC.m; sourceTree = "<group>"; };
 		B755B1F61DBB5A3000C5F329 /* RoadSafetyEducationContainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoadSafetyEducationContainerVC.h; sourceTree = "<group>"; };
@@ -473,6 +485,14 @@
 				CE0596BD1DB6628D001E62A9 /* HomePagerViewController.m */,
 				CE16DAEA1DBB3C2D00AB664C /* ProfileViewController.h */,
 				CE16DAEB1DBB3C2D00AB664C /* ProfileViewController.m */,
+				7FB42B871DBB632B002E4209 /* CallViewController.h */,
+				7FB42B881DBB632B002E4209 /* CallViewController.m */,
+				7FB42B8A1DBB6345002E4209 /* CallPagerViewController.h */,
+				7FB42B8B1DBB6345002E4209 /* CallPagerViewController.m */,
+				7FB42B8D1DBB69DD002E4209 /* CallListVC.h */,
+				7FB42B8E1DBB69DD002E4209 /* CallListVC.m */,
+				7F90CD5D1DBB963F00D8E5B1 /* ReportViewController.h */,
+				7F90CD5E1DBB963F00D8E5B1 /* ReportViewController.m */,
 				CE16DB041DBB6E3B00AB664C /* GetAmbulanceViewController.h */,
 				CE16DB051DBB6E3B00AB664C /* GetAmbulanceViewController.m */,
 				CE16DB061DBB6E3B00AB664C /* GetAmbulanceViewController.xib */,
@@ -685,6 +705,8 @@
 				TargetAttributes = {
 					CE2B39781DAE6D1F00B266E1 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = T3654L4VAS;
+						ProvisioningStyle = Manual;
 						DevelopmentTeam = U2XZWSZ93N;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -763,6 +785,7 @@
 				CE0596BA1DB65E92001E62A9 /* GUITabPagerViewController.m in Sources */,
 				CE0596E11DB665B5001E62A9 /* AFURLResponseSerialization.m in Sources */,
 				CE2B39BB1DAE71CC00B266E1 /* TPKeyboardAvoidingTableView.m in Sources */,
+				7FB42B8F1DBB69DD002E4209 /* CallListVC.m in Sources */,
 				CE2B39C21DAE736B00B266E1 /* RegisterViewController.m in Sources */,
 				CE2B39C51DAE7A1000B266E1 /* HomeViewController.m in Sources */,
 				CE16DAE91DBA043500AB664C /* FFValidationResult.m in Sources */,
@@ -783,6 +806,7 @@
 				B755B1FE1DBB696C00C5F329 /* WebViewController.m in Sources */,
 				B75DAF5F1DBB444D008B2D0F /* HighwayServicesHomeVC.m in Sources */,
 				CE2B39F01DAE7FCB00B266E1 /* UIView+FF.m in Sources */,
+				7F90CD5F1DBB963F00D8E5B1 /* ReportViewController.m in Sources */,
 				CE16DAFE1DBB42FD00AB664C /* TSMessage.m in Sources */,
 				CE16DB071DBB6E3B00AB664C /* GetAmbulanceViewController.m in Sources */,
 				B781D6E31DBAB4F2001627F1 /* HomeListVC.m in Sources */,
@@ -794,6 +818,8 @@
 				CE2B39A91DAE6F2D00B266E1 /* RESideMenu.m in Sources */,
 				B755B1FB1DBB5A5300C5F329 /* RoadSafetyEducationVC.m in Sources */,
 				CE2B39A81DAE6F2D00B266E1 /* RECommonFunctions.m in Sources */,
+				7FB42B8C1DBB6345002E4209 /* CallPagerViewController.m in Sources */,
+				7FB42B891DBB632B002E4209 /* CallViewController.m in Sources */,
 				CE2B39BF1DAE72AB00B266E1 /* LoginViewController.m in Sources */,
 				CE2B39F11DAE7FCB00B266E1 /* UIViewController+Utility.m in Sources */,
 				CE0596C41DB6655E001E62A9 /* FFWebServiceHelper.m in Sources */,
@@ -845,7 +871,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -893,7 +920,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -918,6 +946,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = T3654L4VAS;
 				CODE_SIGN_ENTITLEMENTS = Humsafar/Humsafar.entitlements;
 				DEVELOPMENT_TEAM = U2XZWSZ93N;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -927,8 +958,10 @@
 				GCC_PREFIX_HEADER = Humsafar/PrefixHeader.pch;
 				INFOPLIST_FILE = Humsafar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.Humsafar;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1572775d-a7a5-4918-ab9f-efff4d984b9f";
+				PROVISIONING_PROFILE_SPECIFIER = "WILDCARD TEST DEV";
 			};
 			name = Debug;
 		};
@@ -936,6 +969,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = T3654L4VAS;
 				CODE_SIGN_ENTITLEMENTS = Humsafar/Humsafar.entitlements;
 				DEVELOPMENT_TEAM = U2XZWSZ93N;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -945,8 +981,10 @@
 				GCC_PREFIX_HEADER = Humsafar/PrefixHeader.pch;
 				INFOPLIST_FILE = Humsafar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.Humsafar;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1572775d-a7a5-4918-ab9f-efff4d984b9f";
+				PROVISIONING_PROFILE_SPECIFIER = "WILDCARD TEST DEV";
 			};
 			name = Release;
 		};

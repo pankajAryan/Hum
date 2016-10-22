@@ -27,6 +27,7 @@
 
 // 2. *********************|| Prefix By BASE_URL ||**************************************************** //
 
+<<<<<<< HEAD
 #define GetStates                   @"/getStateList/"
 #define GetDistricts                @"/getDistrictList/"
 #define GetAlertsForCategory        @"/getAlertsForCategory/"
@@ -34,11 +35,24 @@
 #define GetEducationContentForType  @"/getEducationContentForType/"
 #define GetAmbulanceList            @"/getAmbulanceList/"
 
-#define departmentLogin    @"/login/"
+#define GetStates                   @"/getStateList/"
+#define GetDistricts                @"/getDistrictList/"
+#define GetAlertsForCategory        @"/getAlertsForCategory/"
+#define GetHighwayServices          @"/getHighwayFacilityListByType/"
+#define GetEmergencyServices        @"/getEmergencyDirectoryForDepartment/"
+#define UploadImage                 @"/uploadImage/"
+#define ReportIssue                 @"/reportIssue/"
 
-#define RegisterUser    @"/registerUser/"
-#define RegenerateOtp   @"/generateOtp/"
-#define VerifyOtp       @"/verifyOtp/"
+
+#define GetEducationContentForType  @"/getEducationContentForType/"
+#define GetAmbulanceList            @"/getAmbulanceList/"
+#define AddUpdateEmergencyContacts  @"/addUpdateEmergencyContacts/"
+
+#define departmentLogin     @"/login/"
+
+#define RegisterUser        @"/registerUser/"
+#define RegenerateOtp       @"/generateOtp/"
+#define VerifyOtp           @"/verifyOtp/"
 
 /*
 
