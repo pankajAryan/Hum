@@ -11,12 +11,20 @@
 #import "UITextField+Validation.h"
 #import "UIViewController+Utility.h"
 
-@interface RegisterViewController ()
+@interface RegisterViewController () {
+    
+    NSDictionary *selectedStateInfo;
+    NSString *selectedStateId;
+}
+
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldName;
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldEmail;
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldMobile;
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldState;
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldDist;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @end
 
 @implementation RegisterViewController
@@ -25,6 +33,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    _txtFieldName.text = self.name;
+    _txtFieldEmail.text = self.email;
+    _imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:_imageUrl]];
+
     [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetStates withParameter:nil onCompletion:^(eResponseType responseType, id response) {
         
         if (responseType == eResponseTypeSuccessJSON) {
@@ -65,17 +77,6 @@
 #pragma mark- Button Actions
 - (IBAction)showStatePicker:(id)sender {
    
-    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetDistricts withParameter:@{@"stateId":@"29"} onCompletion:^(eResponseType responseType, id response) {
-        
-        if (responseType == eResponseTypeSuccessJSON) {
-            arrayDistrictsData = [response objectForKey:kKEY_ResponseObject];
-        }else{
-            [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
-            // [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
-        }
-    }];
-    
-    /*
     [_txtFieldName resignFirstResponder];
     [_txtFieldMobile resignFirstResponder];
     [_txtFieldEmail resignFirstResponder];
@@ -87,20 +88,30 @@
     for (int i =0; i < arrayStatesData.count; i++) {
         
         NSDictionary *dict = [arrayStatesData objectAtIndex:i];
-        [stateTitles addObject:[dict objectForKey:@"productName"]];
+        [stateTitles addObject:[dict objectForKey:@"stateName"]];
     }
     
     [ActionSheetStringPicker showPickerWithTitle:nil rows:[stateTitles copy] initialSelection:0 doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedValueIndex, id selectedValue) {
         
-        //selectedIndex = selectedValueIndex;
-        
+        selectedStateId = [[arrayStatesData objectAtIndex:selectedValueIndex] objectForKey:@"stateId"];
         _txtFieldState.text = selectedValue;
+        
+        
+         [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetDistricts withParameter:@{@"stateId":selectedStateId} onCompletion:^(eResponseType responseType, id response) {
+         
+             if (responseType == eResponseTypeSuccessJSON) {
+                 arrayDistrictsData = [response objectForKey:kKEY_ResponseObject];
+             }
+             else{
+                 [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+                 // [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+             }
+         }];
         
     } cancelBlock:^(ActionSheetStringPicker *picker) {
         NSLog(@"Block Picker Canceled");
     } origin:sender];
     
-    */
 }
 
 - (IBAction)showDistrictPicker:(id)sender {
@@ -116,14 +127,16 @@
     for (int i =0; i < arrayDistrictsData.count; i++) {
         
         NSDictionary *dict = [arrayDistrictsData objectAtIndex:i];
-        [DistTitles addObject:[dict objectForKey:@"productName"]];
+        [DistTitles addObject:[dict objectForKey:@"districtName"]];
     }
     
     [ActionSheetStringPicker showPickerWithTitle:nil rows:[DistTitles copy] initialSelection:0 doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedValueIndex, id selectedValue) {
         
         //selectedIndex = selectedValueIndex;
         
-        _txtFieldState.text = selectedValue;
+        _txtFieldDist.text = selectedValue;
+        
+        selectedStateInfo = [arrayDistrictsData objectAtIndex:selectedValueIndex];
         
     } cancelBlock:^(ActionSheetStringPicker *picker) {
         NSLog(@"Block Picker Canceled");
@@ -142,20 +155,34 @@
         [self showAlert:@"Invalid Email address!"];
     }
     else {
-        // Register API
-        //        name
-        //        mobile
-        //        email
-        //        favoriteProduct
-        //        password
+        NSString *districtId = [selectedStateInfo objectForKey:@"districtId"];
+
+        NSDictionary *paramsDict = @{@"userName": _txtFieldName.text, @"emailId": _txtFieldEmail.text, @"profileImageURL": _imageUrl.absoluteString, @"mobileNumber": _txtFieldMobile.text, @"stateId": selectedStateId, @"defaultDistrictId": districtId, @"deviceOS":@"iOS"};
         
-        if ([UIViewController isNetworkAvailable])
-        {
             [self showProgressHudWithMessage:@"Registering user"];
-        }
-        else {
-            [self showAlert:@"No internet available!"];
-        }
+            
+            [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:RegisterUser withParameter:paramsDict onCompletion:^(eResponseType responseType, id response) {
+                
+                [self hideProgressHudAfterDelay:0.1];
+                
+                if (responseType == eResponseTypeSuccessJSON)
+                {
+                    [UIViewController saveDatatoUserDefault:[response objectForKey:@"responseObject"] forKey:@"userId"];
+
+                    [UIViewController saveDatatoUserDefault:_txtFieldName.text forKey:@"name"];
+                    [UIViewController saveDatatoUserDefault:_txtFieldEmail.text forKey:@"email"];
+                    [UIViewController saveDatatoUserDefault:_imageUrl forKey:@"userImageUrl"];
+                    [UIViewController saveDatatoUserDefault:selectedStateInfo forKey:@"selectedStateDict"];
+                    [UIViewController saveDatatoUserDefault:arrayDistrictsData forKey:@"districts"];
+                }
+                else {
+                    if (responseType != eResponseTypeNoInternet)
+                    {
+                        //[self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+                        [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                    }
+                }
+            }];
     }
 }
 

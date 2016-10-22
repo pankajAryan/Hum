@@ -34,6 +34,7 @@
 #define GetEducationContentForType  @"/getEducationContentForType/"
 #define GetAmbulanceList @"/getAmbulanceList/"
 
+#define RegisterUser  @"/registerUser/"
 
 /*
 

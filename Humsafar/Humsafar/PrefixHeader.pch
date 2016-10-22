@@ -29,5 +29,7 @@
 //#import <AFNetworking/UIKit+AFNetworking.h>
 #import "FFWebServiceHelper.h"
 
+#import <GoogleSignIn/GoogleSignIn.h>
+
 
 #endif

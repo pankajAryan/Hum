@@ -80,7 +80,7 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
         }
             break;
             
-        default:      ;
+        default:       [[GIDSignIn sharedInstance] signOut];
             
             break;
     }

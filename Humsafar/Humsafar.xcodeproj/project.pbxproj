@@ -91,6 +91,11 @@
 		CE9316571DBB7EF500A84A91 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316531DBB7EF500A84A91 /* GoogleMapsCore.framework */; };
 		CE9316581DBB7EF500A84A91 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316541DBB7EF500A84A91 /* GoogleMapsBase.framework */; };
 		CE93165A1DBB7F3B00A84A91 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE9316591DBB7F3B00A84A91 /* GoogleMaps.bundle */; };
+		CE93165D1DBBB69B00A84A91 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE93165B1DBBB69B00A84A91 /* GoogleSignIn.bundle */; };
+		CE93165E1DBBB69B00A84A91 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE93165C1DBBB69B00A84A91 /* GoogleSignIn.framework */; };
+		CE9316611DBBB6D700A84A91 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316601DBBB6D700A84A91 /* AddressBook.framework */; };
+		CE9316631DBBB6DD00A84A91 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316621DBBB6DD00A84A91 /* SafariServices.framework */; };
+		CE9316651DBBB82400A84A91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE9316641DBBB82400A84A91 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -244,6 +249,12 @@
 		CE9316531DBB7EF500A84A91 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsCore.framework; sourceTree = "<group>"; };
 		CE9316541DBB7EF500A84A91 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
 		CE9316591DBB7F3B00A84A91 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		CE93165B1DBBB69B00A84A91 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
+		CE93165C1DBBB69B00A84A91 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
+		CE9316601DBBB6D700A84A91 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		CE9316621DBBB6DD00A84A91 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		CE9316641DBBB82400A84A91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE9316661DBBC71B00A84A91 /* Humsafar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Humsafar.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,8 +262,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9316631DBBB6DD00A84A91 /* SafariServices.framework in Frameworks */,
+				CE9316611DBBB6D700A84A91 /* AddressBook.framework in Frameworks */,
 				CE9316451DBB7E6800A84A91 /* OpenGLES.framework in Frameworks */,
 				CE9316461DBB7E6800A84A91 /* libz.tbd in Frameworks */,
+				CE93165E1DBBB69B00A84A91 /* GoogleSignIn.framework in Frameworks */,
 				CE93164B1DBB7E6800A84A91 /* CoreLocation.framework in Frameworks */,
 				CE9316491DBB7E6800A84A91 /* GLKit.framework in Frameworks */,
 				CE9316431DBB7E6800A84A91 /* SystemConfiguration.framework in Frameworks */,
@@ -416,6 +430,7 @@
 				CE0596B51DB65E92001E62A9 /* GUITabPager */,
 				CE2B397B1DAE6D1F00B266E1 /* Humsafar */,
 				CE2B397A1DAE6D1F00B266E1 /* Products */,
+				CE93165F1DBBB6D700A84A91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -430,6 +445,7 @@
 		CE2B397B1DAE6D1F00B266E1 /* Humsafar */ = {
 			isa = PBXGroup;
 			children = (
+				CE9316661DBBC71B00A84A91 /* Humsafar.entitlements */,
 				CE16DAF11DBB405E00AB664C /* Storyboards */,
 				CE0596BF1DB6654E001E62A9 /* WebServiceHelpers */,
 				CE2B39AC1DAE70DB00B266E1 /* Constants */,
@@ -466,6 +482,8 @@
 		CE2B397C1DAE6D1F00B266E1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CE93165B1DBBB69B00A84A91 /* GoogleSignIn.bundle */,
+				CE93165C1DBBB69B00A84A91 /* GoogleSignIn.framework */,
 				CE9316591DBB7F3B00A84A91 /* GoogleMaps.bundle */,
 				CE9316521DBB7EF500A84A91 /* GoogleMaps.framework */,
 				CE9316531DBB7EF500A84A91 /* GoogleMapsCore.framework */,
@@ -486,6 +504,7 @@
 				CE16DAF21DBB423500AB664C /* TSMessagesDefaultDesign.json */,
 				CE2B39AB1DAE6F6E00B266E1 /* PrefixHeader.pch */,
 				CE2B397D1DAE6D1F00B266E1 /* main.m */,
+				CE9316641DBBB82400A84A91 /* GoogleService-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -621,6 +640,15 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		CE93165F1DBBB6D700A84A91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE9316621DBBB6DD00A84A91 /* SafariServices.framework */,
+				CE9316601DBBB6D700A84A91 /* AddressBook.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -652,7 +680,13 @@
 				TargetAttributes = {
 					CE2B39781DAE6D1F00B266E1 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = U2XZWSZ93N;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -683,8 +717,10 @@
 				CE16DAF51DBB426400AB664C /* Assets.xcassets in Resources */,
 				CE2B398C1DAE6D1F00B266E1 /* LaunchScreen.storyboard in Resources */,
 				CE2B39871DAE6D1F00B266E1 /* Main.storyboard in Resources */,
+				CE93165D1DBBB69B00A84A91 /* GoogleSignIn.bundle in Resources */,
 				CE16DB081DBB6E3B00AB664C /* GetAmbulanceViewController.xib in Resources */,
 				CE16DAF31DBB423500AB664C /* TSMessagesDefaultDesign.json in Resources */,
+				CE9316651DBBB82400A84A91 /* GoogleService-Info.plist in Resources */,
 				CE2B39C81DAE7B7E00B266E1 /* Home.storyboard in Resources */,
 				CE16DAF01DBB3D0300AB664C /* LeftMenuScenes.storyboard in Resources */,
 			);
@@ -876,6 +912,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Humsafar/Humsafar.entitlements;
+				DEVELOPMENT_TEAM = U2XZWSZ93N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Humsafar",
@@ -892,6 +930,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Humsafar/Humsafar.entitlements;
+				DEVELOPMENT_TEAM = U2XZWSZ93N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Humsafar",
