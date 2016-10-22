@@ -33,6 +33,9 @@
 #define GetAlertsForCategory  @"/getAlertsForCategory/"
 #define GetHighwayServices  @"/getHighwayFacilityListByType/"
 
+#define GetEducationContentForType  @"/getEducationContentForType/"
+
+
 
 /*
 

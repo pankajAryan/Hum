@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B755B1F51DBB5A0C00C5F329 /* RoadSafetyEducationHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B755B1F41DBB5A0C00C5F329 /* RoadSafetyEducationHomeVC.m */; };
+		B755B1F81DBB5A3000C5F329 /* RoadSafetyEducationContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B755B1F71DBB5A3000C5F329 /* RoadSafetyEducationContainerVC.m */; };
+		B755B1FB1DBB5A5300C5F329 /* RoadSafetyEducationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B755B1FA1DBB5A5300C5F329 /* RoadSafetyEducationVC.m */; };
 		B75DAF5E1DBB444D008B2D0F /* HighwayServicesContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B75DAF5B1DBB444D008B2D0F /* HighwayServicesContainerVC.m */; };
 		B75DAF5F1DBB444D008B2D0F /* HighwayServicesHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B75DAF5D1DBB444D008B2D0F /* HighwayServicesHomeVC.m */; };
 		B75DAF621DBB4486008B2D0F /* HighwayServicesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B75DAF611DBB4486008B2D0F /* HighwayServicesVC.m */; };
@@ -69,6 +72,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B755B1F31DBB5A0C00C5F329 /* RoadSafetyEducationHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoadSafetyEducationHomeVC.h; sourceTree = "<group>"; };
+		B755B1F41DBB5A0C00C5F329 /* RoadSafetyEducationHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoadSafetyEducationHomeVC.m; sourceTree = "<group>"; };
+		B755B1F61DBB5A3000C5F329 /* RoadSafetyEducationContainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoadSafetyEducationContainerVC.h; sourceTree = "<group>"; };
+		B755B1F71DBB5A3000C5F329 /* RoadSafetyEducationContainerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoadSafetyEducationContainerVC.m; sourceTree = "<group>"; };
+		B755B1F91DBB5A5300C5F329 /* RoadSafetyEducationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoadSafetyEducationVC.h; sourceTree = "<group>"; };
+		B755B1FA1DBB5A5300C5F329 /* RoadSafetyEducationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoadSafetyEducationVC.m; sourceTree = "<group>"; };
 		B75DAF5A1DBB444D008B2D0F /* HighwayServicesContainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighwayServicesContainerVC.h; sourceTree = "<group>"; };
 		B75DAF5B1DBB444D008B2D0F /* HighwayServicesContainerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighwayServicesContainerVC.m; sourceTree = "<group>"; };
 		B75DAF5C1DBB444D008B2D0F /* HighwayServicesHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighwayServicesHomeVC.h; sourceTree = "<group>"; };
@@ -199,6 +208,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B755B1F21DBB59C100C5F329 /* RoadSafetyEducationVC */ = {
+			isa = PBXGroup;
+			children = (
+				B755B1F31DBB5A0C00C5F329 /* RoadSafetyEducationHomeVC.h */,
+				B755B1F41DBB5A0C00C5F329 /* RoadSafetyEducationHomeVC.m */,
+				B755B1F61DBB5A3000C5F329 /* RoadSafetyEducationContainerVC.h */,
+				B755B1F71DBB5A3000C5F329 /* RoadSafetyEducationContainerVC.m */,
+				B755B1F91DBB5A5300C5F329 /* RoadSafetyEducationVC.h */,
+				B755B1FA1DBB5A5300C5F329 /* RoadSafetyEducationVC.m */,
+			);
+			path = RoadSafetyEducationVC;
+			sourceTree = "<group>";
+		};
 		B75DAF591DBB444D008B2D0F /* HighwayServicesVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +362,7 @@
 				CE2B39BE1DAE72AB00B266E1 /* LoginViewController.m */,
 				CE2B39C01DAE736B00B266E1 /* RegisterViewController.h */,
 				CE2B39C11DAE736B00B266E1 /* RegisterViewController.m */,
+				B755B1F21DBB59C100C5F329 /* RoadSafetyEducationVC */,
 				B75DAF591DBB444D008B2D0F /* HighwayServicesVC */,
 				CE2B39C61DAE7B2F00B266E1 /* SideManuPanel */,
 				B781D6E01DBAB4BE001627F1 /* HomeVC */,
@@ -586,6 +609,7 @@
 				CE0596DD1DB665B5001E62A9 /* AFNetworkReachabilityManager.m in Sources */,
 				CE0596DE1DB665B5001E62A9 /* AFSecurityPolicy.m in Sources */,
 				CE2B3A2C1DAE823D00B266E1 /* HexColor.m in Sources */,
+				B755B1F51DBB5A0C00C5F329 /* RoadSafetyEducationHomeVC.m in Sources */,
 				B75DAF5E1DBB444D008B2D0F /* HighwayServicesContainerVC.m in Sources */,
 				B75DAF621DBB4486008B2D0F /* HighwayServicesVC.m in Sources */,
 				CE2B39811DAE6D1F00B266E1 /* AppDelegate.m in Sources */,
@@ -600,6 +624,7 @@
 				CE2B39C51DAE7A1000B266E1 /* HomeViewController.m in Sources */,
 				CE16DAE91DBA043500AB664C /* FFValidationResult.m in Sources */,
 				CE0596DB1DB665B5001E62A9 /* AFHTTPRequestOperationManager.m in Sources */,
+				B755B1F81DBB5A3000C5F329 /* RoadSafetyEducationContainerVC.m in Sources */,
 				CE2B39A41DAE6F2D00B266E1 /* AbstractActionSheetPicker.m in Sources */,
 				CE0596E01DB665B5001E62A9 /* AFURLRequestSerialization.m in Sources */,
 				CE2B39A61DAE6F2D00B266E1 /* SWActionSheet.m in Sources */,
@@ -619,6 +644,7 @@
 				CE0596E21DB665B5001E62A9 /* AFURLSessionManager.m in Sources */,
 				CE0596DC1DB665B5001E62A9 /* AFHTTPSessionManager.m in Sources */,
 				CE2B39A91DAE6F2D00B266E1 /* RESideMenu.m in Sources */,
+				B755B1FB1DBB5A5300C5F329 /* RoadSafetyEducationVC.m in Sources */,
 				CE2B39A81DAE6F2D00B266E1 /* RECommonFunctions.m in Sources */,
 				CE2B39BF1DAE72AB00B266E1 /* LoginViewController.m in Sources */,
 				CE2B39F11DAE7FCB00B266E1 /* UIViewController+Utility.m in Sources */,

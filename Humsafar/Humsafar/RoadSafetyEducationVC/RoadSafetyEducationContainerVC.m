@@ -1,21 +1,21 @@
 //
-//  HighwayServicesContainerVC.m
+//  RoadSafetyEducationContainerVC.m
 //  Humsafar
 //
 //  Created by Rahul on 10/22/16.
 //  Copyright © 2016 mobiquel. All rights reserved.
 //
 
-#import "HighwayServicesContainerVC.h"
-#import "HighwayServicesVC.h"
+#import "RoadSafetyEducationContainerVC.h"
+#import "RoadSafetyEducationVC.h"
 
-@interface HighwayServicesContainerVC ()<GUITabPagerDataSource, GUITabPagerDelegate>
+@interface RoadSafetyEducationContainerVC ()<GUITabPagerDataSource, GUITabPagerDelegate>
 
 @property (nonatomic) NSArray *arrayOfVC;
 
 @end
 
-@implementation HighwayServicesContainerVC
+@implementation RoadSafetyEducationContainerVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,22 +23,13 @@
     
     UIStoryboard *homeStory = [UIStoryboard storyboardWithName:@"LeftMenuScenes" bundle:nil];
     
-    HighwayServicesVC *vcCar = [homeStory instantiateViewControllerWithIdentifier:@"HighwayServicesVC"];
-    vcCar.highwayServicesVCType = HighwayServicesVCTypeCAR;
+    RoadSafetyEducationVC *vcVideos = [homeStory instantiateViewControllerWithIdentifier:@"RoadSafetyEducationVC"];
+    vcVideos.roadSafetyEducationVCType = RoadSafetyEducationVCTypeVideos;
     
-    HighwayServicesVC *vcHospital = [homeStory instantiateViewControllerWithIdentifier:@"HighwayServicesVC"];
-    vcHospital.highwayServicesVCType = HighwayServicesVCTypeHOSPITAL;
+    RoadSafetyEducationVC *vcPdfs = [homeStory instantiateViewControllerWithIdentifier:@"RoadSafetyEducationVC"];
+    vcPdfs.roadSafetyEducationVCType = RoadSafetyEducationVCTypePDFs;
     
-    HighwayServicesVC *vcRestaurant = [homeStory instantiateViewControllerWithIdentifier:@"HighwayServicesVC"];
-    vcRestaurant.highwayServicesVCType = HighwayServicesVCTypeRESTAURANT;
-    
-    HighwayServicesVC *vcGas = [homeStory instantiateViewControllerWithIdentifier:@"HighwayServicesVC"];
-    vcGas.highwayServicesVCType = HighwayServicesVCTypeGAS;
-    
-    HighwayServicesVC *vcPharmacy = [homeStory instantiateViewControllerWithIdentifier:@"HighwayServicesVC"];
-    vcPharmacy.highwayServicesVCType = HighwayServicesVCTypePHARMACY;
-    
-    self.arrayOfVC = [NSArray arrayWithObjects:vcCar,vcHospital,vcRestaurant,vcGas,vcPharmacy,nil];
+    self.arrayOfVC = [NSArray arrayWithObjects:vcVideos,vcPdfs,nil];
     
     [self setDataSource:self];
     [self setDelegate:self];
@@ -86,21 +77,12 @@
     
     switch (index) {
         case 0:
-            return @"CAR_REPAIR";
+            return @"Videos";
             break;
         case 1:
-            return @"HOSPITAL";
+            return @"PDFs";
             break;
-        case 2:
-            return @"RESTAURANT";
-            break;
-        case 3:
-            return @"GAS_STATION";
-            break;
-        case 4:
-            return @"PHARMACY";
-            break;
-        default: return @"";
+                default: return @"";
             break;
     }
 }
