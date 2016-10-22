@@ -38,6 +38,7 @@
 
 #define GetEducationContentForType  @"/getEducationContentForType/"
 #define GetAmbulanceList @"/getAmbulanceList/"
+#define AddUpdateEmergencyContacts @"/addUpdateEmergencyContacts/"
 
 #define RegisterUser  @"/registerUser/"
 
