@@ -13,6 +13,8 @@
 #import "HighwayServicesHomeVC.h"
 #import "RoadSafetyEducationHomeVC.h"
 
+#import "GetAmbulanceViewController.h"
+
 #import "RESideMenu.h"
 #import "UIViewController+RESideMenu.h"
 
@@ -58,6 +60,13 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
+            
+        case 3: {
+            GetAmbulanceViewController *vc = [[GetAmbulanceViewController alloc] initWithNibName:@"GetAmbulanceViewController" bundle:nil];
+            [homeController.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+
         case 4: {
             HighwayServicesHomeVC *vc = (HighwayServicesHomeVC *)[UIViewController instantiateViewControllerWithIdentifier:@"HighwayServicesHomeVC" fromStoryboard:@"LeftMenuScenes"];
             [homeController.navigationController pushViewController:vc animated:YES];
