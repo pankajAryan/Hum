@@ -175,7 +175,8 @@ typedef enum {
     eResponseTypeNULL, // nil Response
     eResponseTypeIncomplete, // Reserved
     eResponseTypeWaiting, // Reserved
-    eResponseTypeUnknown // Reserved
+    eResponseTypeUnknown,
+    eResponseTypeNoInternet// Reserved
 } eResponseType;
 
 typedef NS_ENUM(NSUInteger, kProductDetailScreenComingFrom) {
