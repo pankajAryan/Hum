@@ -8,6 +8,8 @@
 
 #import "RoadSafetyEducationVC.h"
 
+#import "UIImageView+AFNetworking.h"
+
 @interface RoadSafetyEducationListTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIView *bgView;
