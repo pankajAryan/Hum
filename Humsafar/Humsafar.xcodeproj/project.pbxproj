@@ -25,6 +25,8 @@
 		CE0596E61DB665D2001E62A9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596E51DB665D2001E62A9 /* Reachability.m */; };
 		CE16DAE41DBA022400AB664C /* UITextField+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16DAE31DBA022400AB664C /* UITextField+Validation.m */; };
 		CE16DAE91DBA043500AB664C /* FFValidationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16DAE81DBA043500AB664C /* FFValidationResult.m */; };
+		CE16DAEC1DBB3C2D00AB664C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16DAEB1DBB3C2D00AB664C /* ProfileViewController.m */; };
+		CE16DAF01DBB3D0300AB664C /* LeftMenuScenes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE16DAEF1DBB3D0300AB664C /* LeftMenuScenes.storyboard */; };
 		CE2B397E1DAE6D1F00B266E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B397D1DAE6D1F00B266E1 /* main.m */; };
 		CE2B39811DAE6D1F00B266E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39801DAE6D1F00B266E1 /* AppDelegate.m */; };
 		CE2B39841DAE6D1F00B266E1 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39831DAE6D1F00B266E1 /* IntroViewController.m */; };
@@ -117,6 +119,9 @@
 		CE16DAE31DBA022400AB664C /* UITextField+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Validation.m"; sourceTree = "<group>"; };
 		CE16DAE51DBA028400AB664C /* FFValidationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFValidationResult.h; sourceTree = "<group>"; };
 		CE16DAE81DBA043500AB664C /* FFValidationResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFValidationResult.m; sourceTree = "<group>"; };
+		CE16DAEA1DBB3C2D00AB664C /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		CE16DAEB1DBB3C2D00AB664C /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		CE16DAEF1DBB3D0300AB664C /* LeftMenuScenes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LeftMenuScenes.storyboard; sourceTree = "<group>"; };
 		CE2B39791DAE6D1F00B266E1 /* Humsafar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Humsafar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2B397D1DAE6D1F00B266E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE2B397F1DAE6D1F00B266E1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -329,6 +334,9 @@
 				CE2B39C41DAE7A1000B266E1 /* HomeViewController.m */,
 				CE0596BC1DB6628D001E62A9 /* HomePagerViewController.h */,
 				CE0596BD1DB6628D001E62A9 /* HomePagerViewController.m */,
+				CE16DAEF1DBB3D0300AB664C /* LeftMenuScenes.storyboard */,
+				CE16DAEA1DBB3C2D00AB664C /* ProfileViewController.h */,
+				CE16DAEB1DBB3C2D00AB664C /* ProfileViewController.m */,
 				CE2B39881DAE6D1F00B266E1 /* Assets.xcassets */,
 				CE2B398A1DAE6D1F00B266E1 /* LaunchScreen.storyboard */,
 				CE2B398D1DAE6D1F00B266E1 /* Info.plist */,
@@ -602,6 +610,7 @@
 				CE2B3A201DAE812A00B266E1 /* NotificationButtonBackground@2x.png in Resources */,
 				CE2B3A1A1DAE812A00B266E1 /* NotificationBackgroundSuccessIcon@2x.png in Resources */,
 				CE2B3A151DAE812A00B266E1 /* NotificationBackgroundMessage.png in Resources */,
+				CE16DAF01DBB3D0300AB664C /* LeftMenuScenes.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +625,7 @@
 				CE0596DA1DB665B5001E62A9 /* AFHTTPRequestOperation.m in Sources */,
 				CE2B39841DAE6D1F00B266E1 /* IntroViewController.m in Sources */,
 				CE2B39E71DAE7FCB00B266E1 /* CLLocationManager+blocks.m in Sources */,
+				CE16DAEC1DBB3C2D00AB664C /* ProfileViewController.m in Sources */,
 				CE2B39EB1DAE7FCB00B266E1 /* UIFont+FF.m in Sources */,
 				CE2B39E91DAE7FCB00B266E1 /* NSString+device.m in Sources */,
 				CE2B39CE1DAE7D2C00B266E1 /* RootViewController.m in Sources */,

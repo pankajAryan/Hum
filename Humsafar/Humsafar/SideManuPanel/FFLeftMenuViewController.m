@@ -9,6 +9,7 @@
 #import "FFLeftMenuViewController.h"
 
 #import "HomeViewController.h"
+#import "ProfileViewController.h"
 
 #import "RESideMenu.h"
 #import "UIViewController+RESideMenu.h"
@@ -41,31 +42,20 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//    switch (indexPath.row) {
-//        case 0:
-//            return [UIImage imageNamed:@"profile"];
-//            break;
-//            
-//        case 1:
-//            return [UIImage imageNamed:@"emerg_call"];
-//            break;
-//            
-//        case 2:
-//            return [UIImage imageNamed:@"road_safety"];
-//            break;
-//            
-//        case 3:
-//            return [UIImage imageNamed:@"about"];
-//            break;
-//            
-//        case 4:
-//            return [UIImage imageNamed:@"faq"];
-//            break;
-//            
-//        default:     return nil;
-//            
-//            break;
-//    }
+    HomeViewController *homeController = (HomeViewController*)self.sideMenuViewController.contentViewController;
+
+    switch (indexPath.row)
+    {
+        case 0: {
+            ProfileViewController *vc = (ProfileViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"ProfileViewController" fromStoryboard:@"LeftMenuScenes"];
+            [homeController.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+            
+        default:      ;
+            
+            break;
+    }
 
     [self.sideMenuViewController hideMenuViewController];
 }
@@ -117,15 +107,15 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             return [UIImage imageNamed:@"road_safety"];
             break;
             
-        case 3:
+        case 6:
             return [UIImage imageNamed:@"about"];
             break;
             
-        case 4:
+        case 7:
             return [UIImage imageNamed:@"faq"];
             break;
             
-        default:     return nil;
+        default: return [UIImage imageNamed:@"road_safety"];
             
             break;
     }
@@ -139,19 +129,35 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             break;
             
         case 1:
-            return @"MY EMERGENCY CONTACT";
+            return @"EMERGENCY CONTACT";
             break;
             
         case 2:
-            return @"ROAD SAFETY";
+            return @"ROAD SAFETY EDUCATION";
             break;
             
         case 3:
-            return @"ABOUT";
+            return @"GET AMBULANCE";
             break;
             
         case 4:
+            return @"HIGHWAY SERVICES";
+            break;
+            
+        case 5:
+            return @"SPEED ANALYTICS";
+            break;
+            
+        case 6:
             return @"FAQ'S";
+            break;
+   
+        case 7:
+            return @"ABOUT";
+            break;
+            
+        case 8:
+            return @"LOGOUT";
             break;
             
         default:     return nil;
