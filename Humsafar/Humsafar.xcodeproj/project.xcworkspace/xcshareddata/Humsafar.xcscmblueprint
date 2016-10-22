@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E09F1D7A88C886A13DB5CE248364411FA1BF5162",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E09F1D7A88C886A13DB5CE248364411FA1BF5162" : 9223372036854775807,
+    "383933857321002C3742F457F1499A918AEB2FD9" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "41D9A25F-AF14-43DD-94E5-1A3D9AECBE50",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E09F1D7A88C886A13DB5CE248364411FA1BF5162" : "Hum\/",
+    "383933857321002C3742F457F1499A918AEB2FD9" : "FuelUp\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Humsafar",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Humsafar\/Humsafar.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pankajAryan\/FuelUp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "383933857321002C3742F457F1499A918AEB2FD9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pankajAryan\/Hum.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E09F1D7A88C886A13DB5CE248364411FA1BF5162"
+    }
+  ]
+}

@@ -191,7 +191,8 @@
         }else{
             // network not reachable
             // No internet connection.
-            
+            completionBlock(eResponseTypeNoInternet ,nil);
+
             //[SharedModelManager stopProgress];
             [self showAlertWithTitle:@"Network Error" message:kMessageInternetFailure];
         }

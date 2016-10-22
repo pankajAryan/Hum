@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lbl_title;
 @property (weak, nonatomic) IBOutlet UILabel *lbl_subTitle;
+@property (weak, nonatomic) IBOutlet UIButton *btn_direction;
 
 @end
 
@@ -147,6 +148,8 @@
     
     cell.lbl_title.text = dict[@"name"];
     cell.lbl_subTitle.text = dict[@"address"];
+    [cell.btn_direction addTarget:self action:@selector(openDirectionsInExternalMap:) forControlEvents:UIControlEventTouchUpInside];
+    cell.btn_direction.tag = indexPath.row;
     
     return cell;
 }
@@ -169,6 +172,26 @@
     height += 10;// contentView
     
     return height;
+}
+
+#pragma mark - btn Action
+
+
+- (IBAction)openDirectionsInExternalMap:(UIButton*)sender {
+    
+    NSDictionary *dict = self.arrayList[sender.tag];
+
+    if ([[UIApplication sharedApplication] canOpenURL:
+         [NSURL URLWithString:@"comgooglemaps://"]])
+    {
+        NSString *urlString=[NSString stringWithFormat:@"comgooglemaps://?daddr=%@,%@&zoom=14&directionsmode=driving",dict[@"lat"], dict[@"lon"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+    }
+    else
+    {
+        NSString *string = [NSString stringWithFormat:@"http://maps.apple.com/?ll=%@,%@&q=%@",dict[@"lat"], dict[@"lon"],[dict[@"name"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:string]];
+    }
 }
 
 @end

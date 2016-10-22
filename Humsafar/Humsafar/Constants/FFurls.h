@@ -29,7 +29,6 @@
 
 #define GetStates           @"/getStateList/"
 #define GetDistricts        @"/getDistrictList/"
-
 #define GetAlertsForCategory  @"/getAlertsForCategory/"
 #define GetHighwayServices  @"/getHighwayFacilityListByType/"
 #define GetEmergencyServices  @"/getEmergencyDirectoryForDepartment/"
@@ -37,7 +36,10 @@
 #define ReportIssue  @"/reportIssue/"
 
 
+#define GetEducationContentForType  @"/getEducationContentForType/"
+#define GetAmbulanceList @"/getAmbulanceList/"
 
+#define RegisterUser  @"/registerUser/"
 
 /*
 

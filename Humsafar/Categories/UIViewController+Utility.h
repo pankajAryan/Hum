@@ -18,10 +18,12 @@
 
 - (void)showProgressHudWithMessage:(NSString*)message;
 
-- (void)removeProgressHudAfterDelay:(NSTimeInterval)delay;
+- (void)hideProgressHudAfterDelay:(NSTimeInterval)delay;
 
 +(BOOL)isNetworkAvailable;
 
++(void)saveDatatoUserDefault:(id)data forKey:(NSString*)key;
++(id)retrieveDataFromUserDefault:(NSString*)key;
 
 -(void) showErrorTSMessage:(NSString*)errorMessage;
 -(void) showWarningTSMessage:(NSString*)errorMessage;

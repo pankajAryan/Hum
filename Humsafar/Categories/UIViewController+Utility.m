@@ -52,7 +52,7 @@
 }
 
 
-- (void)removeProgressHudAfterDelay:(NSTimeInterval)delay {
+- (void)hideProgressHudAfterDelay:(NSTimeInterval)delay {
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
@@ -63,6 +63,24 @@
             HUD = nil;
         }
     });
+}
+
++(void)saveDatatoUserDefault:(id)data forKey:(NSString*)key
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    [prefs setObject:data forKey:key];
+    [prefs synchronize];
+    NSLog(@"%@",[prefs dictionaryForKey:key]);
+}
+
+
++(id)retrieveDataFromUserDefault:(NSString*)key
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    id data = [prefs objectForKey:key];
+    
+    return data;
 }
 
 #pragma mark- Error And Alert Messages
