@@ -32,6 +32,11 @@
 
 #define GetAlertsForCategory  @"/getAlertsForCategory/"
 #define GetHighwayServices  @"/getHighwayFacilityListByType/"
+#define GetEmergencyServices  @"/getEmergencyDirectoryForDepartment/"
+#define UploadImage  @"/uploadImage/"
+#define ReportIssue  @"/reportIssue/"
+
+
 
 
 /*

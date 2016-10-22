@@ -6,7 +6,7 @@
 //#import "FFSession.h"
 //#import "NSObject+FFLocalStorage.h"
 #import "Reachability.h"
-
+#import "AFHTTPSessionManager.h"
 
 @interface FFWebServiceHelper ()
 
@@ -202,6 +202,102 @@
     @finally {
         
     }
+}
+
+
+-(void)uploadImageWithUrl:(NSString*)serviceUrl withParameters:(NSDictionary*)parameters onCompletion:(void(^)(eResponseType responseType, id response))completionBlock {
+
+    
+    @try {
+        Reachability *reachability = [Reachability reachabilityWithHostName:@"www.google.com"]; // To test the reachability.
+        
+        if (reachability.currentReachabilityStatus != NotReachable)
+        {
+            NSURL *url = [FFWebServiceHelper urlWithString:serviceUrl];
+            
+            NSLog(@"URL = %@",url);
+            NSLog(@"Parameters = %@",parameters);
+            
+            NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+            configuration.HTTPAdditionalHeaders = @{@"Content-Type": @"multipart/form-data"};
+            
+            AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:url sessionConfiguration:configuration];
+            manager.responseSerializer = [AFJSONResponseSerializer serializer];
+            
+            [manager POST:url.absoluteString parameters:@{} constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+                [formData appendPartWithFileData:UIImageJPEGRepresentation(parameters[@"file"], 0.5) name:@"file"
+                                        fileName:@"file" mimeType:@"image/jpeg"];
+            } success:^(NSURLSessionDataTask *task, id responseObject) {
+                
+                NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSStringEncodingConversionExternalRepresentation];
+                NSLog(@"%@",string);
+                
+                NSError* error;
+                NSDictionary *responseDict  = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
+                
+                if (error == nil)
+                {
+                    // JSON response
+                    //#warning Complete if needed.
+                    // 1- Check if fabfurnish.com server
+                    // 2- Call completion block (to send the response to particular class)
+                    // 3- Call completion block to Stop Progress Indicator, if it is started from that class.
+                    
+                    if ([[responseDict objectForKey:kKEY_ErrorCode] integerValue] == 0) {
+                        
+                        // server response.
+                        completionBlock(eResponseTypeSuccessJSON,responseDict);
+                    }else{
+                        
+                        // fabfurnish.com Server response in negative :- "success = false"
+                        //[weakSelf updateSessionWithDictionary:responseJSON];
+                        completionBlock(eResponseTypeFailJSON ,responseDict);
+                    }
+                }
+                else
+                {
+                    // not a JSON response.
+                    //#warning Complete if needed.
+                    // 1- Display some Error message here. OR
+                    // 2- Call completion block (to send the response to particular class)
+                    // 3- Call completion block to Stop Progress Indicator, if it is started from that class.
+                    
+                    completionBlock(eResponseTypeNotJSON, nil);
+                }
+            } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                // failure
+                //#warning Complete if needed.
+                // 1- Display some error message for failure
+                // 2- Call completion block to Stop Progress Indicator, if it is started from that class.
+                
+                // Here is few parameters using those we can display a proper message based on error code
+                //1-error.description,
+                //2-error.localizedDescription,
+                //3-error.localizedFailureReason
+                // OR
+                
+                NSLog(@"Request did fail with error : %@", error.userInfo);
+                
+                switch (error.code) {
+                    case 1001:
+                        // Display some messages (Our Message)
+                        break;
+                    default:
+                        // display message based on parameters, error.description
+                        break;
+                }
+                
+                completionBlock(eResponseTypeRequestFailure,error);
+                
+            }];
+            
+            
+        }
+        
+    } @catch (NSException *exception) {
+        
+    }
+   
 }
 
 /*-(void) updateSessionWithDictionary:(NSDictionary*)dictionary{

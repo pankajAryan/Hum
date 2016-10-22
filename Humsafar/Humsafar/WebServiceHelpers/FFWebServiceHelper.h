@@ -14,6 +14,8 @@
 
 -(void) callWebServiceWithUrl:(NSString *)serviceUrl withParameter:(NSDictionary *)dictionary onCompletion:(void(^)(eResponseType responseType, id response))completionBlock;
 
+-(void)uploadImageWithUrl:(NSString*)serviceUrl withParameters:(NSDictionary*)parameters onCompletion:(void(^)(eResponseType responseType, id response))completionBlock;
+
 //-(void) updateSessionWithDictionary:(NSDictionary*)dictionary;
 
 //+ (NSMutableURLRequest*)appendCommonHeaderFieldsToRequest:(NSMutableURLRequest*)request;
