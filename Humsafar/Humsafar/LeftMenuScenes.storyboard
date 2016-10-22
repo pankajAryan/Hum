@@ -133,7 +133,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1HC-f7-9qc" id="Rr5-9m-LiJ">
-                                            <frame key="frameInset" width="375" height="89"/>
+                                            <frame key="frameInset" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9N-4E-OA7">
@@ -148,23 +148,24 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="DUE-f9-tZp">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfv-HC-gCO">
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="22" id="F8R-uD-Fmo"/>
-                                                                <constraint firstAttribute="height" constant="22" id="bDD-dd-WjJ"/>
+                                                                <constraint firstAttribute="width" constant="40" id="MnF-RC-u1i"/>
+                                                                <constraint firstAttribute="height" constant="40" id="tZz-Cv-oWl"/>
                                                             </constraints>
-                                                        </imageView>
+                                                            <state key="normal" image="about"/>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstItem="pfv-HC-gCO" firstAttribute="centerY" secondItem="U9N-4E-OA7" secondAttribute="centerY" id="63Z-Sa-WgK"/>
                                                         <constraint firstItem="bwV-jn-UCm" firstAttribute="leading" secondItem="U9N-4E-OA7" secondAttribute="leading" constant="15" id="7W7-u7-Fna"/>
                                                         <constraint firstItem="OVO-Uh-XU7" firstAttribute="trailing" secondItem="bwV-jn-UCm" secondAttribute="trailing" id="8Wh-a4-11i"/>
                                                         <constraint firstAttribute="trailing" secondItem="bwV-jn-UCm" secondAttribute="trailing" constant="50" id="AKZ-Cj-PCS"/>
                                                         <constraint firstItem="OVO-Uh-XU7" firstAttribute="top" secondItem="bwV-jn-UCm" secondAttribute="bottom" constant="10" id="CQ9-RS-WBM"/>
-                                                        <constraint firstItem="DUE-f9-tZp" firstAttribute="centerY" secondItem="U9N-4E-OA7" secondAttribute="centerY" id="Rw9-xw-ZIU"/>
+                                                        <constraint firstAttribute="trailing" secondItem="pfv-HC-gCO" secondAttribute="trailing" constant="8" id="W58-e0-HXQ"/>
                                                         <constraint firstItem="OVO-Uh-XU7" firstAttribute="leading" secondItem="bwV-jn-UCm" secondAttribute="leading" id="gIo-Cg-qdP"/>
                                                         <constraint firstItem="bwV-jn-UCm" firstAttribute="top" secondItem="U9N-4E-OA7" secondAttribute="top" constant="10" id="wmY-d2-XIc"/>
-                                                        <constraint firstAttribute="trailing" secondItem="DUE-f9-tZp" secondAttribute="trailing" constant="15" id="wws-bL-MSf"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -178,6 +179,7 @@
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="bgView" destination="U9N-4E-OA7" id="FoM-SD-HFJ"/>
+                                            <outlet property="btn_direction" destination="pfv-HC-gCO" id="gjN-8K-n4W"/>
                                             <outlet property="lbl_subTitle" destination="OVO-Uh-XU7" id="y4M-rb-RFP"/>
                                             <outlet property="lbl_title" destination="bwV-jn-UCm" id="aKC-t7-jdH"/>
                                         </connections>

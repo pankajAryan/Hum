@@ -39,6 +39,7 @@
 		CE16DAFD1DBB42FD00AB664C /* TSBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16DAF81DBB42FD00AB664C /* TSBlurView.m */; };
 		CE16DAFE1DBB42FD00AB664C /* TSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16DAFA1DBB42FD00AB664C /* TSMessage.m */; };
 		CE16DAFF1DBB42FD00AB664C /* TSMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16DAFC1DBB42FD00AB664C /* TSMessageView.m */; };
+		CE16DB031DBB6B2D00AB664C /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16DB011DBB6B2D00AB664C /* UIImageView+AFNetworking.m */; };
 		CE2B397E1DAE6D1F00B266E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B397D1DAE6D1F00B266E1 /* main.m */; };
 		CE2B39811DAE6D1F00B266E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39801DAE6D1F00B266E1 /* AppDelegate.m */; };
 		CE2B39841DAE6D1F00B266E1 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39831DAE6D1F00B266E1 /* IntroViewController.m */; };
@@ -135,6 +136,9 @@
 		CE16DAFA1DBB42FD00AB664C /* TSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMessage.m; sourceTree = "<group>"; };
 		CE16DAFB1DBB42FD00AB664C /* TSMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMessageView.h; sourceTree = "<group>"; };
 		CE16DAFC1DBB42FD00AB664C /* TSMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMessageView.m; sourceTree = "<group>"; };
+		CE16DB001DBB6B2D00AB664C /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		CE16DB011DBB6B2D00AB664C /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		CE16DB021DBB6B2D00AB664C /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+AFNetworking.h"; sourceTree = "<group>"; };
 		CE2B39791DAE6D1F00B266E1 /* Humsafar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Humsafar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2B397D1DAE6D1F00B266E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE2B397F1DAE6D1F00B266E1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -294,6 +298,9 @@
 				CE0596D71DB665B5001E62A9 /* AFURLResponseSerialization.m */,
 				CE0596D81DB665B5001E62A9 /* AFURLSessionManager.h */,
 				CE0596D91DB665B5001E62A9 /* AFURLSessionManager.m */,
+				CE16DB021DBB6B2D00AB664C /* UIKit+AFNetworking.h */,
+				CE16DB001DBB6B2D00AB664C /* UIImageView+AFNetworking.h */,
+				CE16DB011DBB6B2D00AB664C /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
 			sourceTree = "<group>";
@@ -628,6 +635,7 @@
 				CE2B39C21DAE736B00B266E1 /* RegisterViewController.m in Sources */,
 				CE2B39C51DAE7A1000B266E1 /* HomeViewController.m in Sources */,
 				CE16DAE91DBA043500AB664C /* FFValidationResult.m in Sources */,
+				CE16DB031DBB6B2D00AB664C /* UIImageView+AFNetworking.m in Sources */,
 				CE0596DB1DB665B5001E62A9 /* AFHTTPRequestOperationManager.m in Sources */,
 				B755B1F81DBB5A3000C5F329 /* RoadSafetyEducationContainerVC.m in Sources */,
 				CE2B39A41DAE6F2D00B266E1 /* AbstractActionSheetPicker.m in Sources */,

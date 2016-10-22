@@ -28,7 +28,7 @@
 
 - (IBAction)backBtnACTION:(UIButton *)sender {
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

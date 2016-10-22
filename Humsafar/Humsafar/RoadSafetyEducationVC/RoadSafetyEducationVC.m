@@ -9,6 +9,8 @@
 #import "RoadSafetyEducationVC.h"
 #import "WebViewController.h"
 
+#import "UIImageView+AFNetworking.h"
+
 @interface RoadSafetyEducationListTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIView *bgView;
@@ -121,7 +123,7 @@
     
     switch (self.roadSafetyEducationVCType) {
         case RoadSafetyEducationVCTypeVideos:
-            cell.imgView.image = [UIImage imageNamed:@"ambulance"];
+            [cell.imgView setImageWithURL:[NSURL URLWithString:dict[@"thumbnailURL"]] placeholderImage:[UIImage imageNamed:@"call"]];
             break;
         case RoadSafetyEducationVCTypePDFs:
             cell.imgView.image = [UIImage imageNamed:@"call"];
