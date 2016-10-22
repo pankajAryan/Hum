@@ -1,46 +1,49 @@
 //
-//  HomePagerViewController.m
+//  HighwayServicesContainerVC.m
 //  Humsafar
 //
-//  Created by Pankaj Yadav on 18/10/16.
+//  Created by Rahul on 10/22/16.
 //  Copyright © 2016 mobiquel. All rights reserved.
 //
 
-#import "HomePagerViewController.h"
-#import "HomeListVC.h"
+#import "HighwayServicesContainerVC.h"
+#import "HighwayServicesVC.h"
 
-@interface HomePagerViewController () <GUITabPagerDataSource, GUITabPagerDelegate>
+@interface HighwayServicesContainerVC ()<GUITabPagerDataSource, GUITabPagerDelegate>
 
 @property (nonatomic) NSArray *arrayOfVC;
 
 @end
 
-@implementation HomePagerViewController
+@implementation HighwayServicesContainerVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIStoryboard *homeStory = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
+    UIStoryboard *homeStory = [UIStoryboard storyboardWithName:@"LeftMenuScenes" bundle:nil];
     
-    HomeListVC *vcJam = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC"];
-    vcJam.homeListVCType = HomeListVCTypeJams;
+    HighwayServicesVC *vcCar = [homeStory instantiateViewControllerWithIdentifier:@"HighwayServicesVC"];
+    vcCar.highwayServicesVCType = HighwayServicesVCTypeCAR;
     
-    HomeListVC *vcDiversions = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC"];
-    vcDiversions.homeListVCType = HomeListVCTypeDiversions;
+    HighwayServicesVC *vcHospital = [homeStory instantiateViewControllerWithIdentifier:@"HighwayServicesVC"];
+    vcHospital.highwayServicesVCType = HighwayServicesVCTypeHOSPITAL;
     
-    HomeListVC *vcVIPMovements = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC"];
-    vcVIPMovements.homeListVCType = HomeListVCTypeVIPMovements;
+    HighwayServicesVC *vcRestaurant = [homeStory instantiateViewControllerWithIdentifier:@"HighwayServicesVC"];
+    vcRestaurant.highwayServicesVCType = HighwayServicesVCTypeRESTAURANT;
     
-    HomeListVC *vcSuggestions = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC"];
-    vcSuggestions.homeListVCType = HomeListVCTypeSuggestions;
+    HighwayServicesVC *vcGas = [homeStory instantiateViewControllerWithIdentifier:@"HighwayServicesVC"];
+    vcGas.highwayServicesVCType = HighwayServicesVCTypeGAS;
     
-    self.arrayOfVC = [NSArray arrayWithObjects:vcJam,vcDiversions,vcVIPMovements,vcSuggestions,nil];
+    HighwayServicesVC *vcPharmacy = [homeStory instantiateViewControllerWithIdentifier:@"HighwayServicesVC"];
+    vcPharmacy.highwayServicesVCType = HighwayServicesVCTypePHARMACY;
+    
+    self.arrayOfVC = [NSArray arrayWithObjects:vcCar,vcHospital,vcRestaurant,vcGas,vcPharmacy,nil];
     
     [self setDataSource:self];
     [self setDelegate:self];
     [self reloadData];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,14 +52,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -69,7 +72,7 @@
 }
 
 - (UIViewController *)viewControllerForIndex:(NSInteger)index {
-   
+    
     return self.arrayOfVC[index];
 }
 
@@ -83,18 +86,20 @@
     
     switch (index) {
         case 0:
-            return @"Jams";
+            return @"CAR_REPAIR";
             break;
         case 1:
-            return @"Diversions";
+            return @"HOSPITAL";
             break;
         case 2:
-            return @"VIP Movements";
+            return @"RESTAURANT";
             break;
         case 3:
-            return @"Suggestions";
+            return @"GAS_STATION";
             break;
-        
+        case 4:
+            return @"PHARMACY";
+            break;
         default: return @"";
             break;
     }
@@ -136,6 +141,5 @@
 - (void)tabPager:(GUITabPagerViewController *)tabPager didTransitionToTabAtIndex:(NSInteger)index {
     NSLog(@"Did transition to tab %ld", (long)index);
 }
-
 
 @end

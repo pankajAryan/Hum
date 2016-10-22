@@ -9,13 +9,7 @@
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
 
-@interface LoginViewController () {
-    
-    NSString *lat;
-    NSString *lon;
-}
-@property (nonatomic, strong) CLLocationManager *manager;
-
+@interface LoginViewController ()
 
 @end
 
@@ -25,34 +19,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.manager = [CLLocationManager updateManagerWithAccuracy:100.0 locationAge:15.0 authorizationDesciption:CLLocationUpdateAuthorizationDescriptionWhenInUse];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    
-    if (lat == nil) {
-        
-        if ([CLLocationManager isLocationUpdatesAvailable]) {
-            
-            [self.manager startUpdatingLocationWithUpdateBlock:^(CLLocationManager *manager, CLLocation *location, NSError *error, BOOL *stopUpdating) {
-                
-                *stopUpdating = YES;
-                
-                if (location)
-                {
-                    lat = [NSString stringWithFormat:@"%f",location.coordinate.latitude];
-                    lon = [NSString stringWithFormat:@"%f",location.coordinate.longitude];
-                    
-                    // Fetch latest data
-                }
-                else
-                    [self showAlert:@"Could not determine your location. Please check location settings."];
-            }];
-        }
-        else {
-            [self showAlert:@"Please enable location services from settings."];
-        }
-    }
 }
 
 - (void)didReceiveMemoryWarning {
