@@ -31,6 +31,7 @@
 #define GetDistricts        @"/getDistrictList/"
 
 #define GetAlertsForCategory  @"/getAlertsForCategory/"
+#define GetHighwayServices  @"/getHighwayFacilityListByType/"
 
 
 /*
