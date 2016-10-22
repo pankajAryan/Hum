@@ -156,23 +156,37 @@
 
 - (IBAction)cancelBtnAction:(UIButton *)sender {
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)saveBtnAction:(UIButton *)sender {
+    [self.view endEditing:YES];
+
+    BOOL isValide = NO;
     
     for (ContactModel *model in self.arrayList) {
         
-        if (model.name.length == 0 || model.number.length == 0) {
-            [self showAlert:@"All input fields are mandatory!"];
-            return;
-        }
-        
-        if (model.number.length < 10) {
-            [self showAlert:@"Mobile must contain 10 characters!"];
-            return;
+        if (model.name.length != 0 || model.number.length != 0) {
+            
+            isValide = YES;
+            
+            if (model.name.length == 0) {
+                [self showAlert:@"Please enter name!"];
+                return;
+            }
+            if (model.number.length < 10) {
+                [self showAlert:@"Mobile must contain 10 characters!"];
+                return;
+            }
         }
     }
+    
+    if (!isValide) {
+        [self showAlert:@"Please enter at least one contact!"];
+        return;
+    }
+    
+    // hit API
 }
 
 -(void)addBtnAction:(UIButton*)sender {
