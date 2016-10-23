@@ -96,7 +96,7 @@
 //    public ResponseVO<List<HighwayFacilityVO>> getHighwayFacilityListByType(@FormParam("type")String type,@FormParam("stateId")String stateId,@FormParam("highwayId")String highwayId,@FormParam("lat")String lat,@FormParam("lon")String lon)
 
     NSString *strCat = @"";
-    
+
     switch (self.highwayServicesVCType) {
         case HighwayServicesVCTypeCAR:
             strCat = @"car_repair";
@@ -117,7 +117,7 @@
             break;
     }
     
-    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetHighwayServices withParameter:@{@"type" : strCat, @"stateId" : @"29", @"highwayId" : @"1", @"lat" : lat , @"lon" :lon} onCompletion:^(eResponseType responseType, id response) {
+    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetHighwayServices withParameter:@{@"type" : strCat, @"stateId" : [UIViewController retrieveDataFromUserDefault:@"selectedStateDict"][@"stateId"], @"highwayId" : @"1", @"lat" : lat , @"lon" :lon} onCompletion:^(eResponseType responseType, id response) {
         
         if (responseType == eResponseTypeSuccessJSON) {
             self.arrayList = [response objectForKey:kKEY_ResponseObject];

@@ -36,6 +36,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.imageView.layer.cornerRadius = 28;
+    self.imageView.layer.masksToBounds = YES;
+    self.imageView.layer.borderColor = [UIColor orangeColor].CGColor;
+    self.imageView.layer.borderWidth = 3;
+    
     selectedStateInfo = [UIViewController retrieveDataFromUserDefault:@"selectedStateDict"];
     selectedDistrictInfo = [UIViewController retrieveDataFromUserDefault:@"selectedDistrictDict"];
     arrayDistrictsData = [UIViewController retrieveDataFromUserDefault:@"selectedStateDistrictArray"];

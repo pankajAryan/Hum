@@ -655,8 +655,8 @@
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="slider_bg" translatesAutoresizingMaskIntoConstraints="NO" id="4ES-RM-XX3"/>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="6Ib-nV-eS1">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="cjQ-fQ-PZz"/>
-                                            <constraint firstAttribute="height" constant="48" id="g80-XV-0dc"/>
+                                            <constraint firstAttribute="width" constant="56" id="cjQ-fQ-PZz"/>
+                                            <constraint firstAttribute="height" constant="56" id="g80-XV-0dc"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTb-6U-uV6">
@@ -768,14 +768,14 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVe-Dv-x8k">
-                                        <color key="backgroundColor" red="0.96078431369999995" green="0.80913746050000002" blue="0.1201482279" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="38" id="DXN-84-3DP"/>
-                                            <constraint firstAttribute="width" constant="288" id="lGM-2C-WpP"/>
+                                            <constraint firstAttribute="height" constant="60" id="DXN-84-3DP"/>
+                                            <constraint firstAttribute="width" constant="120" id="lGM-2C-WpP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Update">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="updateButtonDidTap:" destination="cLx-bl-mhc" eventType="touchUpInside" id="XuW-mn-hes"/>
@@ -789,7 +789,7 @@
                                     <constraint firstItem="1TX-hq-IID" firstAttribute="centerX" secondItem="v9I-eX-CRE" secondAttribute="centerX" id="9kU-If-Jfm"/>
                                     <constraint firstItem="5bt-rV-lN1" firstAttribute="trailing" secondItem="Z8h-vg-lX2" secondAttribute="trailing" id="A5k-Jy-rWN"/>
                                     <constraint firstItem="KdQ-hp-Uxn" firstAttribute="trailing" secondItem="YhG-mv-ngb" secondAttribute="trailing" id="Chf-20-a91"/>
-                                    <constraint firstItem="6Ib-nV-eS1" firstAttribute="top" secondItem="v9I-eX-CRE" secondAttribute="top" constant="39" id="Fmw-Lm-vt7"/>
+                                    <constraint firstItem="6Ib-nV-eS1" firstAttribute="top" secondItem="v9I-eX-CRE" secondAttribute="top" constant="35" id="Fmw-Lm-vt7"/>
                                     <constraint firstItem="4ES-RM-XX3" firstAttribute="leading" secondItem="v9I-eX-CRE" secondAttribute="leading" id="FqA-5i-iVa"/>
                                     <constraint firstAttribute="bottom" secondItem="4ES-RM-XX3" secondAttribute="bottom" id="Fyx-fT-Upl"/>
                                     <constraint firstItem="KdQ-hp-Uxn" firstAttribute="trailing" secondItem="5EO-OY-pe6" secondAttribute="trailing" id="Hhv-ud-vbc"/>
