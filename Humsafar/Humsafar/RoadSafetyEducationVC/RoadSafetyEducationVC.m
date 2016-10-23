@@ -90,8 +90,12 @@
             break;
     }
     
+    [self showProgressHudWithMessage:@"Loading..."];
+    
     [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetEducationContentForType withParameter:@{@"type" : strCat} onCompletion:^(eResponseType responseType, id response) {
         
+        [self hideProgressHudAfterDelay:.1];
+
         if (responseType == eResponseTypeSuccessJSON) {
             self.arrayList = [response objectForKey:kKEY_ResponseObject];
         }else{

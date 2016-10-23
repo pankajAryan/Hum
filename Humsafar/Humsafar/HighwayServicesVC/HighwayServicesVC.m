@@ -117,8 +117,12 @@
             break;
     }
     
+    [self showProgressHudWithMessage:@"Loading..."];
+    
     [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetHighwayServices withParameter:@{@"type" : strCat, @"stateId" : [UIViewController retrieveDataFromUserDefault:@"selectedStateDict"][@"stateId"], @"highwayId" : @"1", @"lat" : lat , @"lon" :lon} onCompletion:^(eResponseType responseType, id response) {
         
+        [self hideProgressHudAfterDelay:.1];
+
         if (responseType == eResponseTypeSuccessJSON) {
             self.arrayList = [response objectForKey:kKEY_ResponseObject];
         }else{

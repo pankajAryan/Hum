@@ -55,7 +55,11 @@
 
     [self.imageView setImageWithURL:[NSURL URLWithString:[UIViewController retrieveDataFromUserDefault:@"userImageUrl"]] placeholderImage:nil];
     
+    [self showProgressHudWithMessage:@"Fetching States.."];
+    
     [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetStates withParameter:nil onCompletion:^(eResponseType responseType, id response) {
+        
+        [self hideProgressHudAfterDelay:.1];
         
         if (responseType == eResponseTypeSuccessJSON) {
             arrayStatesData = [response objectForKey:kKEY_ResponseObject];
@@ -118,8 +122,12 @@
             _txtFieldDist.text = @"";
         }
         
+        [self showProgressHudWithMessage:@"Fetching Districts..."];
+        
         [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetDistricts withParameter:@{@"stateId":selectedStateInfo[@"stateId"]} onCompletion:^(eResponseType responseType, id response) {
             
+            [self hideProgressHudAfterDelay:.1];
+
             if (responseType == eResponseTypeSuccessJSON) {
                 arrayDistrictsData = [response objectForKey:kKEY_ResponseObject];
             }

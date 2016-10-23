@@ -82,7 +82,11 @@
             break;
     }
     
+    [self showProgressHudWithMessage:@"Loading..."];
+
     [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetAlertsForCategory withParameter:@{@"category" : strCat, @"stateId" : [UIViewController retrieveDataFromUserDefault:@"selectedStateDict"][@"stateId"], @"districtId" : [UIViewController retrieveDataFromUserDefault:@"selectedDistrictDict"][@"districtId"]} onCompletion:^(eResponseType responseType, id response) {
+        
+        [self hideProgressHudAfterDelay:.1];
         
         if (responseType == eResponseTypeSuccessJSON) {
             self.arrayList = [response objectForKey:kKEY_ResponseObject];
