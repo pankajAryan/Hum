@@ -10,6 +10,7 @@
 
 @interface CallViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *lbl_districtName;
 - (IBAction)action_goBack:(id)sender;
 - (IBAction)action_selectState:(id)sender;
 

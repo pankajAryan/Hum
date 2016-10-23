@@ -34,7 +34,9 @@
 @end
 
 @interface CallListVC ()<UITableViewDelegate,UITableViewDataSource>
-
+{
+    NSDictionary *selectedDistrictInfo;
+}
 @property (nonatomic) NSArray *arrayList;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 @property (strong, nonatomic) NSArray *filteredresultList;
@@ -47,6 +49,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.tblView.tableFooterView = [UIView new];
+    
+    selectedDistrictInfo = [UIViewController retrieveDataFromUserDefault:@"selectedDistrictDict"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,6 +62,9 @@
     [super viewWillAppear:animated];
     
     [self fetchDataListFromServer];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectDistrict:) name:@"DistrictSelectionNotification" object:nil];
+
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -66,7 +73,15 @@
     if ([self.txtField_search isFirstResponder])
         [self.txtField_search resignFirstResponder];
     
+    [[NSNotificationCenter defaultCenter] removeObserver:@"DistrictSelectionNotification"];
+
 }
+
+-(void)selectDistrict:(NSNotification*)notification {
+    selectedDistrictInfo = [notification userInfo];
+    [self fetchDataListFromServer];
+}
+
 
 -(void)fetchDataListFromServer {
     
@@ -86,7 +101,14 @@
             break;
     }
     
-    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetEmergencyServices withParameter:@{@"department" : strCat, @"stateId" : @"29", @"districtId" : @"2"} onCompletion:^(eResponseType responseType, id response) {
+    NSString *stateId = selectedDistrictInfo[@"stateId"];
+    NSString *districtId = selectedDistrictInfo[@"districtId"];
+
+    if (stateId == nil || districtId == nil) {
+        return;
+    }
+    
+    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetEmergencyServices withParameter:@{@"department" : strCat, @"stateId" : stateId, @"districtId" : districtId} onCompletion:^(eResponseType responseType, id response) {
         
         if (responseType == eResponseTypeSuccessJSON) {
             self.arrayList = [response objectForKey:kKEY_ResponseObject];

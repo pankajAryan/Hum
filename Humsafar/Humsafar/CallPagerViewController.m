@@ -24,10 +24,14 @@
     UIStoryboard *homeStory = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
     
     CallListVC *vcMedical = [homeStory instantiateViewControllerWithIdentifier:@"CallListVC"];
-    
+    vcMedical.callListVCType = CallListVCTypeMedical;
+
     CallListVC *vcPolice = [homeStory instantiateViewControllerWithIdentifier:@"CallListVC"];
-    
+    vcMedical.callListVCType = CallListVCTypePolice;
+
     CallListVC *vcTransport = [homeStory instantiateViewControllerWithIdentifier:@"CallListVC"];
+    vcMedical.callListVCType = CallListVCTypeTransport;
+
     
     self.arrayOfVC = [NSArray arrayWithObjects:vcMedical,vcPolice,vcTransport,nil];
     

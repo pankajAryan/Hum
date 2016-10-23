@@ -31,7 +31,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.mobiquel.Humsafar</string>
+				<string>com.test.humsafar</string>
 			</array>
 		</dict>
 	</array>

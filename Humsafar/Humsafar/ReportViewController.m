@@ -15,6 +15,9 @@
     NSString *lat;
     NSString *lon;
     NSString *selectedCategory;
+    NSString *uploadedImageURL;
+    NSArray *arrayIssueTypes;
+    NSDictionary *selectedDistrictInfo;
 }
 @property (nonatomic, strong) CLLocationManager *manager;
 @end
@@ -25,14 +28,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     selectedCategory = @"";
+    arrayIssueTypes = [NSArray arrayWithObjects:@"ROAD CONDITION",@"STREET LIGHT",@"TRAFFIC LIGHT",@"TRAFFIC PERSONNEL",@"OTHER", nil];
     self.manager = [CLLocationManager updateManagerWithAccuracy:100.0 locationAge:15.0 authorizationDesciption:CLLocationUpdateAuthorizationDescriptionWhenInUse];
-
+    
     if ([self.navType isEqualToString:@"emergency"]) {
         self.imgVw_reportImg.image = self.image;
-
+        self.button_selectIssueType.hidden = YES;
     }else if ([self.navType isEqualToString:@"report"]) {
         self.imgVw_reportImg.image = self.image;
-
+        self.button_selectIssueType.hidden = NO;
     }
     
     //[self api_uploadImage];
@@ -47,6 +51,11 @@
     [super viewWillAppear:animated];
     [self fetchLocation];
 }
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+
 
 -(void)fetchLocation {
     
@@ -81,40 +90,80 @@
         //hit service for report
     }
     
-//    [[FFWebServiceHelper sharedManager] uploadImageWithUrl:UploadImage withParameters:@{@"file":self.image} onCompletion:^(eResponseType responseType, id response) {
-//        if (responseType == eResponseTypeSuccessJSON) {
-//            
-//        }else{
-//            [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
-//        }
-//    }];
+    [self showProgressHudWithMessage:@"uploading image"];
+
+    [[FFWebServiceHelper sharedManager] uploadImageWithUrl:UploadImage withParameters:@{@"file":self.image} onCompletion:^(eResponseType responseType, id response) {
+        
+        [self hideProgressHudAfterDelay:0.1];
+        
+        if (responseType == eResponseTypeSuccessJSON) {
+            
+        }else{
+            [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+        }
+        
+    }];
 }
 
 -(void)api_uploadOtherInfo {
     
-    if ([self.navType isEqualToString:@"emergency"]) {
-        
-    }else if ([self.navType isEqualToString:@"report"]) {
-        
-    }
+    NSString *stateId = selectedDistrictInfo[@"stateId"];
+    NSString *userId = [UIViewController retrieveDataFromUserDefault:@"userId"];
     
-    if (selectedCategory.length == 0) {
-        [self showAlert:@"Please select issue category"];
+    if (stateId == nil || userId == nil)
+        return;
+    
+    if (uploadedImageURL == nil) {
+        [self showAlert:@"Image url not found."];
         return;
     }
     
-    if (lat == nil || lon == nil) {
-        lat = @"";
-        lon = @"";
-    }
     
-    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:ReportIssue withParameter:@{@"category" : selectedCategory, @"lat" : lat, @"lon" : lon, @"postedBy" : @"Pankaj Yadav", @"description" : self.txtVw_desc.text, @"uploadedImageURL" : @"", @"stateId" : @"29"} onCompletion:^(eResponseType responseType, id response) {
-        if (responseType == eResponseTypeSuccessJSON) {
-            [self.navigationController popViewControllerAnimated:YES];
-        }else{
-            [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+    if ([self.navType isEqualToString:@"emergency"]) {
+        selectedCategory = @"";
+        if (lat == nil || lon == nil) {
+            lat = @"";
+            lon = @"";
         }
-    }];
+        
+        [self showProgressHudWithMessage:@"submitting.."];
+
+        [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:ReportEmergency withParameter:@{@"lat" : lat, @"lon" : lon, @"postedBy" : userId, @"description" : self.txtVw_desc.text, @"uploadedImageURL" : uploadedImageURL, @"stateId" : stateId} onCompletion:^(eResponseType responseType, id response) {
+            
+            [self hideProgressHudAfterDelay:0.1];
+            
+            if (responseType == eResponseTypeSuccessJSON) {
+                [self.navigationController popViewControllerAnimated:YES];
+            }else{
+                [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+            }
+        }];
+        
+    }else if ([self.navType isEqualToString:@"report"]) {
+        if (selectedCategory.length == 0) {
+            [self showAlert:@"Please select issue category and try again."];
+            return;
+        }
+        
+        if (lat == nil || lon == nil) {
+            [self showAlert:@"Please ensure your GPS is enable. Go to Settings app to enable GPS."];
+            return;
+        }
+        
+        [self showProgressHudWithMessage:@"submitting.."];
+
+        [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:ReportIssue withParameter:@{@"category" : selectedCategory, @"lat" : lat, @"lon" : lon, @"postedBy" : userId, @"description" : self.txtVw_desc.text, @"uploadedImageURL" : uploadedImageURL, @"stateId" : stateId} onCompletion:^(eResponseType responseType, id response) {
+            
+            [self hideProgressHudAfterDelay:0.1];
+
+            if (responseType == eResponseTypeSuccessJSON) {
+                [self.navigationController popViewControllerAnimated:YES];
+            }else{
+                [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+            }
+        }];
+        
+    }
 }
 
 
@@ -141,13 +190,16 @@
 #pragma mark - IBActions
 
 - (IBAction)action_selectIssueType:(id)sender {
-    NSArray *arrayStates = [NSArray arrayWithObjects:@"A",@"B",@"C",@"D",nil];
-    [ActionSheetStringPicker showPickerWithTitle:nil rows:arrayStates initialSelection:0 doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedValueIndex, id selectedValue) {
-        [self.button_selectIssueType setTitle:selectedValue forState:UIControlStateNormal];
-        selectedCategory = selectedValue;
-    } cancelBlock:^(ActionSheetStringPicker *picker) {
-        NSLog(@"Block Picker Canceled");
-    } origin:sender];
+    if (arrayIssueTypes.count != 0) {
+        [ActionSheetStringPicker showPickerWithTitle:nil rows:arrayIssueTypes initialSelection:0 doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedValueIndex, id selectedValue) {
+            [self.button_selectIssueType setTitle:selectedValue forState:UIControlStateNormal];
+            selectedCategory = selectedValue;
+        } cancelBlock:^(ActionSheetStringPicker *picker) {
+            NSLog(@"Block Picker Canceled");
+        } origin:sender];
+    }else{
+        [self showAlert:@"There are no issues to select"];
+    }
 }
 
 - (IBAction)action_goBack:(id)sender {

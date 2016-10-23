@@ -41,6 +41,8 @@
 #define GetEmergencyServices        @"/getEmergencyDirectoryForDepartment/"
 #define UploadImage                 @"/uploadImage/"
 #define ReportIssue                 @"/reportIssue/"
+#define ReportEmergency                 @"/reportEmergency/"
+
 
 
 #define GetEducationContentForType  @"/getEducationContentForType/"

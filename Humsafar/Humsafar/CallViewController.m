@@ -10,7 +10,10 @@
 #import "ActionSheetStringPicker.h"
 
 @interface CallViewController ()
-
+{
+    NSArray *arrayDistrictsInfo;
+    NSMutableArray *arrayDistrictsNames;
+}
 @end
 
 @implementation CallViewController
@@ -18,6 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    arrayDistrictsNames = [NSMutableArray new];
+    arrayDistrictsInfo = [UIViewController retrieveDataFromUserDefault:@"selectedStateDistrictArray"];
+    for (NSDictionary *info in arrayDistrictsInfo) {
+        [arrayDistrictsNames addObject:info[@"districtName"]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,15 +47,13 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-
 #pragma mark - UIActionSheetPicker
 
 -(IBAction)action_selectState:(id)sender{
-    
-    NSArray *arrayStates = [NSArray arrayWithObjects:@"A",@"B",@"C",@"D",nil];
-    
-    [ActionSheetStringPicker showPickerWithTitle:nil rows:arrayStates initialSelection:0 doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedValueIndex, id selectedValue) {
-        
+    [ActionSheetStringPicker showPickerWithTitle:nil rows:arrayDistrictsNames initialSelection:0 doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedValueIndex, id selectedValue) {
+        self.lbl_districtName.text = selectedValue;
+        NSDictionary *dict_dictrictInfo = [arrayDistrictsInfo objectAtIndex:selectedValueIndex];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"DistrictSelectionNotification" object:nil userInfo:dict_dictrictInfo];
     } cancelBlock:^(ActionSheetStringPicker *picker) {
         NSLog(@"Block Picker Canceled");
     } origin:sender];
