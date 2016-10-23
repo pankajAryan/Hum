@@ -705,8 +705,6 @@
 				TargetAttributes = {
 					CE2B39781DAE6D1F00B266E1 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = T3654L4VAS;
-						ProvisioningStyle = Manual;
 						DevelopmentTeam = U2XZWSZ93N;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -946,10 +944,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Humsafar/Humsafar.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = T3654L4VAS;
-				CODE_SIGN_ENTITLEMENTS = Humsafar/Humsafar.entitlements;
 				DEVELOPMENT_TEAM = U2XZWSZ93N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -958,7 +955,7 @@
 				GCC_PREFIX_HEADER = Humsafar/PrefixHeader.pch;
 				INFOPLIST_FILE = Humsafar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.test.-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.Humsafar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1572775d-a7a5-4918-ab9f-efff4d984b9f";
 				PROVISIONING_PROFILE_SPECIFIER = "WILDCARD TEST DEV";
@@ -969,10 +966,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Humsafar/Humsafar.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = T3654L4VAS;
-				CODE_SIGN_ENTITLEMENTS = Humsafar/Humsafar.entitlements;
 				DEVELOPMENT_TEAM = U2XZWSZ93N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -981,7 +977,7 @@
 				GCC_PREFIX_HEADER = Humsafar/PrefixHeader.pch;
 				INFOPLIST_FILE = Humsafar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.test.-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.Humsafar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1572775d-a7a5-4918-ab9f-efff4d984b9f";
 				PROVISIONING_PROFILE_SPECIFIER = "WILDCARD TEST DEV";

@@ -15,7 +15,7 @@
 @interface RegisterViewController () <UITextFieldDelegate> {
     
     NSDictionary *selectedStateInfo;
-    NSString *selectedStateId;
+    NSDictionary *selectedDistrictInfo;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldName;
@@ -94,11 +94,14 @@
     
     [ActionSheetStringPicker showPickerWithTitle:nil rows:[stateTitles copy] initialSelection:0 doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedValueIndex, id selectedValue) {
         
-        selectedStateId = [[arrayStatesData objectAtIndex:selectedValueIndex] objectForKey:@"stateId"];
-        _txtFieldState.text = selectedValue;
+        if (selectedValueIndex < arrayStatesData.count ) {
+            
+            selectedStateInfo = [arrayStatesData objectAtIndex:selectedValueIndex];
+            _txtFieldState.text = selectedValue;
+            _txtFieldDist.text = @"";
+        }
         
-        
-         [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetDistricts withParameter:@{@"stateId":selectedStateId} onCompletion:^(eResponseType responseType, id response) {
+         [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetDistricts withParameter:@{@"stateId":selectedStateInfo[@"stateId"]} onCompletion:^(eResponseType responseType, id response) {
          
              if (responseType == eResponseTypeSuccessJSON) {
                  arrayDistrictsData = [response objectForKey:kKEY_ResponseObject];
@@ -133,12 +136,11 @@
     
     [ActionSheetStringPicker showPickerWithTitle:nil rows:[DistTitles copy] initialSelection:0 doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedValueIndex, id selectedValue) {
         
-        //selectedIndex = selectedValueIndex;
-        
-        _txtFieldDist.text = selectedValue;
-        
-        selectedStateInfo = [arrayDistrictsData objectAtIndex:selectedValueIndex];
-        
+        if (selectedValueIndex < arrayDistrictsData.count ) {
+
+            selectedDistrictInfo = [arrayDistrictsData objectAtIndex:selectedValueIndex];
+            _txtFieldDist.text = selectedValue;
+        }
     } cancelBlock:^(ActionSheetStringPicker *picker) {
         NSLog(@"Block Picker Canceled");
     } origin:sender];
@@ -156,9 +158,8 @@
         [self showAlert:@"Invalid Email address!"];
     }
     else {
-        NSString *districtId = [selectedStateInfo objectForKey:@"districtId"];
 
-        NSDictionary *paramsDict = @{@"userName": _txtFieldName.text, @"emailId": _txtFieldEmail.text, @"profileImageURL": _imageUrl.absoluteString, @"mobileNumber": _txtFieldMobile.text, @"stateId": selectedStateId, @"defaultDistrictId": districtId, @"deviceOS":@"iOS"};
+        NSDictionary *paramsDict = @{@"userName": _txtFieldName.text, @"emailId": _txtFieldEmail.text, @"profileImageURL": _imageUrl.absoluteString, @"mobileNumber": _txtFieldMobile.text, @"stateId": selectedStateInfo[@"stateId"], @"defaultDistrictId": selectedDistrictInfo[@"districtId"], @"deviceOS":@"iOS"};
         
             [self showProgressHudWithMessage:@"Registering user"];
             
@@ -172,12 +173,12 @@
 
                     [UIViewController saveDatatoUserDefault:_txtFieldName.text forKey:@"name"];
                     [UIViewController saveDatatoUserDefault:_txtFieldEmail.text forKey:@"email"];
+                    [UIViewController saveDatatoUserDefault:_txtFieldMobile.text forKey:@"mobile"];
                     [UIViewController saveDatatoUserDefault:_imageUrl.absoluteString forKey:@"userImageUrl"];
                     [UIViewController saveDatatoUserDefault:selectedStateInfo forKey:@"selectedStateDict"];
-                    
-                    [UIViewController saveDatatoUserDefault:arrayStatesData forKey:@"state"];
-                    [UIViewController saveDatatoUserDefault:arrayDistrictsData forKey:@"districts"];
-                    
+                    [UIViewController saveDatatoUserDefault:selectedDistrictInfo forKey:@"selectedDistrictDict"];
+                    [UIViewController saveDatatoUserDefault:arrayDistrictsData forKey:@"selectedStateDistrictArray"];
+
                     // Present OTP VC
                     OTPViewController *VC = [OTPViewController instantiateViewControllerWithIdentifier:@"OTPViewController" fromStoryboard:@"Main"];
                     VC.mobileNumber = _txtFieldMobile.text;

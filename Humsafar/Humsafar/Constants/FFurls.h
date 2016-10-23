@@ -27,7 +27,6 @@
 
 // 2. *********************|| Prefix By BASE_URL ||**************************************************** //
 
-<<<<<<< HEAD
 #define GetStates                   @"/getStateList/"
 #define GetDistricts                @"/getDistrictList/"
 #define GetAlertsForCategory        @"/getAlertsForCategory/"
@@ -53,6 +52,8 @@
 #define RegisterUser        @"/registerUser/"
 #define RegenerateOtp       @"/generateOtp/"
 #define VerifyOtp           @"/verifyOtp/"
+
+#define UpdateUserProfile @"/updateUserProfile/"
 
 /*
 
