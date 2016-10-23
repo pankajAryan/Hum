@@ -53,6 +53,8 @@
 #define RegenerateOtp       @"/generateOtp/"
 #define VerifyOtp           @"/verifyOtp/"
 
+#define UpdateUserProfile @"/updateUserProfile/"
+
 /*
 
  @Path("/service")

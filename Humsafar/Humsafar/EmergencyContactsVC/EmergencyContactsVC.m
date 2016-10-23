@@ -210,13 +210,12 @@
     
     // hit API
     
-    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:AddUpdateEmergencyContacts withParameter:@{ @"userId" : @"14",@"contact1" : cont1,@"contact2" : cont2,@"contact3" : cont3,} onCompletion:^(eResponseType responseType, id response) {
+    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:AddUpdateEmergencyContacts withParameter:@{ @"userId" : [UIViewController retrieveDataFromUserDefault:@"userId"],@"contact1" : cont1,@"contact2" : cont2,@"contact3" : cont3,} onCompletion:^(eResponseType responseType, id response) {
         
         if (responseType == eResponseTypeSuccessJSON) {
              [self showAlert:@"Updated successfully!"];
         }else{
             [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
-            // [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
         }
     }];
 }

@@ -82,7 +82,7 @@
             break;
     }
     
-    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetAlertsForCategory withParameter:@{@"category" : strCat, @"stateId" : @"29", @"districtId" : @"1"} onCompletion:^(eResponseType responseType, id response) {
+    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetAlertsForCategory withParameter:@{@"category" : strCat, @"stateId" : [UIViewController retrieveDataFromUserDefault:@"selectedStateDict"][@"stateId"], @"districtId" : [UIViewController retrieveDataFromUserDefault:@"selectedDistrictDict"][@"districtId"]} onCompletion:^(eResponseType responseType, id response) {
         
         if (responseType == eResponseTypeSuccessJSON) {
             self.arrayList = [response objectForKey:kKEY_ResponseObject];
