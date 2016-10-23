@@ -44,7 +44,7 @@
         
         NSDictionary *paramsDict = @{@"userName": _txtFieldUsername.text, @"password": _txtFieldPassword.text, @"deviceOS":@"iOS"};
         
-        [self showProgressHudWithMessage:@"Registering user"];
+        [self showProgressHudWithMessage:@"SigningIn"];
         
         [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:departmentLogin withParameter:paramsDict onCompletion:^(eResponseType responseType, id response) {
             
@@ -53,7 +53,8 @@
             if (responseType == eResponseTypeSuccessJSON)
             {
                 [UIViewController saveDatatoUserDefault:[response objectForKey:@"responseObject"] forKey:@"userId"];
-                
+                [UIViewController saveDatatoUserDefault:@"1" forKey:@"isUserLoggedIn"];
+
                 RootViewController *VC = [RootViewController instantiateViewControllerWithIdentifier:@"RootViewController" fromStoryboard:@"Main"];
                 
                 [self.navigationController pushViewController:VC animated:YES];

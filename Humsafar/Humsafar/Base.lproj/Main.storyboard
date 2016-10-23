@@ -10,13 +10,13 @@
         <!--Navigation Controller-->
         <scene sceneID="b17-mF-tbD">
             <objects>
-                <navigationController navigationBarHidden="YES" id="mTF-Hz-ZyW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="rootNavController" navigationBarHidden="YES" id="mTF-Hz-ZyW" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="924-ay-fJH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="59I-O4-G4L"/>
+                        <segue destination="7fa-h0-wMB" kind="relationship" relationship="rootViewController" id="dMn-F8-vr5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PsK-jD-zC7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -51,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-783.75" y="242.95774647887325"/>
+            <point key="canvasLocation" x="-1581" y="995"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="dds-94-n55">
@@ -67,7 +67,7 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjx-3P-QX0" customClass="TPKeyboardAvoidingScrollView">
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="slider_bg" translatesAutoresizingMaskIntoConstraints="NO" id="cdK-Sp-I4O"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="slider_bg" translatesAutoresizingMaskIntoConstraints="NO" id="cdK-Sp-I4O"/>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="2Hw-rT-UA4">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="268" id="HUc-SJ-PpY"/>
@@ -108,7 +108,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="5SN-xu-l8c" kind="show" id="4JM-nM-gKy"/>
+                                            <action selector="loginButtonDidTap:" destination="7fa-h0-wMB" eventType="touchUpInside" id="hRK-68-JcV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNX-0x-1fs">
@@ -168,6 +168,7 @@
                             <constraint firstItem="kjx-3P-QX0" firstAttribute="top" secondItem="YYs-nV-z4v" secondAttribute="top" id="hJX-qn-r3M"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="NGu-Xo-9Rm"/>
                     <connections>
                         <outlet property="GSignIn" destination="BNX-0x-1fs" id="h0d-dm-E39"/>
                         <outlet property="txtFieldPassword" destination="Set-e9-m4s" id="wKn-0z-vSG"/>
@@ -176,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L9h-26-lYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-28.125" y="242.95774647887325"/>
+            <point key="canvasLocation" x="-767" y="243"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="GDQ-Z6-cqy">
@@ -387,7 +388,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFx-iE-EHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="744.375" y="242.95774647887325"/>
+            <point key="canvasLocation" x="103" y="243"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oGT-Yd-jPJ">
@@ -469,7 +470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yul-ff-gk5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1477.5" y="242.95774647887325"/>
+            <point key="canvasLocation" x="947" y="243"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="bRv-BU-C8h">
@@ -487,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdK-rG-Dtm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="632" y="996"/>
+            <point key="canvasLocation" x="1823" y="243"/>
         </scene>
     </scenes>
     <resources>
@@ -495,4 +496,7 @@
         <image name="profile" width="24" height="24"/>
         <image name="slider_bg" width="375" height="667"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="QZn-FH-x5y"/>
+    </inferredMetricsTieBreakers>
 </document>

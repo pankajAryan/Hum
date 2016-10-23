@@ -114,6 +114,7 @@
             case eResponseTypeFailJSON:
             {
                 NSDictionary *response = (NSDictionary *)object;
+#warning kKEY_ErrorMessage crashes in case of NSURLDomainError/HTTP error
                 NSString *message = [response objectForKey:kKEY_ErrorMessage];
                 [TSMessage showNotificationWithTitle:message type:TSMessageNotificationTypeError];
             }

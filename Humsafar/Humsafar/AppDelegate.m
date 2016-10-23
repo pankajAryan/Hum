@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 @import GoogleMaps;
+#import "RootViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,9 +22,35 @@
     
     [GMSServices provideAPIKey:@"AIzaSyAn04qD5eAnR2YV_h-J8xNoLz4rzBvN_ow"];
 
+    NSString *userId = [UIViewController retrieveDataFromUserDefault:@"userId"];
+    BOOL isLoggedIn = [[UIViewController retrieveDataFromUserDefault:@"isUserLoggedIn"] boolValue];
+
+    if (isLoggedIn && (userId && userId.length)) {
+        
+        self.rootNavController = (UINavigationController*)self.window.rootViewController; // it'll return UINavigationController which is set as Initial view controller in storyboard.
+        
+        RootViewController *rootVC = [RootViewController instantiateViewControllerWithIdentifier:@"RootViewController" fromStoryboard:@"Main"];
+        
+        self.rootNavController.viewControllers = @[rootVC];
+        [self.window makeKeyAndVisible];
+    }
+    
     return YES;
 }
 
+- (void)logout {
+    
+    [[GIDSignIn sharedInstance] signOut];
+    [UIViewController saveDatatoUserDefault:@"" forKey:@"userId"];
+    [UIViewController saveDatatoUserDefault:@"0" forKey:@"isUserLoggedIn"];
+
+    UINavigationController *rootVC = [UINavigationController instantiateViewControllerWithIdentifier:@"rootNavController" fromStoryboard:@"Main"];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.window.rootViewController = rootVC;
+        [self.window makeKeyAndVisible];
+    });
+}
 - (BOOL)application:(UIApplication *)app
             openURL:(NSURL *)url
             options:(NSDictionary *)options {

@@ -179,6 +179,8 @@
                     [UIViewController saveDatatoUserDefault:selectedDistrictInfo forKey:@"selectedDistrictDict"];
                     [UIViewController saveDatatoUserDefault:arrayDistrictsData forKey:@"selectedStateDistrictArray"];
 
+                    [UIViewController saveDatatoUserDefault:@"1" forKey:@"isUserLoggedIn"];
+
                     // Present OTP VC
                     OTPViewController *VC = [OTPViewController instantiateViewControllerWithIdentifier:@"OTPViewController" fromStoryboard:@"Main"];
                     VC.mobileNumber = _txtFieldMobile.text;
