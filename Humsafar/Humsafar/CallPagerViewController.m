@@ -27,11 +27,10 @@
     vcMedical.callListVCType = CallListVCTypeMedical;
 
     CallListVC *vcPolice = [homeStory instantiateViewControllerWithIdentifier:@"CallListVC"];
-    vcMedical.callListVCType = CallListVCTypePolice;
+    vcPolice.callListVCType = CallListVCTypePolice;
 
     CallListVC *vcTransport = [homeStory instantiateViewControllerWithIdentifier:@"CallListVC"];
-    vcMedical.callListVCType = CallListVCTypeTransport;
-
+    vcTransport.callListVCType = CallListVCTypeTransport;
     
     self.arrayOfVC = [NSArray arrayWithObjects:vcMedical,vcPolice,vcTransport,nil];
     
