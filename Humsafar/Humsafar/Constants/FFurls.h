@@ -27,7 +27,6 @@
 
 // 2. *********************|| Prefix By BASE_URL ||**************************************************** //
 
-<<<<<<< HEAD
 #define GetStates                   @"/getStateList/"
 #define GetDistricts                @"/getDistrictList/"
 #define GetAlertsForCategory        @"/getAlertsForCategory/"

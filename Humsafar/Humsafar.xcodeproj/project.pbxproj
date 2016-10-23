@@ -707,8 +707,6 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = T3654L4VAS;
 						ProvisioningStyle = Manual;
-						DevelopmentTeam = U2XZWSZ93N;
-						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -946,11 +944,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = T3654L4VAS;
 				CODE_SIGN_ENTITLEMENTS = Humsafar/Humsafar.entitlements;
-				DEVELOPMENT_TEAM = U2XZWSZ93N;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = T3654L4VAS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Humsafar",
@@ -960,8 +957,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.test.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1572775d-a7a5-4918-ab9f-efff4d984b9f";
-				PROVISIONING_PROFILE_SPECIFIER = "WILDCARD TEST DEV";
+				PROVISIONING_PROFILE = "30c1d801-3d0a-447c-96f0-4e5171e1fff9";
+				PROVISIONING_PROFILE_SPECIFIER = "XC: com.test.*";
 			};
 			name = Debug;
 		};
@@ -969,11 +966,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = T3654L4VAS;
 				CODE_SIGN_ENTITLEMENTS = Humsafar/Humsafar.entitlements;
-				DEVELOPMENT_TEAM = U2XZWSZ93N;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = T3654L4VAS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Humsafar",
@@ -983,8 +979,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.test.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1572775d-a7a5-4918-ab9f-efff4d984b9f";
-				PROVISIONING_PROFILE_SPECIFIER = "WILDCARD TEST DEV";
+				PROVISIONING_PROFILE = "30c1d801-3d0a-447c-96f0-4e5171e1fff9";
+				PROVISIONING_PROFILE_SPECIFIER = "XC: com.test.*";
 			};
 			name = Release;
 		};
