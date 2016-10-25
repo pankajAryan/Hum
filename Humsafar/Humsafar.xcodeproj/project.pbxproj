@@ -20,6 +20,7 @@
 		B75DAF5F1DBB444D008B2D0F /* HighwayServicesHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B75DAF5D1DBB444D008B2D0F /* HighwayServicesHomeVC.m */; };
 		B75DAF621DBB4486008B2D0F /* HighwayServicesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B75DAF611DBB4486008B2D0F /* HighwayServicesVC.m */; };
 		B781D6E31DBAB4F2001627F1 /* HomeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B781D6E21DBAB4F2001627F1 /* HomeListVC.m */; };
+		B7CA057C1DBFE1F900750CF6 /* HomeListVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CA057B1DBFE1F900750CF6 /* HomeListVC2.m */; };
 		CE0596BA1DB65E92001E62A9 /* GUITabPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596B71DB65E92001E62A9 /* GUITabPagerViewController.m */; };
 		CE0596BB1DB65E92001E62A9 /* GUITabScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596B91DB65E92001E62A9 /* GUITabScrollView.m */; };
 		CE0596BE1DB6628D001E62A9 /* HomePagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596BD1DB6628D001E62A9 /* HomePagerViewController.m */; };
@@ -130,6 +131,8 @@
 		B75DAF611DBB4486008B2D0F /* HighwayServicesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighwayServicesVC.m; sourceTree = "<group>"; };
 		B781D6E11DBAB4F2001627F1 /* HomeListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListVC.h; sourceTree = "<group>"; };
 		B781D6E21DBAB4F2001627F1 /* HomeListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListVC.m; sourceTree = "<group>"; };
+		B7CA057A1DBFE1F900750CF6 /* HomeListVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListVC2.h; sourceTree = "<group>"; };
+		B7CA057B1DBFE1F900750CF6 /* HomeListVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListVC2.m; sourceTree = "<group>"; };
 		CE0596B61DB65E92001E62A9 /* GUITabPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUITabPagerViewController.h; sourceTree = "<group>"; };
 		CE0596B71DB65E92001E62A9 /* GUITabPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUITabPagerViewController.m; sourceTree = "<group>"; };
 		CE0596B81DB65E92001E62A9 /* GUITabScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUITabScrollView.h; sourceTree = "<group>"; };
@@ -344,6 +347,8 @@
 			children = (
 				B781D6E11DBAB4F2001627F1 /* HomeListVC.h */,
 				B781D6E21DBAB4F2001627F1 /* HomeListVC.m */,
+				B7CA057A1DBFE1F900750CF6 /* HomeListVC2.h */,
+				B7CA057B1DBFE1F900750CF6 /* HomeListVC2.m */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -774,6 +779,7 @@
 				CE2B3A2C1DAE823D00B266E1 /* HexColor.m in Sources */,
 				B755B1F51DBB5A0C00C5F329 /* RoadSafetyEducationHomeVC.m in Sources */,
 				B75DAF5E1DBB444D008B2D0F /* HighwayServicesContainerVC.m in Sources */,
+				B7CA057C1DBFE1F900750CF6 /* HomeListVC2.m in Sources */,
 				B75DAF621DBB4486008B2D0F /* HighwayServicesVC.m in Sources */,
 				CE2B39811DAE6D1F00B266E1 /* AppDelegate.m in Sources */,
 				CE2B39BC1DAE71CC00B266E1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,

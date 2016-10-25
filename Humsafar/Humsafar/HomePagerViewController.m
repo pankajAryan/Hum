@@ -8,6 +8,7 @@
 
 #import "HomePagerViewController.h"
 #import "HomeListVC.h"
+#import "HomeListVC2.h"
 
 @interface HomePagerViewController () <GUITabPagerDataSource, GUITabPagerDelegate>
 
@@ -21,21 +22,41 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIStoryboard *homeStory = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
+#warning hardcoded true
+    if (true) {// Normal Login
+        
+        UIStoryboard *homeStory = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
+        
+        HomeListVC2 *vcEmergencie = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC2"];
+        vcEmergencie.homeListVC2Type = HomeListVC2TypeEmergencie;
+        
+        HomeListVC2 *vcIssue = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC2"];
+        vcIssue.homeListVC2Type = HomeListVC2TypeIssue;
+        
+        // Add Directory vc here
+        
+        self.arrayOfVC = [NSArray arrayWithObjects:vcEmergencie,vcIssue,nil];
+
+    }else{ // G+ login
+        
+        UIStoryboard *homeStory = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
+        
+        HomeListVC *vcJam = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC"];
+        vcJam.homeListVCType = HomeListVCTypeJams;
+        
+        HomeListVC *vcDiversions = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC"];
+        vcDiversions.homeListVCType = HomeListVCTypeDiversions;
+        
+        HomeListVC *vcVIPMovements = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC"];
+        vcVIPMovements.homeListVCType = HomeListVCTypeVIPMovements;
+        
+        HomeListVC *vcSuggestions = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC"];
+        vcSuggestions.homeListVCType = HomeListVCTypeSuggestions;
+        
+        self.arrayOfVC = [NSArray arrayWithObjects:vcJam,vcDiversions,vcVIPMovements,vcSuggestions,nil];
+    }
     
-    HomeListVC *vcJam = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC"];
-    vcJam.homeListVCType = HomeListVCTypeJams;
     
-    HomeListVC *vcDiversions = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC"];
-    vcDiversions.homeListVCType = HomeListVCTypeDiversions;
-    
-    HomeListVC *vcVIPMovements = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC"];
-    vcVIPMovements.homeListVCType = HomeListVCTypeVIPMovements;
-    
-    HomeListVC *vcSuggestions = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC"];
-    vcSuggestions.homeListVCType = HomeListVCTypeSuggestions;
-    
-    self.arrayOfVC = [NSArray arrayWithObjects:vcJam,vcDiversions,vcVIPMovements,vcSuggestions,nil];
     
     [self setDataSource:self];
     [self setDelegate:self];
@@ -81,22 +102,35 @@
 - (NSString *)titleForTabAtIndex:(NSInteger)index {
     //return [NSString stringWithFormat:@"Tab #%ld", (long) index + 1];
     
-    switch (index) {
-        case 0:
-            return @"Jams";
-            break;
-        case 1:
-            return @"Diversions";
-            break;
-        case 2:
-            return @"VIP Movements";
-            break;
-        case 3:
-            return @"Suggestions";
-            break;
+    #warning hardcoded true
+    if (true) {// Normal Login
+
+        switch (index) {
+            case 0:
+                return @"Emergenie";
+            case 1:
+                return @"Issue";
+            case 2:
+                return @"Directory";
+            default:
+                return @"";
+                break;
+        }
+
+    }else{// G+ login
         
-        default: return @"";
-            break;
+        switch (index) {
+            case 0:
+                return @"Jams";
+            case 1:
+                return @"Diversions";
+            case 2:
+                return @"VIP Movements";
+            case 3:
+                return @"Suggestions";
+            default: return @"";
+                break;
+        }
     }
 }
 

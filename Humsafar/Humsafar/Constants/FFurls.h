@@ -57,6 +57,13 @@
 
 #define UpdateUserProfile @"/updateUserProfile/"
 
+#define GetListOfReportedIssues @"/getListOfReportedIssues/"
+#define GetListOfReportedEmergencies @"/getListOfReportedEmergencies/"
+
+
+
+
+
 /*
 
  @Path("/service")
