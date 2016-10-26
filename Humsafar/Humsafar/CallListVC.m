@@ -63,8 +63,6 @@
     
     [self fetchDataListFromServer];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectDistrict:) name:@"DistrictSelectionNotification" object:nil];
-
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -72,8 +70,6 @@
     
     if ([self.txtField_search isFirstResponder])
         [self.txtField_search resignFirstResponder];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:@"DistrictSelectionNotification"];
 
 }
 
@@ -97,8 +93,37 @@
         case CallListVCTypeTransport:
             strCat = @"Transport";
             break;
+        case CallListVCTypeOther:
+            strCat = @"Medical";
+            break;
+            
+            
         default:
             break;
+    }
+    
+    
+    if (self.callListVCType == CallListVCTypeOther) {
+        //CallListVCTypeOther change it
+        NSString *stateId = selectedDistrictInfo[@"stateId"];
+        NSString *districtId = selectedDistrictInfo[@"districtId"];
+        
+        if (stateId == nil || districtId == nil) {
+            return;
+        }
+        
+        [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetEmergencyServices withParameter:@{@"department" : strCat, @"stateId" : stateId, @"districtId" : districtId} onCompletion:^(eResponseType responseType, id response) {
+            
+            if (responseType == eResponseTypeSuccessJSON) {
+                self.arrayList = [response objectForKey:kKEY_ResponseObject];
+                self.filteredresultList = [NSArray arrayWithArray:self.arrayList];
+            }else{
+                [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+            }
+            
+            [self.tblView reloadData];
+        }];
+        return;
     }
     
     NSString *stateId = selectedDistrictInfo[@"stateId"];
@@ -137,8 +162,14 @@
     
     NSDictionary *dict = self.filteredresultList[indexPath.row];
     
-    cell.lbl_title.text = dict[@"name"];
-    cell.txtVw_phonenumber.text = dict[@"phoneNumbers"];
+    if (self.callListVCType == CallListVCTypeOther) {
+        //CallListVCTypeOther change it
+        cell.lbl_title.text = dict[@"name"];
+        cell.txtVw_phonenumber.text = dict[@"phoneNumbers"];
+    }else{
+        cell.lbl_title.text = dict[@"name"];
+        cell.txtVw_phonenumber.text = dict[@"phoneNumbers"];
+    }
     
     return cell;
 }
@@ -151,11 +182,21 @@
     
     height += 10;
     
-    height += [dict[@"name"] boundingRectWithSize:CGSizeMake(ScreenWidth-50, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]} context:nil].size.height;
+    if (self.callListVCType == CallListVCTypeOther) {
+        //CallListVCTypeOther change it
+        height += [dict[@"name"] boundingRectWithSize:CGSizeMake(ScreenWidth-50, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]} context:nil].size.height;
+        
+        height += 10;
+        
+        height += [dict[@"phoneNumbers"] boundingRectWithSize:CGSizeMake(ScreenWidth-50, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} context:nil].size.height;
+    }else{
+        height += [dict[@"name"] boundingRectWithSize:CGSizeMake(ScreenWidth-50, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]} context:nil].size.height;
+        
+        height += 10;
+        
+        height += [dict[@"phoneNumbers"] boundingRectWithSize:CGSizeMake(ScreenWidth-50, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} context:nil].size.height;
+    }
     
-    height += 10;
-    
-    height += [dict[@"phoneNumbers"] boundingRectWithSize:CGSizeMake(ScreenWidth-50, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} context:nil].size.height;
     
     height += 10;// line
     height += 44;// bg view

@@ -9,6 +9,7 @@
 #import "HomePagerViewController.h"
 #import "HomeListVC.h"
 #import "HomeListVC2.h"
+#import "CallListVC.h"
 
 @interface HomePagerViewController () <GUITabPagerDataSource, GUITabPagerDelegate>
 
@@ -33,9 +34,10 @@
         HomeListVC2 *vcIssue = [homeStory instantiateViewControllerWithIdentifier:@"HomeListVC2"];
         vcIssue.homeListVC2Type = HomeListVC2TypeIssue;
         
-        // Add Directory vc here
+        CallListVC *vcDirectory = [homeStory instantiateViewControllerWithIdentifier:@"CallListVC"];
+        vcDirectory.callListVCType = CallListVCTypeOther;
         
-        self.arrayOfVC = [NSArray arrayWithObjects:vcEmergencie,vcIssue,nil];
+        self.arrayOfVC = [NSArray arrayWithObjects:vcEmergencie,vcIssue,vcDirectory,nil];
 
     }else{ // G+ login
         

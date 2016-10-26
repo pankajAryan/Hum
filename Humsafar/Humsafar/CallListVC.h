@@ -12,6 +12,7 @@ typedef NS_ENUM(NSUInteger, CallListVCType) {
     CallListVCTypeMedical,
     CallListVCTypePolice,
     CallListVCTypeTransport,
+    CallListVCTypeOther,
 };
 
 
