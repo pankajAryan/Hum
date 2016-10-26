@@ -39,5 +39,6 @@
 
 - (void)showDelegatedAlertwithTitle:(NSString*)Title message:(NSString*)message tag:(NSInteger)tag;
 
++(void) showAlert:(NSString *)message;
 
 @end

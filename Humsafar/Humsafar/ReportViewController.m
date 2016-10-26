@@ -97,7 +97,8 @@
         [self hideProgressHudAfterDelay:0.1];
         
         if (responseType == eResponseTypeSuccessJSON) {
-            
+            uploadedImageURL = response;
+            [self api_uploadOtherInfo];
         }else{
             [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
         }

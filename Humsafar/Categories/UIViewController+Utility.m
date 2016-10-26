@@ -183,6 +183,12 @@
 #pragma mark- UIAlertView Display Methods
 #pragma mark-
 
++ (void)showAlert:(NSString *)message{
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:message message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alertView show];
+}
+
 - (void)showAlert:(NSString *)message{
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:message message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];

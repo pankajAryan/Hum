@@ -233,49 +233,9 @@
                 NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSStringEncodingConversionExternalRepresentation];
                 NSLog(@"%@",string);
                 
-                NSError* error;
-                NSDictionary *responseDict  = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
-                
-                if (error == nil)
-                {
-                    // JSON response
-                    //#warning Complete if needed.
-                    // 1- Check if fabfurnish.com server
-                    // 2- Call completion block (to send the response to particular class)
-                    // 3- Call completion block to Stop Progress Indicator, if it is started from that class.
-                    
-                    if ([[responseDict objectForKey:kKEY_ErrorCode] integerValue] == 0) {
-                        
-                        // server response.
-                        completionBlock(eResponseTypeSuccessJSON,responseDict);
-                    }else{
-                        
-                        // fabfurnish.com Server response in negative :- "success = false"
-                        //[weakSelf updateSessionWithDictionary:responseJSON];
-                        completionBlock(eResponseTypeFailJSON ,responseDict);
-                    }
-                }
-                else
-                {
-                    // not a JSON response.
-                    //#warning Complete if needed.
-                    // 1- Display some Error message here. OR
-                    // 2- Call completion block (to send the response to particular class)
-                    // 3- Call completion block to Stop Progress Indicator, if it is started from that class.
-                    
-                    completionBlock(eResponseTypeNotJSON, nil);
-                }
+                completionBlock(eResponseTypeSuccessJSON,string);
+
             } failure:^(NSURLSessionDataTask *task, NSError *error) {
-                // failure
-                //#warning Complete if needed.
-                // 1- Display some error message for failure
-                // 2- Call completion block to Stop Progress Indicator, if it is started from that class.
-                
-                // Here is few parameters using those we can display a proper message based on error code
-                //1-error.description,
-                //2-error.localizedDescription,
-                //3-error.localizedFailureReason
-                // OR
                 
                 NSLog(@"Request did fail with error : %@", error.userInfo);
                 
@@ -290,6 +250,7 @@
                 
                 completionBlock(eResponseTypeRequestFailure,error);
                 
+                [UIViewController showAlert:@"Image upload failed please try again later."];
             }];
             
             

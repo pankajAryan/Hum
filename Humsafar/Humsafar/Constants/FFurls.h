@@ -41,7 +41,7 @@
 #define GetEmergencyServices        @"/getEmergencyDirectoryForDepartment/"
 #define UploadImage                 @"/uploadImage/"
 #define ReportIssue                 @"/reportIssue/"
-#define ReportEmergency                 @"/reportEmergency/"
+#define ReportEmergency             @"/reportEmergency/"
 
 
 
@@ -55,10 +55,10 @@
 #define RegenerateOtp       @"/generateOtp/"
 #define VerifyOtp           @"/verifyOtp/"
 
-#define UpdateUserProfile @"/updateUserProfile/"
+#define UpdateUserProfile               @"/updateUserProfile/"
 
-#define GetListOfReportedIssues @"/getListOfReportedIssues/"
-#define GetListOfReportedEmergencies @"/getListOfReportedEmergencies/"
+#define GetListOfReportedIssues         @"/getListOfReportedIssues/"
+#define GetListOfReportedEmergencies    @"/getListOfReportedEmergencies/"
 
 
 
