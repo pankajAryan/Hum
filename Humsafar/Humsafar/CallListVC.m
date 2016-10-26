@@ -63,6 +63,10 @@
     
     [self fetchDataListFromServer];
     
+    if (self.callListVCType != CallListVCTypeOther) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectDistrict:) name:@"DistrictSelectionNotification" object:nil];
+    }
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -71,6 +75,9 @@
     if ([self.txtField_search isFirstResponder])
         [self.txtField_search resignFirstResponder];
 
+    if (self.callListVCType != CallListVCTypeOther) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:@"DistrictSelectionNotification" object:nil];
+    }
 }
 
 -(void)selectDistrict:(NSNotification*)notification {
