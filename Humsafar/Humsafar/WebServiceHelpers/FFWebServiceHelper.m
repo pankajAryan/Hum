@@ -223,7 +223,7 @@
             configuration.HTTPAdditionalHeaders = @{@"Content-Type": @"multipart/form-data"};
             
             AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:url sessionConfiguration:configuration];
-            manager.responseSerializer = [AFJSONResponseSerializer serializer];
+            manager.responseSerializer = [AFHTTPResponseSerializer serializer];
             
             [manager POST:url.absoluteString parameters:@{} constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
                 [formData appendPartWithFileData:UIImageJPEGRepresentation(parameters[@"file"], 0.5) name:@"file"
