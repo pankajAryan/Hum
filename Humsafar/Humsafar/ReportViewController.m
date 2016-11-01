@@ -84,12 +84,6 @@
 
 - (void)api_uploadImage {
     
-    if ([self.navType isEqualToString:@"emergency"]) {
-        //hit service for emergency
-    }else if ([self.navType isEqualToString:@"report"]) {
-        //hit service for report
-    }
-    
     [self showProgressHudWithMessage:@"uploading image"];
 
     [[FFWebServiceHelper sharedManager] uploadImageWithUrl:UploadImage withParameters:@{@"file":self.image} onCompletion:^(eResponseType responseType, id response) {
@@ -120,7 +114,8 @@
     }
     
     
-    if ([self.navType isEqualToString:@"emergency"]) {
+    if ([self.navType isEqualToString:@"emergency"])
+    {
         selectedCategory = @"";
         if (lat == nil || lon == nil) {
             lat = @"";
@@ -140,7 +135,9 @@
             }
         }];
         
-    }else if ([self.navType isEqualToString:@"report"]) {
+    }
+    else if ([self.navType isEqualToString:@"report"])
+    {
         if (selectedCategory.length == 0) {
             [self showAlert:@"Please select issue category and try again."];
             return;
