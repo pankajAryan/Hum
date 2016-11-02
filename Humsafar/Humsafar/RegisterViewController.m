@@ -170,7 +170,6 @@
                 if (responseType == eResponseTypeSuccessJSON)
                 {
                     [UIViewController saveDatatoUserDefault:[response objectForKey:@"responseObject"] forKey:@"userId"];
-
                     [UIViewController saveDatatoUserDefault:_txtFieldName.text forKey:@"name"];
                     [UIViewController saveDatatoUserDefault:_txtFieldEmail.text forKey:@"email"];
                     [UIViewController saveDatatoUserDefault:_txtFieldMobile.text forKey:@"mobile"];

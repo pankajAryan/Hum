@@ -55,14 +55,20 @@
                 NSDictionary *dictUserdata = [response objectForKey:@"responseObject"];
                 
                 [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"staffId"] forKey:@"userId"];
-                
                 [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"name"] forKey:@"name"];
                 [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"email"] forKey:@"email"];
-                //[UIViewController saveDatatoUserDefault: forKey:@"mobile"];
-//                [UIViewController saveDatatoUserDefault:_imageUrl.absoluteString forKey:@"userImageUrl"];
-//                [UIViewController saveDatatoUserDefault:selectedStateInfo forKey:@"selectedStateDict"];
-//                [UIViewController saveDatatoUserDefault:selectedDistrictInfo forKey:@"selectedDistrictDict"];
-//                [UIViewController saveDatatoUserDefault:arrayDistrictsData forKey:@"selectedStateDistrictArray"];
+                
+                if ([dictUserdata[@"mobile"] isKindOfClass:[NSString class]]) {
+                    [UIViewController saveDatatoUserDefault:dictUserdata[@"mobile"] forKey:@"mobile"];
+                }else{
+                    [UIViewController saveDatatoUserDefault:@"" forKey:@"mobile"];
+                }
+                
+                [UIViewController saveDatatoUserDefault:@"" forKey:@"userImageUrl"];
+                [UIViewController saveDatatoUserDefault:@{@"stateId" : @"29",@"stateName" : @"Rajasthan"} forKey:@"selectedStateDict"];
+                [UIViewController saveDatatoUserDefault:@{@"districtId" : @"1",@"districtName" : @"Ajmer",@"stateId" : @"29"} forKey:@"selectedDistrictDict"];
+                [UIViewController saveDatatoUserDefault:nil forKey:@"selectedStateDistrictArray"];
+                
                 
                 [UIViewController saveDatatoUserDefault:@"1" forKey:@"isUserLoggedIn"];
                 [UIViewController saveDatatoUserDefault:@"department" forKey:@"loginType"];

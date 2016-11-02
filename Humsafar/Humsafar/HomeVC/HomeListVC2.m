@@ -84,7 +84,7 @@
     
     [self showProgressHudWithMessage:@"Loading..."];
     
-    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:strURL withParameter:@{@"stateId" : @"29"} onCompletion:^(eResponseType responseType, id response) {
+    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:strURL withParameter:@{@"stateId" :  [UIViewController retrieveDataFromUserDefault:@"selectedStateDict"][@"stateId"]} onCompletion:^(eResponseType responseType, id response) {
         
         [self hideProgressHudAfterDelay:.1];
         

@@ -23,8 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-#warning hardcoded true
-    if (true) {// Normal Login
+    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
         
         UIStoryboard *homeStory = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
         
@@ -104,8 +103,7 @@
 - (NSString *)titleForTabAtIndex:(NSInteger)index {
     //return [NSString stringWithFormat:@"Tab #%ld", (long) index + 1];
     
-    #warning hardcoded true
-    if (true) {// Normal Login
+    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
 
         switch (index) {
             case 0:
