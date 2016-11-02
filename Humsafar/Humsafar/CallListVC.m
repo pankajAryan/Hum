@@ -101,7 +101,7 @@
             strCat = @"Transport";
             break;
         case CallListVCTypeOther:
-            strCat = @"Medical";
+            strCat = @"Police";
             break;
             
             
@@ -112,8 +112,8 @@
     
     if (self.callListVCType == CallListVCTypeOther) {
         //CallListVCTypeOther change it
-        NSString *stateId = selectedDistrictInfo[@"stateId"];
-        NSString *districtId = selectedDistrictInfo[@"districtId"];
+        NSString *stateId = @"29";//selectedDistrictInfo[@"stateId"];
+        NSString *districtId = @"2";//selectedDistrictInfo[@"districtId"];
         
         if (stateId == nil || districtId == nil) {
             return;
@@ -121,21 +121,31 @@
         
         [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetEmergencyServices withParameter:@{@"department" : strCat, @"stateId" : stateId, @"districtId" : districtId} onCompletion:^(eResponseType responseType, id response) {
             
-            if (responseType == eResponseTypeSuccessJSON) {
-                self.arrayList = [response objectForKey:kKEY_ResponseObject];
-                self.filteredresultList = [NSArray arrayWithArray:self.arrayList];
-            }else{
-                [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+            @try {
+                if (responseType == eResponseTypeSuccessJSON) {
+                    self.arrayList = [response objectForKey:kKEY_ResponseObject];
+                    self.filteredresultList = [NSArray arrayWithArray:self.arrayList];
+                }else{
+                    [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+                }
+            } @catch (NSException *exception) {
+                
             }
             
             [self.tblView reloadData];
         }];
+        
         return;
     }
     
     NSString *stateId = selectedDistrictInfo[@"stateId"];
     NSString *districtId = selectedDistrictInfo[@"districtId"];
 
+    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {
+        stateId = @"29";
+        districtId = @"2";
+    }
+    
     if (stateId == nil || districtId == nil) {
         return;
     }
