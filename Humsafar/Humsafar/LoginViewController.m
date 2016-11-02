@@ -52,8 +52,20 @@
             
             if (responseType == eResponseTypeSuccessJSON)
             {
-                [UIViewController saveDatatoUserDefault:[response objectForKey:@"responseObject"] forKey:@"userId"];
+                NSDictionary *dictUserdata = [response objectForKey:@"responseObject"];
+                
+                [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"staffId"] forKey:@"userId"];
+                
+                [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"name"] forKey:@"name"];
+                [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"email"] forKey:@"email"];
+                //[UIViewController saveDatatoUserDefault: forKey:@"mobile"];
+//                [UIViewController saveDatatoUserDefault:_imageUrl.absoluteString forKey:@"userImageUrl"];
+//                [UIViewController saveDatatoUserDefault:selectedStateInfo forKey:@"selectedStateDict"];
+//                [UIViewController saveDatatoUserDefault:selectedDistrictInfo forKey:@"selectedDistrictDict"];
+//                [UIViewController saveDatatoUserDefault:arrayDistrictsData forKey:@"selectedStateDistrictArray"];
+                
                 [UIViewController saveDatatoUserDefault:@"1" forKey:@"isUserLoggedIn"];
+                [UIViewController saveDatatoUserDefault:@"department" forKey:@"loginType"];
 
                 RootViewController *VC = [RootViewController instantiateViewControllerWithIdentifier:@"RootViewController" fromStoryboard:@"Main"];
                 

@@ -109,7 +109,7 @@
 
         switch (index) {
             case 0:
-                return @"Emergenie";
+                return @"Emergency";
             case 1:
                 return @"Issue";
             case 2:

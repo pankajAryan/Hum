@@ -180,6 +180,8 @@
                     [UIViewController saveDatatoUserDefault:arrayDistrictsData forKey:@"selectedStateDistrictArray"];
 
                     [UIViewController saveDatatoUserDefault:@"1" forKey:@"isUserLoggedIn"];
+                    [UIViewController saveDatatoUserDefault:@"user" forKey:@"loginType"];
+
 
                     // Present OTP VC
                     OTPViewController *VC = [OTPViewController instantiateViewControllerWithIdentifier:@"OTPViewController" fromStoryboard:@"Main"];
