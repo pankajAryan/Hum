@@ -39,7 +39,9 @@
         self.button_selectIssueType.hidden = NO;
     }
     
-    //[self api_uploadImage];
+    selectedDistrictInfo = [UIViewController retrieveDataFromUserDefault:@"selectedDistrictDict"];
+
+    [self api_uploadImage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -92,7 +94,7 @@
         
         if (responseType == eResponseTypeSuccessJSON) {
             uploadedImageURL = response;
-            [self api_uploadOtherInfo];
+            //[self api_uploadOtherInfo];
         }else{
             [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
         }
@@ -104,6 +106,10 @@
     
     NSString *stateId = selectedDistrictInfo[@"stateId"];
     NSString *userId = [UIViewController retrieveDataFromUserDefault:@"userId"];
+    
+    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {
+        stateId = @"29";
+    }
     
     if (stateId == nil || userId == nil)
         return;
@@ -128,10 +134,14 @@
             
             [self hideProgressHudAfterDelay:0.1];
             
-            if (responseType == eResponseTypeSuccessJSON) {
-                [self.navigationController popViewControllerAnimated:YES];
-            }else{
-                [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+            @try {
+                if (responseType == eResponseTypeSuccessJSON) {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }else{
+                    [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+                }
+            } @catch (NSException *exception) {
+                
             }
         }];
         
@@ -154,11 +164,16 @@
             
             [self hideProgressHudAfterDelay:0.1];
 
-            if (responseType == eResponseTypeSuccessJSON) {
-                [self.navigationController popViewControllerAnimated:YES];
-            }else{
-                [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+            @try {
+                if (responseType == eResponseTypeSuccessJSON) {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }else{
+                    [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+                }
+            } @catch (NSException *exception) {
+                
             }
+            
         }];
         
     }
