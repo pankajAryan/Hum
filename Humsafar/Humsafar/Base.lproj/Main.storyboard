@@ -11,7 +11,7 @@
         <scene sceneID="b17-mF-tbD">
             <objects>
                 <navigationController storyboardIdentifier="rootNavController" navigationBarHidden="YES" id="mTF-Hz-ZyW" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="924-ay-fJH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="924-ay-fJH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -32,7 +32,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddV-WE-nY9">
@@ -62,7 +62,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Gja-3I-Mdy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YYs-nV-z4v">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjx-3P-QX0" customClass="TPKeyboardAvoidingScrollView">
@@ -188,7 +188,7 @@
                         <viewControllerLayoutGuide type="bottom" id="eUJ-OO-eDA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5df-t2-poB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7e-sm-OxQ" customClass="TPKeyboardAvoidingScrollView">
@@ -399,7 +399,7 @@
                         <viewControllerLayoutGuide type="bottom" id="olh-NJ-Hdc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zbY-hM-Fjp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="slider_bg" translatesAutoresizingMaskIntoConstraints="NO" id="O5Z-M9-Guz"/>
@@ -481,7 +481,7 @@
                         <viewControllerLayoutGuide type="bottom" id="PAR-Ge-Umv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="h7d-Sh-k91">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

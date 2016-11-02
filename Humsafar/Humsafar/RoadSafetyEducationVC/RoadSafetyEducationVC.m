@@ -132,7 +132,7 @@
             [cell.imgView setImageWithURL:[NSURL URLWithString:dict[@"thumbnailURL"]] placeholderImage:[UIImage imageNamed:@"call"]];
             break;
         case RoadSafetyEducationVCTypePDFs:
-            cell.imgView.image = [UIImage imageNamed:@"call"];
+            cell.imgView.image = [UIImage imageNamed:@"ic_pdf"];
             break;
         default:
             break;

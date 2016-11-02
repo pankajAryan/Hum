@@ -40,10 +40,10 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LeftMenuCell" id="BNZ-V5-oEg">
-                                        <rect key="frame" x="0.0" y="1" width="282" height="51"/>
+                                        <rect key="frame" x="0.0" y="1" width="281" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BNZ-V5-oEg" id="ssx-fF-ITG">
-                                            <frame key="frameInset" width="282" height="51"/>
+                                            <frame key="frameInset" width="281.5" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="21" contentMode="center" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="ZQn-2b-UFm">
@@ -134,7 +134,6 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HAMSAFAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMB-KF-wjT">
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -247,6 +246,16 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOn-7i-doj">
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyw-81-daZ">
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Z3J-G6-5ZG"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="action_goBack:" destination="Ekm-VL-d9R" eventType="touchUpInside" id="RPd-Oa-0Oc"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPORT ISSUE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBX-Ge-QLL">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="145" id="KbV-P3-pfy"/>
@@ -255,17 +264,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyw-81-daZ">
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="170" id="Z3J-G6-5ZG"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="150" maxY="0.0"/>
-                                        <state key="normal" image="back"/>
-                                        <connections>
-                                            <action selector="action_goBack:" destination="Ekm-VL-d9R" eventType="touchUpInside" id="RPd-Oa-0Oc"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhh-8z-1FF">
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -280,13 +278,13 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.84313725490000002" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="dBX-Ge-QLL" firstAttribute="leading" secondItem="Kyw-81-daZ" secondAttribute="trailing" constant="15" id="0CA-ql-nAV"/>
                                     <constraint firstItem="Kyw-81-daZ" firstAttribute="leading" secondItem="UOn-7i-doj" secondAttribute="leading" id="8af-m1-5Gc"/>
-                                    <constraint firstItem="dBX-Ge-QLL" firstAttribute="leading" secondItem="UOn-7i-doj" secondAttribute="leading" constant="26" id="CSo-Um-9EA"/>
                                     <constraint firstItem="Kyw-81-daZ" firstAttribute="top" secondItem="UOn-7i-doj" secondAttribute="top" constant="22" id="KR7-bP-LrH"/>
                                     <constraint firstAttribute="trailing" secondItem="Zhh-8z-1FF" secondAttribute="trailing" constant="8" id="XtP-99-VZp"/>
                                     <constraint firstAttribute="height" constant="60" id="Z4K-fb-8kO"/>
                                     <constraint firstAttribute="bottom" secondItem="Zhh-8z-1FF" secondAttribute="bottom" constant="8" id="aDi-vd-5ug"/>
-                                    <constraint firstAttribute="bottom" secondItem="dBX-Ge-QLL" secondAttribute="bottom" constant="8" id="ahB-Tk-Gca"/>
+                                    <constraint firstAttribute="bottom" secondItem="dBX-Ge-QLL" secondAttribute="bottom" constant="9" id="ahB-Tk-Gca"/>
                                     <constraint firstAttribute="bottom" secondItem="Kyw-81-daZ" secondAttribute="bottom" constant="8" id="drV-Am-EhC"/>
                                     <constraint firstItem="dBX-Ge-QLL" firstAttribute="top" secondItem="UOn-7i-doj" secondAttribute="top" constant="22" id="iuC-yZ-I7c"/>
                                     <constraint firstItem="Zhh-8z-1FF" firstAttribute="top" secondItem="UOn-7i-doj" secondAttribute="top" constant="22" id="ph0-EM-3nL"/>
@@ -593,7 +591,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WpK-7p-eTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="832.5" y="936.97183098591552"/>
+            <point key="canvasLocation" x="986" y="986"/>
         </scene>
         <!--Home ListVC-->
         <scene sceneID="YkB-cD-4VZ">

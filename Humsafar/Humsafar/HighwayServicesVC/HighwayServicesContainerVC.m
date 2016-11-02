@@ -112,24 +112,24 @@
 
 - (UIColor *)tabColor {
     // Default: [UIColor orangeColor];
-    return [UIColor whiteColor];
+    return [UIColor yellowColor];
 }
 
 - (UIColor *)tabBackgroundColor {
+    
+    return [UIColor blackColor];
     // Default: [UIColor colorWithWhite:0.95f alpha:1.0f];
-    return [UIColor colorWithRed:249 / 255.0f
-                           green:224 / 255.0f
-                            blue:49 / 255.0f alpha:1];
+    //    return [UIColor colorWithRed:249 / 255.0f green:224 / 255.0f blue:49 / 255.0f alpha:1];
 }
 
 - (UIFont *)titleFont {
     // Default: [UIFont fontWithName:@"HelveticaNeue-Thin" size:20.0f];
-    return [UIFont fontWithName:@"HelveticaNeue-Bold" size:14.0f];
+    return [UIFont fontWithName:@"HelveticaNeue-Regular" size:12.0f];
 }
 
 - (UIColor *)titleColor {
     // Default: [UIColor blackColor];
-    return [UIColor blackColor];//[UIColor colorWithRed:1.0f green:0.8f blue:0.0f alpha:1.0f];
+    return [UIColor whiteColor];//[UIColor colorWithRed:1.0f green:0.8f blue:0.0f alpha:1.0f];
 }
 
 #pragma mark - Tab Pager Delegate

@@ -40,8 +40,8 @@
 -(void)awakeFromNib {
     [super awakeFromNib];
     
-    self.bgView.layer.cornerRadius = 8.0;
-    self.bgView.layer.masksToBounds = YES;
+    //self.bgView.layer.cornerRadius = 8.0;
+    //self.bgView.layer.masksToBounds = YES;
 }
 
 @end
