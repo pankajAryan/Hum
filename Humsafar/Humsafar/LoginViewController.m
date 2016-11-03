@@ -54,6 +54,8 @@
             {
                 NSDictionary *dictUserdata = [response objectForKey:@"responseObject"];
                 
+                [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"ssoId"] forKey:@"ssoId"];
+
                 [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"staffId"] forKey:@"userId"];
                 [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"name"] forKey:@"name"];
                 [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"email"] forKey:@"email"];

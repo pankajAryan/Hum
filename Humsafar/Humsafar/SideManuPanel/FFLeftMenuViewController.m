@@ -10,6 +10,7 @@
 
 #import "HomeViewController.h"
 #import "ProfileViewController.h"
+#import "ProfileViewController2.h"
 #import "HighwayServicesHomeVC.h"
 #import "RoadSafetyEducationHomeVC.h"
 #import "EmergencyContactsVC.h"
@@ -52,8 +53,16 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
     switch (indexPath.row)
     {
         case 0: {
-            ProfileViewController *vc = (ProfileViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"ProfileViewController" fromStoryboard:@"LeftMenuScenes"];
-            [homeController.navigationController pushViewController:vc animated:YES];
+            
+            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
+                
+                ProfileViewController2 *vc = (ProfileViewController2 *)[UIViewController instantiateViewControllerWithIdentifier:@"ProfileViewController2" fromStoryboard:@"LeftMenuScenes"];
+                [homeController.navigationController pushViewController:vc animated:YES];
+            }else{ // G+ login
+                
+                ProfileViewController *vc = (ProfileViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"ProfileViewController" fromStoryboard:@"LeftMenuScenes"];
+                [homeController.navigationController pushViewController:vc animated:YES];
+            }
         }
             break;
         case 1: {

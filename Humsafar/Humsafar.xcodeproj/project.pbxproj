@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B5913611DCBA5A9008873F1 /* ProfileViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5913601DCBA5A9008873F1 /* ProfileViewController2.m */; };
 		7F90CD5F1DBB963F00D8E5B1 /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F90CD5E1DBB963F00D8E5B1 /* ReportViewController.m */; };
 		7FB42B891DBB632B002E4209 /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB42B881DBB632B002E4209 /* CallViewController.m */; };
 		7FB42B8C1DBB6345002E4209 /* CallPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB42B8B1DBB6345002E4209 /* CallPagerViewController.m */; };
@@ -105,6 +106,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B59135F1DCBA5A9008873F1 /* ProfileViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController2.h; sourceTree = "<group>"; };
+		3B5913601DCBA5A9008873F1 /* ProfileViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController2.m; sourceTree = "<group>"; };
 		7F90CD5D1DBB963F00D8E5B1 /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
 		7F90CD5E1DBB963F00D8E5B1 /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
 		7FB42B871DBB632B002E4209 /* CallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallViewController.h; sourceTree = "<group>"; };
@@ -490,6 +493,8 @@
 				CE0596BD1DB6628D001E62A9 /* HomePagerViewController.m */,
 				CE16DAEA1DBB3C2D00AB664C /* ProfileViewController.h */,
 				CE16DAEB1DBB3C2D00AB664C /* ProfileViewController.m */,
+				3B59135F1DCBA5A9008873F1 /* ProfileViewController2.h */,
+				3B5913601DCBA5A9008873F1 /* ProfileViewController2.m */,
 				7FB42B871DBB632B002E4209 /* CallViewController.h */,
 				7FB42B881DBB632B002E4209 /* CallViewController.m */,
 				7FB42B8A1DBB6345002E4209 /* CallPagerViewController.h */,
@@ -827,6 +832,7 @@
 				CE2B39BF1DAE72AB00B266E1 /* LoginViewController.m in Sources */,
 				CE2B39F11DAE7FCB00B266E1 /* UIViewController+Utility.m in Sources */,
 				CE0596C41DB6655E001E62A9 /* FFWebServiceHelper.m in Sources */,
+				3B5913611DCBA5A9008873F1 /* ProfileViewController2.m in Sources */,
 				CE16DAFD1DBB42FD00AB664C /* TSBlurView.m in Sources */,
 				CE2B39EE1DAE7FCB00B266E1 /* UINavigationItem+FF.m in Sources */,
 			);
