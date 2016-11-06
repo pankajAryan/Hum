@@ -50,7 +50,6 @@
     // Do any additional setup after loading the view.
     self.tblView.tableFooterView = [UIView new];
     
-    selectedDistrictInfo = [UIViewController retrieveDataFromUserDefault:@"selectedDistrictDict"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,6 +59,12 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// by default selected
+        selectedDistrictInfo = [UIViewController retrieveDataFromUserDefault:@"selectedDictrictInfoForEmergencyDirectory"];
+    }else{
+        selectedDistrictInfo = [UIViewController retrieveDataFromUserDefault:@"selectedDistrictDict"];
+    }
     
     [self fetchDataListFromServer];
     
@@ -110,14 +115,10 @@
     }
     
     
-    if (self.callListVCType == CallListVCTypeOther) {
-        //CallListVCTypeOther change it
-        NSString *stateId = @"29";//selectedDistrictInfo[@"stateId"];
-        NSString *districtId = @"2";//selectedDistrictInfo[@"districtId"];
-        
-        if (stateId == nil || districtId == nil) {
-            return;
-        }
+    if (self.callListVCType == CallListVCTypeOther) {//Directory tab
+        //hardcode
+        NSString *stateId = @"29";
+        NSString *districtId = @"2";
         
         [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetEmergencyServices withParameter:@{@"department" : strCat, @"stateId" : stateId, @"districtId" : districtId} onCompletion:^(eResponseType responseType, id response) {
             
@@ -140,11 +141,6 @@
     
     NSString *stateId = selectedDistrictInfo[@"stateId"];
     NSString *districtId = selectedDistrictInfo[@"districtId"];
-
-    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {
-        stateId = @"29";
-        districtId = @"2";
-    }
     
     if (stateId == nil || districtId == nil) {
         return;
@@ -182,10 +178,10 @@
     if (self.callListVCType == CallListVCTypeOther) {
         //CallListVCTypeOther change it
         cell.lbl_title.text = dict[@"name"];
-        cell.txtVw_phonenumber.text = dict[@"phoneNumbers"];
+        cell.txtVw_phonenumber.text = [dict[@"phoneNumbers"] stringByReplacingOccurrencesOfString:@"," withString:@" "];
     }else{
         cell.lbl_title.text = dict[@"name"];
-        cell.txtVw_phonenumber.text = dict[@"phoneNumbers"];
+        cell.txtVw_phonenumber.text = [dict[@"phoneNumbers"] stringByReplacingOccurrencesOfString:@"," withString:@" "];
     }
     
     return cell;

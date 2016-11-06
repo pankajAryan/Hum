@@ -227,4 +227,25 @@
 }
 
 
+/*
+ 
+ */
+
++(NSString*)formattedDate:(NSString*)date {
+    NSString *formattedDate;
+    @try {
+        NSDateFormatter *dateFormatter=[[NSDateFormatter alloc]init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss.SSS"];
+        [dateFormatter setLocale:[NSLocale currentLocale]];
+        NSDate *updatetimestamp  = [dateFormatter dateFromString:date];
+        NSDateFormatter *formatter      = [[NSDateFormatter alloc]init];
+        [formatter setDateFormat:@"dd MMM, yyyy"];
+        formattedDate = [formatter stringFromDate:updatetimestamp];
+    } @catch (NSException *exception) {
+        formattedDate = @"";
+    }
+    return formattedDate;
+}
+
+
 @end

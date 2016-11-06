@@ -24,6 +24,10 @@
     // Do any additional setup after loading the view.
 
     [_btn_menu addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
+    
+    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
+        [self fetchDistrictListForStateId:@"29"];//Hardcode
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,15 +35,39 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
+        if ([segue.identifier isEqualToString:@"CallViewControllerSegue"]) {
+            NSArray *arrayDistricts = [UIViewController retrieveDataFromUserDefault:@"districts"];
+            if (arrayDistricts == nil) {
+                    [self fetchDistrictListForStateId:@"29"];//Hardcode
+            }
+        }
+    }
 }
-*/
+
+- (void)fetchDistrictListForStateId:(NSString*)stateId {
+    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetDistricts withParameter:@{@"stateId" : stateId} onCompletion:^(eResponseType responseType, id response) {
+        
+        @try {
+            if (responseType == eResponseTypeSuccessJSON) {
+                NSArray *arrayDistricts = [response objectForKey:kKEY_ResponseObject];
+                if (arrayDistricts != nil) {
+                    [UIViewController saveDatatoUserDefault:arrayDistricts forKey:@"districts"];
+                }
+            }else{
+                
+            }
+        } @catch (NSException *exception) {
+            
+        }
+        
+    }];
+}
+
+
+
 
 
 #pragma mark- ImagePickerControllerDelegate

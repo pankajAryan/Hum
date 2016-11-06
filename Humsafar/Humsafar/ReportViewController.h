@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtVw_desc;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollVw_report;
 @property (strong, nonatomic) NSString *navType;
+@property (weak, nonatomic) IBOutlet UILabel *label_title;
+@property (weak, nonatomic) IBOutlet UIImageView *imgVw_dropdown;
 
 - (IBAction)action_selectIssueType:(id)sender;
 - (IBAction)action_goBack:(id)sender;

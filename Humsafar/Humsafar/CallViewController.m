@@ -19,18 +19,64 @@
 @implementation CallViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     // Do any additional setup after loading the view.
     arrayDistrictsNames = [NSMutableArray new];
-    arrayDistrictsInfo = [UIViewController retrieveDataFromUserDefault:@"selectedStateDistrictArray"];
-    for (NSDictionary *info in arrayDistrictsInfo) {
-        [arrayDistrictsNames addObject:info[@"districtName"]];
+    
+    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {
+        NSArray *arrayDistricts = [UIViewController retrieveDataFromUserDefault:@"districts"];
+        if (arrayDistricts == nil) {
+            [self fetchDistrictListForStateId:@"29"];//Hardcode
+        }else{
+            arrayDistrictsInfo = arrayDistricts;
+            for (NSDictionary *info in arrayDistrictsInfo) {
+                [arrayDistrictsNames addObject:info[@"districtName"]];
+            }
+        }
+        
+        [UIViewController saveDatatoUserDefault:@{
+                                                  @"districtId" : @"10",
+                                                  @"districtName" : @"Chittorgarh",
+                                                  @"stateId" : @"29"
+                                                  } forKey:@"selectedDictrictInfoForEmergencyDirectory"];
+        self.lbl_districtName.text = @"Chittorgarh";
+
+    }else{
+        arrayDistrictsInfo = [UIViewController retrieveDataFromUserDefault:@"selectedStateDistrictArray"];
+        for (NSDictionary *info in arrayDistrictsInfo) {
+            [arrayDistrictsNames addObject:info[@"districtName"]];
+        }
+        
+       NSDictionary *selectedDistrictInfo = [UIViewController retrieveDataFromUserDefault:@"selectedDistrictDict"];
+        self.lbl_districtName.text = selectedDistrictInfo[@"districtName"];
+        
     }
+    
+    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void)fetchDistrictListForStateId:(NSString*)stateId {
+    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetDistricts withParameter:@{@"stateId" : stateId} onCompletion:^(eResponseType responseType, id response) {
+        
+        @try {
+            if (responseType == eResponseTypeSuccessJSON) {
+                NSArray *arrayDistricts = [response objectForKey:kKEY_ResponseObject];
+                if (arrayDistricts != nil) {
+                    [UIViewController saveDatatoUserDefault:arrayDistricts forKey:@"districts"];
+                }
+            }else{
+                
+            }
+        } @catch (NSException *exception) {
+            
+        }
+        
+    }];
 }
 
 /*
@@ -49,11 +95,12 @@
 
 #pragma mark - UIActionSheetPicker
 
--(IBAction)action_selectState:(id)sender{
+-(IBAction)action_selectState:(id)sender{//select district
     [ActionSheetStringPicker showPickerWithTitle:nil rows:arrayDistrictsNames initialSelection:0 doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedValueIndex, id selectedValue) {
         self.lbl_districtName.text = selectedValue;
         NSDictionary *dict_dictrictInfo = [arrayDistrictsInfo objectAtIndex:selectedValueIndex];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"DistrictSelectionNotification" object:nil userInfo:dict_dictrictInfo];
+        [UIViewController saveDatatoUserDefault:dict_dictrictInfo forKey:@"selectedDictrictInfoForEmergencyDirectory"];
     } cancelBlock:^(ActionSheetStringPicker *picker) {
         NSLog(@"Block Picker Canceled");
     } origin:sender];

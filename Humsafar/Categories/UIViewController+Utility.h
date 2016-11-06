@@ -41,4 +41,6 @@
 
 +(void) showAlert:(NSString *)message;
 
++(NSString*)formattedDate:(NSString*)date;
+
 @end

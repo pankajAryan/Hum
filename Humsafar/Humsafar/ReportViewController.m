@@ -34,9 +34,13 @@
     if ([self.navType isEqualToString:@"emergency"]) {
         self.imgVw_reportImg.image = self.image;
         self.button_selectIssueType.hidden = YES;
+        self.label_title.text = @"REPORT EMERGENCY";
+        self.imgVw_dropdown.hidden = YES;
     }else if ([self.navType isEqualToString:@"report"]) {
         self.imgVw_reportImg.image = self.image;
         self.button_selectIssueType.hidden = NO;
+        self.label_title.text = @"REPORT ISSUE";
+        self.imgVw_dropdown.hidden = NO;
     }
     
     selectedDistrictInfo = [UIViewController retrieveDataFromUserDefault:@"selectedDistrictDict"];

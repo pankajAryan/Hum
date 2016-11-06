@@ -38,6 +38,7 @@
         
         self.arrayOfVC = [NSArray arrayWithObjects:vcEmergencie,vcIssue,vcDirectory,nil];
 
+        
     }else{ // G+ login
         
         UIStoryboard *homeStory = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
@@ -68,6 +69,25 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)fetchDistrictListForStateId:(NSString*)stateId {
+    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetDistricts withParameter:@{@"stateId" : stateId} onCompletion:^(eResponseType responseType, id response) {
+        
+        @try {
+            if (responseType == eResponseTypeSuccessJSON) {
+                NSArray *arrayDistricts = [response objectForKey:kKEY_ResponseObject];
+                if (arrayDistricts != nil) {
+                    [UIViewController saveDatatoUserDefault:arrayDistricts forKey:@"districts"];
+                }
+            }else{
+                
+            }
+        } @catch (NSException *exception) {
+            
+        }
+        
+    }];
 }
 
 /*
@@ -107,9 +127,9 @@
 
         switch (index) {
             case 0:
-                return @"Emergencie";
+                return @"Emergencies";
             case 1:
-                return @"Issue";
+                return @"Issues";
             case 2:
                 return @"Directory";
             default:

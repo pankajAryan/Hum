@@ -44,7 +44,6 @@
 #define ReportEmergency             @"/reportEmergency/"
 
 
-
 #define GetEducationContentForType  @"/getEducationContentForType/"
 #define GetAmbulanceList            @"/getAmbulanceList/"
 #define AddUpdateEmergencyContacts  @"/addUpdateEmergencyContacts/"
@@ -276,7 +275,7 @@ public ResponseVO<List<EmergencyVO>> getListOfOpenReportedEmergencies(@FormParam
 }
 
 
-
+//Himz TODO
 @Path("/getDistrictList/")
 @POST
 @Produces(MediaType.APPLICATION_JSON)

@@ -117,7 +117,7 @@
     
     cell.lbl_title.text = dict[@"description"];
     cell.lbl_subTitle.text = [NSString stringWithFormat:@"lat : %@, log : %@",dict[@"lat"],dict[@"lon"]];
-    cell.lbl_date.text = dict[@"postedOn"];
+    cell.lbl_date.text = [UIViewController formattedDate:dict[@"postedOn"]];
     cell.lbl_name.text = dict[@"postedBy"];
     
     [cell.imgView setImageWithURL:[NSURL URLWithString:dict[@"uploadedImageURL"]] placeholderImage:nil];
