@@ -59,6 +59,7 @@
 #define GetListOfReportedIssues         @"/getListOfReportedIssues/"
 #define GetListOfReportedEmergencies    @"/getListOfReportedEmergencies/"
 #define UpdateDepartmentUserProfile     @"/updateDepartmentUserProfile/"
+#define AddAlertForCategory     @"/addAlertForCategory/"
 
 
 

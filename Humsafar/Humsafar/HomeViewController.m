@@ -9,11 +9,13 @@
 #import "HomeViewController.h"
 #import "UIViewController+RESideMenu.h"
 #import "ReportViewController.h"
+#import "AddTrafficAlertVC.h"
 
 @interface HomeViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *btn_menu;
 @property (strong, nonatomic) NSString *navType;
+@property (weak, nonatomic) IBOutlet UIButton *alertBtn;
 
 @end
 
@@ -102,5 +104,18 @@
         [self.navigationController pushViewController:vcReport animated:NO];
     }];
 }
+
+- (IBAction)addAlertBtnAction:(UIButton *)sender {
+    
+    AddTrafficAlertVC *vc = (AddTrafficAlertVC *)[UIViewController instantiateViewControllerWithIdentifier:@"AddTrafficAlertVC" fromStoryboard:@"Home"];
+   
+    vc.providesPresentationContextTransitionStyle = YES;
+    vc.definesPresentationContext = YES;
+    [vc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+
+    [self.navigationController presentViewController:vc animated:YES completion:nil];
+    
+}
+
 
 @end

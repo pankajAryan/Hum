@@ -83,7 +83,7 @@
                 if (responseType != eResponseTypeNoInternet)
                 {
                     //[self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
-                    [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+//                    [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
                 }
             }
         }];
