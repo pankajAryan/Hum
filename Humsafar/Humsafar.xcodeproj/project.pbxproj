@@ -24,6 +24,9 @@
 		B781D6E31DBAB4F2001627F1 /* HomeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B781D6E21DBAB4F2001627F1 /* HomeListVC.m */; };
 		B7CA057C1DBFE1F900750CF6 /* HomeListVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CA057B1DBFE1F900750CF6 /* HomeListVC2.m */; };
 		B7DA98BA1DD25B9400C7E2EC /* AddTrafficAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DA98B91DD25B9400C7E2EC /* AddTrafficAlertVC.m */; };
+		B7E8D3CB1DD3AB45001F005C /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E8D3CA1DD3AB45001F005C /* Other.storyboard */; };
+		B7E8D3CD1DD3B1B9001F005C /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E8D3CC1DD3B1B9001F005C /* GooglePlaces.framework */; };
+		B7E8D3CF1DD3B264001F005C /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E8D3CE1DD3B264001F005C /* GooglePlaces.framework */; };
 		CE0596BA1DB65E92001E62A9 /* GUITabPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596B71DB65E92001E62A9 /* GUITabPagerViewController.m */; };
 		CE0596BB1DB65E92001E62A9 /* GUITabScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596B91DB65E92001E62A9 /* GUITabScrollView.m */; };
 		CE0596BE1DB6628D001E62A9 /* HomePagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596BD1DB6628D001E62A9 /* HomePagerViewController.m */; };
@@ -142,6 +145,9 @@
 		B7CA057B1DBFE1F900750CF6 /* HomeListVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListVC2.m; sourceTree = "<group>"; };
 		B7DA98B81DD25B9400C7E2EC /* AddTrafficAlertVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTrafficAlertVC.h; sourceTree = "<group>"; };
 		B7DA98B91DD25B9400C7E2EC /* AddTrafficAlertVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTrafficAlertVC.m; sourceTree = "<group>"; };
+		B7E8D3CA1DD3AB45001F005C /* Other.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Other.storyboard; sourceTree = "<group>"; };
+		B7E8D3CC1DD3B1B9001F005C /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = "../../../Downloads/2b9e8b99fc05d124-GooglePlaces-2.0.1/Frameworks/GooglePlaces.framework"; sourceTree = "<group>"; };
+		B7E8D3CE1DD3B264001F005C /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlaces.framework; sourceTree = "<group>"; };
 		CE0596B61DB65E92001E62A9 /* GUITabPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUITabPagerViewController.h; sourceTree = "<group>"; };
 		CE0596B71DB65E92001E62A9 /* GUITabPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUITabPagerViewController.m; sourceTree = "<group>"; };
 		CE0596B81DB65E92001E62A9 /* GUITabScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUITabScrollView.h; sourceTree = "<group>"; };
@@ -289,6 +295,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7E8D3CD1DD3B1B9001F005C /* GooglePlaces.framework in Frameworks */,
 				CE9316631DBBB6DD00A84A91 /* SafariServices.framework in Frameworks */,
 				CE9316611DBBB6D700A84A91 /* AddressBook.framework in Frameworks */,
 				CE9316451DBB7E6800A84A91 /* OpenGLES.framework in Frameworks */,
@@ -300,6 +307,7 @@
 				CE9316481DBB7E6800A84A91 /* ImageIO.framework in Frameworks */,
 				CE93164D1DBB7E6800A84A91 /* CoreData.framework in Frameworks */,
 				CE9316571DBB7EF500A84A91 /* GoogleMapsCore.framework in Frameworks */,
+				B7E8D3CF1DD3B264001F005C /* GooglePlaces.framework in Frameworks */,
 				CE9316441DBB7E6800A84A91 /* QuartzCore.framework in Frameworks */,
 				CE9316561DBB7EF500A84A91 /* GoogleMaps.framework in Frameworks */,
 				CE93164E1DBB7E6800A84A91 /* Accelerate.framework in Frameworks */,
@@ -441,6 +449,7 @@
 				CE2B39851DAE6D1F00B266E1 /* Main.storyboard */,
 				CE2B39C71DAE7B7E00B266E1 /* Home.storyboard */,
 				CE16DAEF1DBB3D0300AB664C /* LeftMenuScenes.storyboard */,
+				B7E8D3CA1DD3AB45001F005C /* Other.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -461,6 +470,7 @@
 		CE2B39701DAE6D1F00B266E1 = {
 			isa = PBXGroup;
 			children = (
+				B7E8D3CE1DD3B264001F005C /* GooglePlaces.framework */,
 				CE2B39CF1DAE7FCB00B266E1 /* Categories */,
 				CE2B39B01DAE71CC00B266E1 /* TPKeyboardAvoiding */,
 				CE2B39F31DAE812A00B266E1 /* TSMessages */,
@@ -696,6 +706,7 @@
 		CE93165F1DBBB6D700A84A91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B7E8D3CC1DD3B1B9001F005C /* GooglePlaces.framework */,
 				CE9316621DBBB6DD00A84A91 /* SafariServices.framework */,
 				CE9316601DBBB6D700A84A91 /* AddressBook.framework */,
 			);
@@ -769,6 +780,7 @@
 				CE93165A1DBB7F3B00A84A91 /* GoogleMaps.bundle in Resources */,
 				CE16DAF51DBB426400AB664C /* Assets.xcassets in Resources */,
 				CE2B398C1DAE6D1F00B266E1 /* LaunchScreen.storyboard in Resources */,
+				B7E8D3CB1DD3AB45001F005C /* Other.storyboard in Resources */,
 				CE2B39871DAE6D1F00B266E1 /* Main.storyboard in Resources */,
 				CE93165D1DBBB69B00A84A91 /* GoogleSignIn.bundle in Resources */,
 				CE16DB081DBB6E3B00AB664C /* GetAmbulanceViewController.xib in Resources */,
@@ -985,6 +997,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Humsafar",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = Humsafar/PrefixHeader.pch;
 				INFOPLIST_FILE = Humsafar/Info.plist;
@@ -1007,6 +1020,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Humsafar",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = Humsafar/PrefixHeader.pch;
 				INFOPLIST_FILE = Humsafar/Info.plist;

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Places SearchVC-->
+        <scene sceneID="Ivj-6n-bW9">
+            <objects>
+                <viewController storyboardIdentifier="PlacesSearchVC" id="vpt-Vy-050" customClass="PlacesSearchVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fds-bx-LuV"/>
+                        <viewControllerLayoutGuide type="bottom" id="01S-aV-KGm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TU0-id-Ufc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihe-uX-v2g">
+                                <subviews>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VO-cb-O2J">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="56" id="EIt-mc-08l"/>
+                                        </constraints>
+                                        <state key="normal" title="cancel">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelBtnAction:" destination="vpt-Vy-050" eventType="touchUpInside" id="Jtq-yL-4hQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.84313725490000002" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="3VO-cb-O2J" firstAttribute="leading" secondItem="Ihe-uX-v2g" secondAttribute="leading" id="1ZZ-dT-Ww9"/>
+                                    <constraint firstAttribute="bottom" secondItem="3VO-cb-O2J" secondAttribute="bottom" id="J44-eL-8nP"/>
+                                    <constraint firstAttribute="height" constant="60" id="TN8-By-JvB"/>
+                                    <constraint firstItem="3VO-cb-O2J" firstAttribute="top" secondItem="Ihe-uX-v2g" secondAttribute="top" constant="20" id="Wws-an-DbY"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eaC-Be-gVi">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Btd-cA-lLI"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vpt-Vy-050" id="Wxt-Bc-5p4"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdw-E1-bsJ">
+                                <connections>
+                                    <action selector="placeBtn:" destination="vpt-Vy-050" eventType="touchUpInside" id="pLu-dz-Dk1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gm-1H-tLv">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="mgQ-Qz-c9E"/>
+                                    <constraint firstAttribute="height" constant="36" id="z3U-ZS-2Df"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ic_navigation"/>
+                                <connections>
+                                    <action selector="goBtnAction:" destination="vpt-Vy-050" eventType="touchUpInside" id="XlX-WV-8xP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fdw-E1-bsJ" firstAttribute="top" secondItem="eaC-Be-gVi" secondAttribute="top" id="14v-mv-wph"/>
+                            <constraint firstAttribute="trailing" secondItem="Ihe-uX-v2g" secondAttribute="trailing" id="I55-eM-fXs"/>
+                            <constraint firstItem="eaC-Be-gVi" firstAttribute="leading" secondItem="TU0-id-Ufc" secondAttribute="leading" constant="15" id="MNh-DN-VtO"/>
+                            <constraint firstItem="Ihe-uX-v2g" firstAttribute="leading" secondItem="TU0-id-Ufc" secondAttribute="leading" id="NAa-Z6-eVp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Gm-1H-tLv" secondAttribute="trailing" constant="15" id="T9x-eC-rim"/>
+                            <constraint firstItem="4Gm-1H-tLv" firstAttribute="centerY" secondItem="eaC-Be-gVi" secondAttribute="centerY" id="TRp-kh-6e7"/>
+                            <constraint firstItem="Ihe-uX-v2g" firstAttribute="top" secondItem="TU0-id-Ufc" secondAttribute="top" id="aY4-CI-ibA"/>
+                            <constraint firstItem="fdw-E1-bsJ" firstAttribute="trailing" secondItem="eaC-Be-gVi" secondAttribute="trailing" id="cjV-Kn-0lO"/>
+                            <constraint firstItem="fdw-E1-bsJ" firstAttribute="leading" secondItem="eaC-Be-gVi" secondAttribute="leading" id="kPv-Ce-mcc"/>
+                            <constraint firstItem="4Gm-1H-tLv" firstAttribute="leading" secondItem="eaC-Be-gVi" secondAttribute="trailing" constant="15" id="kYl-4e-RgO"/>
+                            <constraint firstItem="eaC-Be-gVi" firstAttribute="top" secondItem="Ihe-uX-v2g" secondAttribute="bottom" constant="60" id="lHC-2h-XrZ"/>
+                            <constraint firstItem="fdw-E1-bsJ" firstAttribute="bottom" secondItem="eaC-Be-gVi" secondAttribute="bottom" id="llX-dp-4Ka"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="txtAddress" destination="eaC-Be-gVi" id="Q7E-Ts-9d2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="War-Fy-Zs5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2628" y="984.55772113943033"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_navigation" width="36" height="36"/>
+    </resources>
+</document>

@@ -30,6 +30,8 @@
     
     if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
         [self fetchDistrictListForStateId:@"29"];//Hardcode
+    }else{
+        [self.alertBtn setBackgroundImage:[UIImage imageNamed:@"route"] forState:UIControlStateNormal];
     }
 }
 
@@ -120,7 +122,7 @@
         
     }else{ // G+ login
     
-        PlacesSearchVC *vc = (PlacesSearchVC *)[UIViewController instantiateViewControllerWithIdentifier:@"PlacesSearchVC" fromStoryboard:@"Home"];
+        PlacesSearchVC *vc = (PlacesSearchVC *)[UIViewController instantiateViewControllerWithIdentifier:@"PlacesSearchVC" fromStoryboard:@"Other"];
         [self.navigationController presentViewController:vc animated:YES completion:nil];
     }
 }
