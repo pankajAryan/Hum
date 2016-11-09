@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.lbl_title.text = self.title;
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
 }
 
@@ -31,8 +31,23 @@
 
 #pragma mark - btn action
 - (IBAction)cancelBtnAction:(UIButton *)sender {
-    
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark - UIWebViewDelegates
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    [self.activityIndicator startAnimating];
+    [self.activityIndicator setHidden:NO];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self.activityIndicator stopAnimating];
+    [self.activityIndicator setHidden:YES];
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    [self.activityIndicator stopAnimating];
+    [self.activityIndicator setHidden:YES];
 }
 
 

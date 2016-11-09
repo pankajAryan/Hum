@@ -147,6 +147,7 @@
     NSDictionary *dict = self.arrayList[indexPath.row];
 
     WebViewController *webVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+    webVC.title = dict[@"title"];
     webVC.urlString = dict[@"mediaURL"];
     
     [self.navigationController presentViewController:webVC animated:YES completion:nil];

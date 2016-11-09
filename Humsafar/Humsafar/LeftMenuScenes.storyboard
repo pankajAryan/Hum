@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -394,15 +395,27 @@
                                             <action selector="cancelBtnAction:" destination="bKC-Pv-raK" eventType="touchUpInside" id="m94-5O-1V5"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iu5-12-Q96">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="Rfn-46-3yZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.84313725490000002" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Iu5-12-Q96" firstAttribute="trailing" secondItem="Ycb-Nd-Qu2" secondAttribute="trailingMargin" id="1nk-6V-tUb"/>
+                                    <constraint firstItem="Iu5-12-Q96" firstAttribute="baseline" secondItem="yXW-i6-1oi" secondAttribute="baseline" constant="4" id="2s6-tS-Sow"/>
                                     <constraint firstAttribute="height" constant="60" id="df0-h1-rcr"/>
+                                    <constraint firstItem="Iu5-12-Q96" firstAttribute="leading" secondItem="yXW-i6-1oi" secondAttribute="trailing" constant="8" symbolic="YES" id="edT-WL-9Eq"/>
                                     <constraint firstItem="yXW-i6-1oi" firstAttribute="leading" secondItem="Ycb-Nd-Qu2" secondAttribute="leading" id="kcE-WP-iyG"/>
                                     <constraint firstItem="yXW-i6-1oi" firstAttribute="top" secondItem="Ycb-Nd-Qu2" secondAttribute="top" constant="20" id="okp-2H-n4d"/>
                                     <constraint firstAttribute="bottom" secondItem="yXW-i6-1oi" secondAttribute="bottom" id="xvP-ON-Zzm"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Pnt-hG-3Gj"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -410,12 +423,16 @@
                             <constraint firstAttribute="trailing" secondItem="Ycb-Nd-Qu2" secondAttribute="trailing" id="Edc-O3-ti2"/>
                             <constraint firstItem="Mra-7I-yn0" firstAttribute="top" secondItem="DiM-uH-roO" secondAttribute="bottom" id="UQa-tS-cac"/>
                             <constraint firstItem="DiM-uH-roO" firstAttribute="leading" secondItem="sso-tx-C8N" secondAttribute="leading" id="c27-uA-dIw"/>
+                            <constraint firstItem="Pnt-hG-3Gj" firstAttribute="centerY" secondItem="sso-tx-C8N" secondAttribute="centerY" id="ltt-kG-vAV"/>
                             <constraint firstItem="DiM-uH-roO" firstAttribute="top" secondItem="Ycb-Nd-Qu2" secondAttribute="bottom" id="qnL-v4-8Ga"/>
+                            <constraint firstItem="Pnt-hG-3Gj" firstAttribute="centerX" secondItem="sso-tx-C8N" secondAttribute="centerX" id="vZ6-FS-bsi"/>
                             <constraint firstAttribute="trailing" secondItem="DiM-uH-roO" secondAttribute="trailing" id="wjc-Fd-mpL"/>
                             <constraint firstItem="Ycb-Nd-Qu2" firstAttribute="top" secondItem="sso-tx-C8N" secondAttribute="top" id="x69-5j-cAI"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Pnt-hG-3Gj" id="utJ-zm-0aG"/>
+                        <outlet property="lbl_title" destination="Iu5-12-Q96" id="Ks4-jJ-syY"/>
                         <outlet property="webView" destination="DiM-uH-roO" id="jZw-Uu-N7R"/>
                     </connections>
                 </viewController>
