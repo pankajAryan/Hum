@@ -124,7 +124,7 @@
     NSDictionary *dict = self.arrayList[indexPath.row];
     
     cell.lbl_title.text = dict[@"title"];
-    cell.lbl_date.text = dict[@"postedOn"];
+    cell.lbl_date.text = [UIViewController formattedDate:dict[@"postedOn"]];
     cell.lbl_subTitle.text = dict[@"description"];
     
     switch (self.roadSafetyEducationVCType) {
