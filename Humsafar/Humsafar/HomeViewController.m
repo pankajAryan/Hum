@@ -10,6 +10,7 @@
 #import "UIViewController+RESideMenu.h"
 #import "ReportViewController.h"
 #import "AddTrafficAlertVC.h"
+#import "PlacesSearchVC.h"
 
 @interface HomeViewController ()
 
@@ -107,14 +108,21 @@
 
 - (IBAction)addAlertBtnAction:(UIButton *)sender {
     
-    AddTrafficAlertVC *vc = (AddTrafficAlertVC *)[UIViewController instantiateViewControllerWithIdentifier:@"AddTrafficAlertVC" fromStoryboard:@"Home"];
-   
-    vc.providesPresentationContextTransitionStyle = YES;
-    vc.definesPresentationContext = YES;
-    [vc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
-
-    [self.navigationController presentViewController:vc animated:YES completion:nil];
+    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
     
+        AddTrafficAlertVC *vc = (AddTrafficAlertVC *)[UIViewController instantiateViewControllerWithIdentifier:@"AddTrafficAlertVC" fromStoryboard:@"Home"];
+        
+        vc.providesPresentationContextTransitionStyle = YES;
+        vc.definesPresentationContext = YES;
+        [vc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+        
+        [self.navigationController presentViewController:vc animated:YES completion:nil];
+        
+    }else{ // G+ login
+    
+        PlacesSearchVC *vc = (PlacesSearchVC *)[UIViewController instantiateViewControllerWithIdentifier:@"PlacesSearchVC" fromStoryboard:@"Home"];
+        [self.navigationController presentViewController:vc animated:YES completion:nil];
+    }
 }
 
 

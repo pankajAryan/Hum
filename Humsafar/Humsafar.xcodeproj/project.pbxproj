@@ -12,6 +12,7 @@
 		7FB42B891DBB632B002E4209 /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB42B881DBB632B002E4209 /* CallViewController.m */; };
 		7FB42B8C1DBB6345002E4209 /* CallPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB42B8B1DBB6345002E4209 /* CallPagerViewController.m */; };
 		7FB42B8F1DBB69DD002E4209 /* CallListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB42B8E1DBB69DD002E4209 /* CallListVC.m */; };
+		B71C48251DD314D900802F94 /* PlacesSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B71C48241DD314D900802F94 /* PlacesSearchVC.m */; };
 		B755B1F51DBB5A0C00C5F329 /* RoadSafetyEducationHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B755B1F41DBB5A0C00C5F329 /* RoadSafetyEducationHomeVC.m */; };
 		B755B1F81DBB5A3000C5F329 /* RoadSafetyEducationContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B755B1F71DBB5A3000C5F329 /* RoadSafetyEducationContainerVC.m */; };
 		B755B1FB1DBB5A5300C5F329 /* RoadSafetyEducationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B755B1FA1DBB5A5300C5F329 /* RoadSafetyEducationVC.m */; };
@@ -117,6 +118,8 @@
 		7FB42B8B1DBB6345002E4209 /* CallPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallPagerViewController.m; sourceTree = "<group>"; };
 		7FB42B8D1DBB69DD002E4209 /* CallListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallListVC.h; sourceTree = "<group>"; };
 		7FB42B8E1DBB69DD002E4209 /* CallListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallListVC.m; sourceTree = "<group>"; };
+		B71C48231DD314D900802F94 /* PlacesSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesSearchVC.h; sourceTree = "<group>"; };
+		B71C48241DD314D900802F94 /* PlacesSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesSearchVC.m; sourceTree = "<group>"; };
 		B755B1F31DBB5A0C00C5F329 /* RoadSafetyEducationHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoadSafetyEducationHomeVC.h; sourceTree = "<group>"; };
 		B755B1F41DBB5A0C00C5F329 /* RoadSafetyEducationHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoadSafetyEducationHomeVC.m; sourceTree = "<group>"; };
 		B755B1F61DBB5A3000C5F329 /* RoadSafetyEducationContainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoadSafetyEducationContainerVC.h; sourceTree = "<group>"; };
@@ -364,6 +367,8 @@
 			children = (
 				B7DA98B81DD25B9400C7E2EC /* AddTrafficAlertVC.h */,
 				B7DA98B91DD25B9400C7E2EC /* AddTrafficAlertVC.m */,
+				B71C48231DD314D900802F94 /* PlacesSearchVC.h */,
+				B71C48241DD314D900802F94 /* PlacesSearchVC.m */,
 			);
 			path = AddTrafficAlert;
 			sourceTree = "<group>";
@@ -786,6 +791,7 @@
 				CE2B39841DAE6D1F00B266E1 /* IntroViewController.m in Sources */,
 				CE2B39E71DAE7FCB00B266E1 /* CLLocationManager+blocks.m in Sources */,
 				CE16DAEC1DBB3C2D00AB664C /* ProfileViewController.m in Sources */,
+				B71C48251DD314D900802F94 /* PlacesSearchVC.m in Sources */,
 				CE2B39EB1DAE7FCB00B266E1 /* UIFont+FF.m in Sources */,
 				CE2B39E91DAE7FCB00B266E1 /* NSString+device.m in Sources */,
 				CE2B39CE1DAE7D2C00B266E1 /* RootViewController.m in Sources */,
