@@ -88,9 +88,24 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
+        
+        case 5:
+            //return [UIImage imageNamed:@"speed_analysis"];
+            break;
+            
+        case 6:
+            //return [UIImage imageNamed:@"faq"];
+            break;
+            
+        case 7:
+            //return [UIImage imageNamed:@"about"];
+            break;
+            
+        case 8:
+            [App_Delegate logout];
+            break;
             
         default:
-            [App_Delegate logout];
             break;
     }
 
@@ -143,16 +158,32 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
         case 2:
             return [UIImage imageNamed:@"road_safety"];
             break;
-            
-        case 6:
-            return [UIImage imageNamed:@"about"];
+          
+        case 3:
+            return [UIImage imageNamed:@"ambulance"];
             break;
             
-        case 7:
+        case 4:
+            return [UIImage imageNamed:@"highway"];
+            break;
+            
+        case 5:
+            return [UIImage imageNamed:@"speed_analysis"];
+            break;
+            
+        case 6:
             return [UIImage imageNamed:@"faq"];
             break;
             
-        default: return [UIImage imageNamed:@"road_safety"];
+        case 7:
+            return [UIImage imageNamed:@"about"];
+            break;
+         
+        case 8:
+            return [UIImage imageNamed:@"signout"];
+            break;
+            
+        default: return nil;
             
             break;
     }

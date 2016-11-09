@@ -129,7 +129,7 @@
     
     switch (self.roadSafetyEducationVCType) {
         case RoadSafetyEducationVCTypeVideos:
-            [cell.imgView setImageWithURL:[NSURL URLWithString:dict[@"thumbnailURL"]] placeholderImage:[UIImage imageNamed:@"call"]];
+            [cell.imgView setImageWithURL:[NSURL URLWithString:dict[@"thumbnailURL"]] placeholderImage:[UIImage imageNamed:@"placeholder"]];
             break;
         case RoadSafetyEducationVCTypePDFs:
             cell.imgView.image = [UIImage imageNamed:@"ic_pdf"];

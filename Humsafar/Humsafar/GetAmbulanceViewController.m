@@ -119,7 +119,7 @@
         marker.position = CLLocationCoordinate2DMake([dict[@"lat"] doubleValue], [dict[@"lon"] doubleValue]);
 
         marker.title = @"Ambulance";
-        marker.icon = nil;//[UIImage imageNamed:@""]; // ambulance image
+        marker.icon = [UIImage imageNamed:@"ic_ambulance"];
         marker.snippet = nil;//[NSString stringWithFormat:@"%@",]; // ambulance text details as per android
         marker.appearAnimation = kGMSMarkerAnimationPop;
 //        marker.userData = fuelStationPin;

@@ -137,7 +137,7 @@
                                     <constraint firstItem="cdK-Sp-I4O" firstAttribute="leading" secondItem="kjx-3P-QX0" secondAttribute="leading" id="4hx-Dp-g0a"/>
                                     <constraint firstItem="Set-e9-m4s" firstAttribute="top" secondItem="VdV-K7-acH" secondAttribute="bottom" constant="22" id="6fB-JO-ReF"/>
                                     <constraint firstItem="BNX-0x-1fs" firstAttribute="height" secondItem="ldS-m1-GC1" secondAttribute="height" id="7ya-tl-VIg"/>
-                                    <constraint firstItem="cdK-Sp-I4O" firstAttribute="top" secondItem="kjx-3P-QX0" secondAttribute="top" id="FLk-R2-AHR"/>
+                                    <constraint firstItem="cdK-Sp-I4O" firstAttribute="top" secondItem="kjx-3P-QX0" secondAttribute="top" constant="20" id="FLk-R2-AHR"/>
                                     <constraint firstAttribute="bottom" secondItem="cdK-Sp-I4O" secondAttribute="bottom" id="IX8-6n-ecU"/>
                                     <constraint firstItem="aTL-68-Ouy" firstAttribute="width" secondItem="ldS-m1-GC1" secondAttribute="width" id="MpB-Yb-KHO"/>
                                     <constraint firstItem="BNX-0x-1fs" firstAttribute="centerX" secondItem="ldS-m1-GC1" secondAttribute="centerX" id="OIx-wO-FSc"/>
@@ -157,7 +157,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cdK-Sp-I4O" firstAttribute="centerY" secondItem="YYs-nV-z4v" secondAttribute="centerY" id="1st-D5-y5E"/>
+                            <constraint firstItem="cdK-Sp-I4O" firstAttribute="centerY" secondItem="YYs-nV-z4v" secondAttribute="centerY" constant="20" id="1st-D5-y5E"/>
                             <constraint firstItem="cdK-Sp-I4O" firstAttribute="width" secondItem="YYs-nV-z4v" secondAttribute="width" id="8yX-Zf-qFN"/>
                             <constraint firstItem="cdK-Sp-I4O" firstAttribute="centerX" secondItem="YYs-nV-z4v" secondAttribute="centerX" id="Hni-b7-whb"/>
                             <constraint firstItem="kjx-3P-QX0" firstAttribute="leading" secondItem="YYs-nV-z4v" secondAttribute="leading" id="I4O-BE-Zdp"/>
@@ -194,10 +194,10 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7e-sm-OxQ" customClass="TPKeyboardAvoidingScrollView">
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="slider_bg" translatesAutoresizingMaskIntoConstraints="NO" id="m2v-tr-Rlf"/>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="g0D-cp-VSA">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="default_pic" translatesAutoresizingMaskIntoConstraints="NO" id="g0D-cp-VSA">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="GAt-66-mFn"/>
-                                            <constraint firstAttribute="height" constant="48" id="itn-iE-KK7"/>
+                                            <constraint firstAttribute="height" constant="64" id="itn-iE-KK7"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQR-06-8zd">
@@ -492,8 +492,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="default_pic" width="43" height="43"/>
         <image name="logo" width="268" height="215"/>
-        <image name="profile" width="24" height="24"/>
         <image name="slider_bg" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
