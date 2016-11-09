@@ -11,5 +11,8 @@
 @interface WebViewController : UIViewController
 
 @property(nonatomic) NSString *urlString;
+@property(nonatomic, strong) NSString *title;
+@property (weak, nonatomic) IBOutlet UILabel *lbl_title;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end

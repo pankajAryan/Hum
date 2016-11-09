@@ -19,6 +19,7 @@
 
 #import "RESideMenu.h"
 #import "UIViewController+RESideMenu.h"
+#import "UIImageView+AFNetworking.h"
 
 static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
@@ -32,6 +33,11 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.imgVw_userImg.layer.cornerRadius = 28;
+    self.imgVw_userImg.layer.masksToBounds = YES;
+    self.imgVw_userImg.layer.borderColor = [UIColor orangeColor].CGColor;
+    self.imgVw_userImg.layer.borderWidth = 3;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +48,8 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    self.lbl_name.text = [UIViewController retrieveDataFromUserDefault:@"name"];
+    [self.imgVw_userImg setImageWithURL:[NSURL URLWithString:[UIViewController retrieveDataFromUserDefault:@"userImageUrl"]] placeholderImage:nil];
 }
 
 #pragma mark- TableView Delegate

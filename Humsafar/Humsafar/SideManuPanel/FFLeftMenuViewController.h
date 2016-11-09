@@ -15,5 +15,7 @@
 
 @property (nonatomic, assign) BOOL isRoot;
 @property (nonatomic, strong ) NSString *menuTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lbl_name;
+@property (weak, nonatomic) IBOutlet UIImageView *imgVw_userImg;
 
 @end
