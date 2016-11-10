@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbl_subTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lbl_date;
 @property (weak, nonatomic) IBOutlet UILabel *lbl_name;
+@property (weak, nonatomic) IBOutlet UIButton *btn_map;
 
 @end
 
@@ -116,12 +117,13 @@
     NSDictionary *dict = self.arrayList[indexPath.row];
     
     cell.lbl_title.text = dict[@"description"];
-    cell.lbl_subTitle.text = [NSString stringWithFormat:@"lat : %@, log : %@",dict[@"lat"],dict[@"lon"]];
+    cell.lbl_subTitle.text = @"";//[NSString stringWithFormat:@"lat : %@, log : %@",dict[@"lat"],dict[@"lon"]];
     cell.lbl_date.text = [UIViewController formattedDate:dict[@"postedOn"]];
     cell.lbl_name.text = dict[@"postedBy"];
-    
+    cell.btn_map.tag = indexPath.row;
     [cell.imgView setImageWithURL:[NSURL URLWithString:dict[@"uploadedImageURL"]] placeholderImage:nil];
-
+    [cell.btn_map addTarget:self action:@selector(goToMap:) forControlEvents:UIControlEventTouchUpInside];
+    
     return cell;
 }
 
@@ -141,9 +143,9 @@
     
     height += 10;//space
     
-    height += [[NSString stringWithFormat:@"lat : %@, log : %@",dict[@"lat"],dict[@"lon"]] boundingRectWithSize:CGSizeMake(ScreenWidth-50, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} context:nil].size.height;
-    
-    height += 10;// space
+//    height += [[NSString stringWithFormat:@"lat : %@, log : %@",dict[@"lat"],dict[@"lon"]] boundingRectWithSize:CGSizeMake(ScreenWidth-50, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} context:nil].size.height;
+//    
+//    height += 10;// space
     height += 1;// line height
     height += 5;// space
     height += 30;// name/img/date height
@@ -153,6 +155,24 @@
     return height;
 }
 
+#pragma mark - Btn Action
 
+-(void)goToMap:(UIButton*)sender {
+    
+    NSDictionary *dict = self.arrayList[sender.tag];
+
+    if ([[UIApplication sharedApplication] canOpenURL:
+         [NSURL URLWithString:@"comgooglemaps://"]])
+    {
+        NSString *urlString=[NSString stringWithFormat:@"comgooglemaps://?daddr=%@,%@&zoom=14&directionsmode=driving",dict[@"lat"],dict[@"lon"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+    }
+    else
+    {
+        NSString *string = [NSString stringWithFormat:@"http://maps.apple.com/?ll=%@,%@&q=",dict[@"lat"],dict[@"lon"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:string]];
+    }
+
+}
 
 @end

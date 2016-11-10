@@ -11,8 +11,9 @@
 #import "ReportViewController.h"
 #import "AddTrafficAlertVC.h"
 #import "PlacesSearchVC.h"
+#import <GooglePlaces/GooglePlaces.h>
 
-@interface HomeViewController ()
+@interface HomeViewController ()<GMSAutocompleteViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *btn_menu;
 @property (strong, nonatomic) NSString *navType;
@@ -122,10 +123,55 @@
         
     }else{ // G+ login
     
-        PlacesSearchVC *vc = (PlacesSearchVC *)[UIViewController instantiateViewControllerWithIdentifier:@"PlacesSearchVC" fromStoryboard:@"Other"];
-        [self.navigationController presentViewController:vc animated:YES completion:nil];
+//        PlacesSearchVC *vc = (PlacesSearchVC *)[UIViewController instantiateViewControllerWithIdentifier:@"PlacesSearchVC" fromStoryboard:@"Other"];
+//        [self.navigationController presentViewController:vc animated:YES completion:nil];
+        
+        [GMSPlacesClient provideAPIKey:@"AIzaSyBxRgQr0Rslm3I9fEqY9LE4cXJQQ-yZFN8"];
+        GMSAutocompleteViewController *acController = [[GMSAutocompleteViewController alloc] init];
+        acController.delegate = self;
+        [self presentViewController:acController animated:YES completion:nil];
+
     }
 }
+
+// Handle the user's selection.
+- (void)viewController:(GMSAutocompleteViewController *)viewController
+didAutocompleteWithPlace:(GMSPlace *)place {
+    // Do something with the selected place.
+
+    
+    NSLog(@"Place name %@", place.name);
+    NSLog(@"Place address %@", place.formattedAddress);
+    NSLog(@"Place attributions %@", place.attributions.string);
+    
+    if ([[UIApplication sharedApplication] canOpenURL:
+         [NSURL URLWithString:@"comgooglemaps://"]])
+    {
+        NSString *urlString=[NSString stringWithFormat:@"comgooglemaps://?daddr=%f,%f&zoom=14&directionsmode=driving",place.coordinate.latitude,place.coordinate.longitude];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+    }
+    else
+    {
+        NSString *string = [NSString stringWithFormat:@"http://maps.apple.com/?ll=%f,%f&q=%@",place.coordinate.latitude, place.coordinate.longitude,[place.name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:string]];
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)viewController:(GMSAutocompleteViewController *)viewController
+didFailAutocompleteWithError:(NSError *)error {
+    // TODO: handle the error.
+    NSLog(@"error: %ld", [error code]);
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+// User canceled the operation.
+- (void)wasCancelled:(GMSAutocompleteViewController *)viewController {
+    NSLog(@"Autocomplete was cancelled.");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 
 @end

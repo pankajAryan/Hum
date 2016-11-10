@@ -117,7 +117,7 @@
     
     cell.lbl_title.text = dict[@"title"];
     cell.lbl_subTitle.text = dict[@"message"];
-    cell.lbl_date.text = dict[@"date"];
+    cell.lbl_date.text = [UIViewController formattedDate:dict[@"date"]];
     
     return cell;
 }
