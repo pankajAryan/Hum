@@ -85,6 +85,8 @@
 		CE2B39F01DAE7FCB00B266E1 /* UIView+FF.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39E31DAE7FCB00B266E1 /* UIView+FF.m */; };
 		CE2B39F11DAE7FCB00B266E1 /* UIViewController+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39E51DAE7FCB00B266E1 /* UIViewController+Utility.m */; };
 		CE2B3A2C1DAE823D00B266E1 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B3A291DAE823D00B266E1 /* HexColor.m */; };
+		CE75FE831DD8C2B9002A97F8 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE75FE811DD8C2B9002A97F8 /* AboutViewController.m */; };
+		CE75FE841DD8C2B9002A97F8 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE75FE821DD8C2B9002A97F8 /* AboutViewController.xib */; };
 		CE9316421DBB7E6800A84A91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316351DBB7E6800A84A91 /* UIKit.framework */; };
 		CE9316431DBB7E6800A84A91 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316361DBB7E6800A84A91 /* SystemConfiguration.framework */; };
 		CE9316441DBB7E6800A84A91 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316371DBB7E6800A84A91 /* QuartzCore.framework */; };
@@ -263,6 +265,9 @@
 		CE2B39E51DAE7FCB00B266E1 /* UIViewController+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utility.m"; sourceTree = "<group>"; };
 		CE2B3A281DAE823D00B266E1 /* HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
 		CE2B3A291DAE823D00B266E1 /* HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColor.m; sourceTree = "<group>"; };
+		CE75FE801DD8C2B9002A97F8 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		CE75FE811DD8C2B9002A97F8 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		CE75FE821DD8C2B9002A97F8 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		CE9316351DBB7E6800A84A91 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CE9316361DBB7E6800A84A91 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CE9316371DBB7E6800A84A91 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -534,6 +539,9 @@
 				CE16DB041DBB6E3B00AB664C /* GetAmbulanceViewController.h */,
 				CE16DB051DBB6E3B00AB664C /* GetAmbulanceViewController.m */,
 				CE16DB061DBB6E3B00AB664C /* GetAmbulanceViewController.xib */,
+				CE75FE801DD8C2B9002A97F8 /* AboutViewController.h */,
+				CE75FE811DD8C2B9002A97F8 /* AboutViewController.m */,
+				CE75FE821DD8C2B9002A97F8 /* AboutViewController.xib */,
 				CE16DAF41DBB426400AB664C /* Assets.xcassets */,
 				CE2B398A1DAE6D1F00B266E1 /* LaunchScreen.storyboard */,
 				CE2B398D1DAE6D1F00B266E1 /* Info.plist */,
@@ -744,8 +752,8 @@
 				TargetAttributes = {
 					CE2B39781DAE6D1F00B266E1 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = T3654L4VAS;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = CT4G76434G;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -787,6 +795,7 @@
 				CE16DAF31DBB423500AB664C /* TSMessagesDefaultDesign.json in Resources */,
 				CE9316651DBBB82400A84A91 /* GoogleService-Info.plist in Resources */,
 				CE2B39C81DAE7B7E00B266E1 /* Home.storyboard in Resources */,
+				CE75FE841DD8C2B9002A97F8 /* AboutViewController.xib in Resources */,
 				CE16DAF01DBB3D0300AB664C /* LeftMenuScenes.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -864,6 +873,7 @@
 				CE2B39BF1DAE72AB00B266E1 /* LoginViewController.m in Sources */,
 				CE2B39F11DAE7FCB00B266E1 /* UIViewController+Utility.m in Sources */,
 				CE0596C41DB6655E001E62A9 /* FFWebServiceHelper.m in Sources */,
+				CE75FE831DD8C2B9002A97F8 /* AboutViewController.m in Sources */,
 				3B5913611DCBA5A9008873F1 /* ProfileViewController2.m in Sources */,
 				CE16DAFD1DBB42FD00AB664C /* TSBlurView.m in Sources */,
 				CE2B39EE1DAE7FCB00B266E1 /* UINavigationItem+FF.m in Sources */,
@@ -992,8 +1002,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Humsafar/Humsafar.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
-				DEVELOPMENT_TEAM = T3654L4VAS;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = CT4G76434G;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Humsafar",
@@ -1004,8 +1014,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.humsafar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1572775d-a7a5-4918-ab9f-efff4d984b9f";
-				PROVISIONING_PROFILE_SPECIFIER = "WILDCARD TEST DEV";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1015,8 +1025,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Humsafar/Humsafar.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
-				DEVELOPMENT_TEAM = T3654L4VAS;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = CT4G76434G;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Humsafar",
@@ -1027,8 +1037,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.humsafar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1572775d-a7a5-4918-ab9f-efff4d984b9f";
-				PROVISIONING_PROFILE_SPECIFIER = "WILDCARD TEST DEV";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

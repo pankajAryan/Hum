@@ -14,8 +14,8 @@
 #import "HighwayServicesHomeVC.h"
 #import "RoadSafetyEducationHomeVC.h"
 #import "EmergencyContactsVC.h"
-
 #import "GetAmbulanceViewController.h"
+#import "AboutViewController.h"
 
 #import "RESideMenu.h"
 #import "UIViewController+RESideMenu.h"
@@ -105,8 +105,10 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             //return [UIImage imageNamed:@"faq"];
             break;
             
-        case 7:
-            //return [UIImage imageNamed:@"about"];
+        case 7: {
+            AboutViewController *vc = [AboutViewController new];
+            [homeController.navigationController pushViewController:vc animated:YES];
+        }
             break;
             
         case 8:
