@@ -140,6 +140,7 @@
             
             @try {
                 if (responseType == eResponseTypeSuccessJSON) {
+                    [self showAlert:@"Emergency reported successfully."];
                     [self.navigationController popViewControllerAnimated:YES];
                 }else{
                     [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
@@ -170,6 +171,7 @@
 
             @try {
                 if (responseType == eResponseTypeSuccessJSON) {
+                    [self showAlert:@"Report submitted successfully."];
                     [self.navigationController popViewControllerAnimated:YES];
                 }else{
                     [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];

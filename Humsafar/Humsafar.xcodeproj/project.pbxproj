@@ -500,7 +500,6 @@
 		CE2B397B1DAE6D1F00B266E1 /* Humsafar */ = {
 			isa = PBXGroup;
 			children = (
-				CE9316661DBBC71B00A84A91 /* Humsafar.entitlements */,
 				CE16DAF11DBB405E00AB664C /* Storyboards */,
 				CE0596BF1DB6654E001E62A9 /* WebServiceHelpers */,
 				CE2B39AC1DAE70DB00B266E1 /* Constants */,
@@ -553,6 +552,7 @@
 		CE2B397C1DAE6D1F00B266E1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CE9316661DBBC71B00A84A91 /* Humsafar.entitlements */,
 				CE93165B1DBBB69B00A84A91 /* GoogleSignIn.bundle */,
 				CE93165C1DBBB69B00A84A91 /* GoogleSignIn.framework */,
 				CE9316591DBB7F3B00A84A91 /* GoogleMaps.bundle */,
