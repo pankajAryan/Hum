@@ -60,6 +60,7 @@
 #define GetListOfReportedEmergencies    @"/getListOfReportedEmergencies/"
 #define UpdateDepartmentUserProfile     @"/updateDepartmentUserProfile/"
 #define AddAlertForCategory     @"/addAlertForCategory/"
+#define GetDepartmentUserFeed     @"/getDepartmentUserFeed/"
 
 
 

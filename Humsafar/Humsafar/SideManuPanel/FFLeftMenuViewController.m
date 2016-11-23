@@ -20,6 +20,8 @@
 #import "RESideMenu.h"
 #import "UIViewController+RESideMenu.h"
 #import "UIImageView+AFNetworking.h"
+#import "MyFeedsVC.h"
+#import "MyIncentiveVC.h"
 
 static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
@@ -79,39 +81,61 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
         }
             break;
 
-        case 2: {
+        case 2:
+            
+            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
+                
+                MyFeedsVC *vc = (MyFeedsVC *)[UIViewController instantiateViewControllerWithIdentifier:@"MyFeedsVC" fromStoryboard:@"LeftMenuScenes"];
+                [homeController.navigationController pushViewController:vc animated:YES];
+            }else{ // G+ login
+                MyIncentiveVC *vc = (MyIncentiveVC *)[UIViewController instantiateViewControllerWithIdentifier:@"MyIncentiveVC" fromStoryboard:@"LeftMenuScenes"];
+                [homeController.navigationController pushViewController:vc animated:YES];
+            }
+            break;
+            
+        case 3:
+            
+            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
+//                return @"SCAN QR CODE";
+            }else{ // G+ login
+//                return @"MY VEHICLE PROFILE";
+            }
+            
+            break;
+
+        case 4: {
             RoadSafetyEducationHomeVC *vc = (RoadSafetyEducationHomeVC *)[UIViewController instantiateViewControllerWithIdentifier:@"RoadSafetyEducationHomeVC" fromStoryboard:@"LeftMenuScenes"];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
             
-        case 3: {
+        case 5: {
             GetAmbulanceViewController *vc = [[GetAmbulanceViewController alloc] initWithNibName:@"GetAmbulanceViewController" bundle:nil];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
 
-        case 4: {
+        case 6: {
             HighwayServicesHomeVC *vc = (HighwayServicesHomeVC *)[UIViewController instantiateViewControllerWithIdentifier:@"HighwayServicesHomeVC" fromStoryboard:@"LeftMenuScenes"];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
         
-        case 5:
+        case 7:
             //return [UIImage imageNamed:@"speed_analysis"];
             break;
             
-        case 6:
+        case 8:
             //return [UIImage imageNamed:@"faq"];
             break;
             
-        case 7: {
+        case 9: {
             AboutViewController *vc = [AboutViewController new];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
             
-        case 8:
+        case 10:
             [App_Delegate logout];
             break;
             
@@ -126,7 +150,8 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 9;
+    
+    return 11;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -166,30 +191,38 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             break;
             
         case 2:
+            return [UIImage imageNamed:@"signout"];
+            break;
+
+        case 3:
+            return [UIImage imageNamed:@"signout"];
+            break;
+
+        case 4:
             return [UIImage imageNamed:@"road_safety"];
             break;
           
-        case 3:
+        case 5:
             return [UIImage imageNamed:@"ambulance"];
             break;
             
-        case 4:
+        case 6:
             return [UIImage imageNamed:@"highway"];
             break;
             
-        case 5:
+        case 7:
             return [UIImage imageNamed:@"speed_analysis"];
             break;
             
-        case 6:
+        case 8:
             return [UIImage imageNamed:@"faq"];
             break;
             
-        case 7:
+        case 9:
             return [UIImage imageNamed:@"about"];
             break;
          
-        case 8:
+        case 10:
             return [UIImage imageNamed:@"signout"];
             break;
             
@@ -211,34 +244,54 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             break;
             
         case 2:
+            
+            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
+                return @"MY FEED";
+            }else{ // G+ login
+                return @"MY INCENTIVES";
+            }
+            break;
+
+        case 3:
+            
+            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
+                return @"SCAN QR CODE";
+            }else{ // G+ login
+                return @"MY VEHICLE PROFILE";
+            }
+
+            break;
+
+        case 4:
             return @"ROAD SAFETY EDUCATION";
             break;
             
-        case 3:
+        case 5:
             return @"GET AMBULANCE";
             break;
             
-        case 4:
+        case 6:
             return @"HIGHWAY SERVICES";
             break;
             
-        case 5:
+        case 7:
             return @"SPEED ANALYTICS";
             break;
             
-        case 6:
+        case 8:
             return @"FAQ'S";
             break;
    
-        case 7:
+        case 9:
             return @"ABOUT";
             break;
             
-        case 8:
+        case 10:
             return @"LOGOUT";
             break;
             
-        default:     return nil;
+        default:
+            return nil;
             
             break;
     }
