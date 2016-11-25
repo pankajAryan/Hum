@@ -60,7 +60,15 @@
 #define GetListOfReportedEmergencies    @"/getListOfReportedEmergencies/"
 #define UpdateDepartmentUserProfile     @"/updateDepartmentUserProfile/"
 #define AddAlertForCategory     @"/addAlertForCategory/"
+
+#define GetIncentivesForUser     @"/getIncentivesForUser/"
+#define GetIncentiveWalletBalanceForUser     @"/getIncentiveWalletBalanceForUser/"
+#define AddVehicleDigitalIdentity     @"/addVehicleDigitalIdentity/"
+#define GetVehicleDigitalIdentityApprovalStatus     @"/getVehicleDigitalIdentityApprovalStatus/"
 #define GetDepartmentUserFeed     @"/getDepartmentUserFeed/"
+#define UploadImageRC     @"/uploadImageRC/"
+#define UploadImageLicense     @"/uploadImageLicense/"
+#define GetVehicleDigitalIdentity     @"/getVehicleDigitalIdentity/"
 
 
 

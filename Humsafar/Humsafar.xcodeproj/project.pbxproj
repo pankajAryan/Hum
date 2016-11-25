@@ -24,6 +24,7 @@
 		B75DAF5F1DBB444D008B2D0F /* HighwayServicesHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B75DAF5D1DBB444D008B2D0F /* HighwayServicesHomeVC.m */; };
 		B75DAF621DBB4486008B2D0F /* HighwayServicesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B75DAF611DBB4486008B2D0F /* HighwayServicesVC.m */; };
 		B781D6E31DBAB4F2001627F1 /* HomeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B781D6E21DBAB4F2001627F1 /* HomeListVC.m */; };
+		B7B6A45B1DE8B8CB000B90E4 /* MyVehicleProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B6A45A1DE8B8CB000B90E4 /* MyVehicleProfileVC.m */; };
 		B7CA057C1DBFE1F900750CF6 /* HomeListVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CA057B1DBFE1F900750CF6 /* HomeListVC2.m */; };
 		B7DA98BA1DD25B9400C7E2EC /* AddTrafficAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DA98B91DD25B9400C7E2EC /* AddTrafficAlertVC.m */; };
 		B7E8D3CB1DD3AB45001F005C /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E8D3CA1DD3AB45001F005C /* Other.storyboard */; };
@@ -149,6 +150,8 @@
 		B75DAF611DBB4486008B2D0F /* HighwayServicesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighwayServicesVC.m; sourceTree = "<group>"; };
 		B781D6E11DBAB4F2001627F1 /* HomeListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListVC.h; sourceTree = "<group>"; };
 		B781D6E21DBAB4F2001627F1 /* HomeListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListVC.m; sourceTree = "<group>"; };
+		B7B6A4591DE8B8CB000B90E4 /* MyVehicleProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVehicleProfileVC.h; sourceTree = "<group>"; };
+		B7B6A45A1DE8B8CB000B90E4 /* MyVehicleProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVehicleProfileVC.m; sourceTree = "<group>"; };
 		B7CA057A1DBFE1F900750CF6 /* HomeListVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListVC2.h; sourceTree = "<group>"; };
 		B7CA057B1DBFE1F900750CF6 /* HomeListVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListVC2.m; sourceTree = "<group>"; };
 		B7DA98B81DD25B9400C7E2EC /* AddTrafficAlertVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTrafficAlertVC.h; sourceTree = "<group>"; };
@@ -399,6 +402,15 @@
 			path = HomeVC;
 			sourceTree = "<group>";
 		};
+		B7B6A4581DE8B8B0000B90E4 /* MyVehicleProfile */ = {
+			isa = PBXGroup;
+			children = (
+				B7B6A4591DE8B8CB000B90E4 /* MyVehicleProfileVC.h */,
+				B7B6A45A1DE8B8CB000B90E4 /* MyVehicleProfileVC.m */,
+			);
+			path = MyVehicleProfile;
+			sourceTree = "<group>";
+		};
 		B7DA98B71DD25B4500C7E2EC /* AddTrafficAlert */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,6 +549,7 @@
 				CE2B39C11DAE736B00B266E1 /* RegisterViewController.m */,
 				CE9316671DBC0B7200A84A91 /* OTPViewController.h */,
 				CE9316681DBC0B7200A84A91 /* OTPViewController.m */,
+				B7B6A4581DE8B8B0000B90E4 /* MyVehicleProfile */,
 				B71566161DE62B2800879AD6 /* MyIncentives */,
 				B71566121DE620BB00879AD6 /* MyFeeds */,
 				B7DA98B71DD25B4500C7E2EC /* AddTrafficAlert */,
@@ -899,6 +912,7 @@
 				7FB42B8C1DBB6345002E4209 /* CallPagerViewController.m in Sources */,
 				7FB42B891DBB632B002E4209 /* CallViewController.m in Sources */,
 				CE2B39BF1DAE72AB00B266E1 /* LoginViewController.m in Sources */,
+				B7B6A45B1DE8B8CB000B90E4 /* MyVehicleProfileVC.m in Sources */,
 				CE2B39F11DAE7FCB00B266E1 /* UIViewController+Utility.m in Sources */,
 				CE0596C41DB6655E001E62A9 /* FFWebServiceHelper.m in Sources */,
 				CE75FE831DD8C2B9002A97F8 /* AboutViewController.m in Sources */,

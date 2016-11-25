@@ -33,6 +33,7 @@
         [self fetchDistrictListForStateId:@"29"];//Hardcode
     }else{
         [self.alertBtn setBackgroundImage:[UIImage imageNamed:@"route"] forState:UIControlStateNormal];
+        [self fetchIncentiveFromServer];
     }
 }
 
@@ -51,6 +52,27 @@
             }
         }
     }
+}
+
+#pragma mark -
+
+-(void)fetchIncentiveFromServer {
+    
+    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetIncentivesForUser withParameter:@{@"userMobile" : [UIViewController retrieveDataFromUserDefault:@"mobile"]} onCompletion:^(eResponseType responseType, id response) {
+        
+//        {
+//            errorCode = 0;
+//            errorMessage = Success;
+//            responseObject =     (
+//            );
+//        }
+        
+        if (responseType == eResponseTypeSuccessJSON) {
+
+        }else{
+            [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+        }
+    }];
 }
 
 - (void)fetchDistrictListForStateId:(NSString*)stateId {

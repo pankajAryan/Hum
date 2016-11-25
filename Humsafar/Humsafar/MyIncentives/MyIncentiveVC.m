@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self fetchDataListFromServer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,6 +31,32 @@
 - (IBAction)backBtnACTION:(UIButton *)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark -
+
+-(void)fetchDataListFromServer {
+    
+    [self showProgressHudWithMessage:@"Loading..."];
+    
+    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetIncentiveWalletBalanceForUser withParameter:@{@"userMobile" : [UIViewController retrieveDataFromUserDefault:@"mobile"]} onCompletion:^(eResponseType responseType, id response) {
+        
+        [self hideProgressHudAfterDelay:.1];
+        
+//        {
+//            errorCode = 1;
+//            errorMessage = "Error fetchh wallet balance. Please try after sometime!";
+//            responseObject = "<null>";
+//        }
+        
+        if (responseType == eResponseTypeSuccessJSON) {
+//            self.arrayList = [response objectForKey:kKEY_ResponseObject];
+        }else{
+            [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+        }
+        
+//        [self.tblView reloadData];
+    }];
 }
 
 @end

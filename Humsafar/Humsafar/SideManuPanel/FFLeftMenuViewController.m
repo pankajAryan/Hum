@@ -22,6 +22,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "MyFeedsVC.h"
 #import "MyIncentiveVC.h"
+#import "MyVehicleProfileVC.h"
 
 static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
@@ -96,9 +97,11 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
         case 3:
             
             if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
-//                return @"SCAN QR CODE";
+
             }else{ // G+ login
-//                return @"MY VEHICLE PROFILE";
+                
+                MyVehicleProfileVC *vc = (MyVehicleProfileVC *)[UIViewController instantiateViewControllerWithIdentifier:@"MyVehicleProfileVC" fromStoryboard:@"LeftMenuScenes"];
+                [homeController.navigationController pushViewController:vc animated:YES];
             }
             
             break;

@@ -1353,6 +1353,228 @@
             </objects>
             <point key="canvasLocation" x="1273" y="1585"/>
         </scene>
+        <!--My Vehicle ProfileVC-->
+        <scene sceneID="CON-aK-lWX">
+            <objects>
+                <viewController storyboardIdentifier="MyVehicleProfileVC" id="H8k-6r-i57" customClass="MyVehicleProfileVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eMX-MU-k6V"/>
+                        <viewControllerLayoutGuide type="bottom" id="GLM-rd-Uuy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GRK-eR-feQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="741"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhE-vx-BSw">
+                                <subviews>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNf-Ba-Eh7">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="mM0-og-vPq"/>
+                                        </constraints>
+                                        <state key="normal" image="back">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBtnACTION:" destination="oAB-5b-Ag0" eventType="touchUpInside" id="13y-hp-sCl"/>
+                                            <action selector="backBtnAction:" destination="H8k-6r-i57" eventType="touchUpInside" id="uXw-VP-rAS"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Vehicle Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUS-Mf-pyf">
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.84313725490000002" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="hUS-Mf-pyf" secondAttribute="bottom" constant="9" id="LiS-cv-hQv"/>
+                                    <constraint firstAttribute="trailing" secondItem="hUS-Mf-pyf" secondAttribute="trailing" constant="15" id="P9F-Ix-JLm"/>
+                                    <constraint firstAttribute="height" constant="60" id="aLU-4o-gve"/>
+                                    <constraint firstItem="RNf-Ba-Eh7" firstAttribute="leading" secondItem="hhE-vx-BSw" secondAttribute="leading" id="bDC-aH-fZe"/>
+                                    <constraint firstAttribute="bottom" secondItem="RNf-Ba-Eh7" secondAttribute="bottom" id="fGe-ZJ-JlK"/>
+                                    <constraint firstItem="hUS-Mf-pyf" firstAttribute="leading" secondItem="RNf-Ba-Eh7" secondAttribute="trailing" constant="15" id="i7N-lT-CdT"/>
+                                    <constraint firstItem="RNf-Ba-Eh7" firstAttribute="top" secondItem="hhE-vx-BSw" secondAttribute="top" constant="20" id="lHz-8r-G66"/>
+                                </constraints>
+                            </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="main_bg" translatesAutoresizingMaskIntoConstraints="NO" id="fiO-yb-IeO"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heo-2k-8rw" customClass="TPKeyboardAvoidingScrollView">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_bg" translatesAutoresizingMaskIntoConstraints="NO" id="pcQ-qx-Iq1"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="7Ey-Cr-gy8">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="3a5-Do-nc1"/>
+                                            <constraint firstAttribute="width" constant="100" id="Zqh-Xo-oGt"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter vehicle no." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="541-hg-2AZ">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter vehicle no." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="twu-qn-hJy">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Z8h-6F-OSj"/>
+                                            <constraint firstAttribute="width" constant="288" id="saV-6d-D7a"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="H8k-6r-i57" id="PYm-fz-sZ9"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select vehicle type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkN-Oj-RVu">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select vehicle type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f9K-df-8vr">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="H8k-6r-i57" id="YBT-Yx-SnJ"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOi-Bs-8YJ">
+                                        <connections>
+                                            <action selector="showVehiclePicker:" destination="H8k-6r-i57" eventType="touchUpInside" id="6RE-ZB-4tH"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Zo-H4-Zn6">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Wpd-6a-Fdc"/>
+                                            <constraint firstAttribute="height" constant="100" id="gOc-kz-6h7"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---Click &amp; Upload License image---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hym-8s-JJh">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1l-Yx-3sL">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="56" id="Qyo-wV-5kP"/>
+                                            <constraint firstAttribute="height" constant="77" id="cYk-3E-CgE"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_add_user">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="uploadLicenseBtnAction:" destination="H8k-6r-i57" eventType="touchUpInside" id="Zfk-yn-QPL"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lf9-uk-6Fc">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="HxS-m8-pyH"/>
+                                            <constraint firstAttribute="width" constant="100" id="Xfx-qd-I3e"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----Click &amp; Upload RC image-----" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYm-mO-T4E">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afN-IW-d5w">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="56" id="A7T-3m-24p"/>
+                                            <constraint firstAttribute="height" constant="77" id="cPf-ga-sP8"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_add_user">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="uploadRCBtnAction:" destination="H8k-6r-i57" eventType="touchUpInside" id="V0Z-o4-inp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tsd-ga-3fd">
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="162" id="Ndm-jI-xf2"/>
+                                            <constraint firstAttribute="height" constant="47" id="nlJ-DO-90i"/>
+                                        </constraints>
+                                        <state key="normal" title="Upload">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="uploadBtnAction:" destination="H8k-6r-i57" eventType="touchUpInside" id="8Nz-EW-Oa5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hym-8s-JJh" firstAttribute="leading" secondItem="f9K-df-8vr" secondAttribute="leading" id="1Qw-fM-8ry"/>
+                                    <constraint firstItem="KOi-Bs-8YJ" firstAttribute="leading" secondItem="f9K-df-8vr" secondAttribute="leading" id="1oB-oJ-SaR"/>
+                                    <constraint firstItem="KOi-Bs-8YJ" firstAttribute="bottom" secondItem="f9K-df-8vr" secondAttribute="bottom" id="3QX-73-r91"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tsd-ga-3fd" secondAttribute="bottom" constant="40" id="3pl-jf-HO3"/>
+                                    <constraint firstItem="f9K-df-8vr" firstAttribute="leading" secondItem="twu-qn-hJy" secondAttribute="leading" id="75c-LM-s9s"/>
+                                    <constraint firstItem="afN-IW-d5w" firstAttribute="centerY" secondItem="lf9-uk-6Fc" secondAttribute="centerY" id="8JI-6F-FrE"/>
+                                    <constraint firstItem="KOi-Bs-8YJ" firstAttribute="top" secondItem="f9K-df-8vr" secondAttribute="top" id="8gd-FJ-2lw"/>
+                                    <constraint firstItem="Tsd-ga-3fd" firstAttribute="centerX" secondItem="heo-2k-8rw" secondAttribute="centerX" id="9So-Z5-cup"/>
+                                    <constraint firstItem="f9K-df-8vr" firstAttribute="trailing" secondItem="twu-qn-hJy" secondAttribute="trailing" id="B1j-FC-IU1"/>
+                                    <constraint firstItem="twu-qn-hJy" firstAttribute="centerX" secondItem="heo-2k-8rw" secondAttribute="centerX" id="BHK-Kx-58c"/>
+                                    <constraint firstItem="lf9-uk-6Fc" firstAttribute="leading" secondItem="7Zo-H4-Zn6" secondAttribute="leading" id="ECg-Rj-4Pt"/>
+                                    <constraint firstItem="pcQ-qx-Iq1" firstAttribute="width" secondItem="heo-2k-8rw" secondAttribute="width" id="EqS-0c-YJw"/>
+                                    <constraint firstItem="TYm-mO-T4E" firstAttribute="leading" secondItem="hym-8s-JJh" secondAttribute="leading" id="FHs-Va-RiW"/>
+                                    <constraint firstItem="7Ey-Cr-gy8" firstAttribute="top" secondItem="heo-2k-8rw" secondAttribute="top" constant="35" id="FRc-7n-wI9"/>
+                                    <constraint firstItem="f9K-df-8vr" firstAttribute="top" secondItem="hkN-Oj-RVu" secondAttribute="bottom" constant="8" id="FhL-pB-mKf"/>
+                                    <constraint firstItem="hkN-Oj-RVu" firstAttribute="leading" secondItem="f9K-df-8vr" secondAttribute="leading" id="Hf7-a6-2Jh"/>
+                                    <constraint firstItem="J1l-Yx-3sL" firstAttribute="trailing" secondItem="f9K-df-8vr" secondAttribute="trailing" id="LFM-9a-Psr"/>
+                                    <constraint firstItem="TYm-mO-T4E" firstAttribute="top" secondItem="7Zo-H4-Zn6" secondAttribute="bottom" constant="8" id="RWS-6X-UWy"/>
+                                    <constraint firstItem="J1l-Yx-3sL" firstAttribute="centerY" secondItem="7Zo-H4-Zn6" secondAttribute="centerY" id="UW3-WQ-Ms5"/>
+                                    <constraint firstItem="pcQ-qx-Iq1" firstAttribute="leading" secondItem="heo-2k-8rw" secondAttribute="leading" id="V6q-4o-74E"/>
+                                    <constraint firstAttribute="trailing" secondItem="pcQ-qx-Iq1" secondAttribute="trailing" id="W5r-Z0-d2Q"/>
+                                    <constraint firstItem="7Zo-H4-Zn6" firstAttribute="leading" secondItem="f9K-df-8vr" secondAttribute="leading" id="Yqe-p3-swS"/>
+                                    <constraint firstItem="hym-8s-JJh" firstAttribute="top" secondItem="f9K-df-8vr" secondAttribute="bottom" constant="8" id="ZMc-I9-t3X"/>
+                                    <constraint firstItem="pcQ-qx-Iq1" firstAttribute="bottom" secondItem="heo-2k-8rw" secondAttribute="bottom" id="ZZJ-gy-Mxf"/>
+                                    <constraint firstItem="hkN-Oj-RVu" firstAttribute="top" secondItem="twu-qn-hJy" secondAttribute="bottom" constant="16" id="a5N-uN-LGb"/>
+                                    <constraint firstItem="541-hg-2AZ" firstAttribute="leading" secondItem="twu-qn-hJy" secondAttribute="leading" id="d50-Vs-3PC"/>
+                                    <constraint firstItem="lf9-uk-6Fc" firstAttribute="top" secondItem="7Zo-H4-Zn6" secondAttribute="bottom" constant="40" id="jOS-Ni-I30"/>
+                                    <constraint firstItem="afN-IW-d5w" firstAttribute="trailing" secondItem="J1l-Yx-3sL" secondAttribute="trailing" id="mLx-b9-4Pm"/>
+                                    <constraint firstItem="TYm-mO-T4E" firstAttribute="trailing" secondItem="hym-8s-JJh" secondAttribute="trailing" id="oCD-B8-m3e"/>
+                                    <constraint firstItem="pcQ-qx-Iq1" firstAttribute="top" secondItem="heo-2k-8rw" secondAttribute="top" id="oIp-KA-1np"/>
+                                    <constraint firstItem="7Ey-Cr-gy8" firstAttribute="centerX" secondItem="heo-2k-8rw" secondAttribute="centerX" id="qk5-Ig-H6N"/>
+                                    <constraint firstItem="7Zo-H4-Zn6" firstAttribute="top" secondItem="f9K-df-8vr" secondAttribute="bottom" constant="40" id="rHZ-er-xMe"/>
+                                    <constraint firstItem="Tsd-ga-3fd" firstAttribute="top" secondItem="lf9-uk-6Fc" secondAttribute="bottom" constant="20" id="rMF-EN-jbr"/>
+                                    <constraint firstItem="twu-qn-hJy" firstAttribute="top" secondItem="541-hg-2AZ" secondAttribute="bottom" constant="8" id="snP-gt-CxY"/>
+                                    <constraint firstItem="KOi-Bs-8YJ" firstAttribute="trailing" secondItem="f9K-df-8vr" secondAttribute="trailing" id="teC-E8-HCH"/>
+                                    <constraint firstItem="hym-8s-JJh" firstAttribute="trailing" secondItem="f9K-df-8vr" secondAttribute="trailing" id="vV9-YE-XBi"/>
+                                    <constraint firstItem="541-hg-2AZ" firstAttribute="top" secondItem="7Ey-Cr-gy8" secondAttribute="bottom" constant="25" id="viV-kq-BNi"/>
+                                    <constraint firstItem="f9K-df-8vr" firstAttribute="height" secondItem="twu-qn-hJy" secondAttribute="height" id="xw6-nI-bSC"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="heo-2k-8rw" firstAttribute="top" secondItem="hhE-vx-BSw" secondAttribute="bottom" id="3pq-aA-vik"/>
+                            <constraint firstItem="fiO-yb-IeO" firstAttribute="top" secondItem="hhE-vx-BSw" secondAttribute="bottom" id="5Vr-DB-2J2"/>
+                            <constraint firstAttribute="trailing" secondItem="heo-2k-8rw" secondAttribute="trailing" id="882-Vm-CoT"/>
+                            <constraint firstItem="heo-2k-8rw" firstAttribute="leading" secondItem="GRK-eR-feQ" secondAttribute="leading" id="CaQ-aC-4E4"/>
+                            <constraint firstItem="fiO-yb-IeO" firstAttribute="leading" secondItem="GRK-eR-feQ" secondAttribute="leading" id="FjU-4h-J8a"/>
+                            <constraint firstAttribute="trailing" secondItem="hhE-vx-BSw" secondAttribute="trailing" id="Jpo-7O-d4d"/>
+                            <constraint firstAttribute="trailing" secondItem="fiO-yb-IeO" secondAttribute="trailing" id="NjE-f2-Kb7"/>
+                            <constraint firstItem="hhE-vx-BSw" firstAttribute="leading" secondItem="GRK-eR-feQ" secondAttribute="leading" id="NoZ-8k-fnx"/>
+                            <constraint firstItem="GLM-rd-Uuy" firstAttribute="top" secondItem="heo-2k-8rw" secondAttribute="bottom" id="PVk-U2-5en"/>
+                            <constraint firstItem="GLM-rd-Uuy" firstAttribute="top" secondItem="fiO-yb-IeO" secondAttribute="bottom" id="iDu-GD-rvk"/>
+                            <constraint firstItem="hhE-vx-BSw" firstAttribute="top" secondItem="GRK-eR-feQ" secondAttribute="top" id="jVe-Pd-Whp"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="741"/>
+                    <connections>
+                        <outlet property="btn_upload" destination="Tsd-ga-3fd" id="PeL-tj-Q8E"/>
+                        <outlet property="btn_uploadLicense" destination="J1l-Yx-3sL" id="CUd-2M-2m3"/>
+                        <outlet property="btn_uploadRC" destination="afN-IW-d5w" id="1tR-ap-1rC"/>
+                        <outlet property="btn_vehicleType" destination="KOi-Bs-8YJ" id="xiS-xL-ehY"/>
+                        <outlet property="imgView_license" destination="7Zo-H4-Zn6" id="06U-lC-RKQ"/>
+                        <outlet property="imgView_qrCode" destination="7Ey-Cr-gy8" id="67X-XF-BSg"/>
+                        <outlet property="imgView_rc" destination="lf9-uk-6Fc" id="weN-iJ-2b5"/>
+                        <outlet property="txt_vehicleNo" destination="twu-qn-hJy" id="new-Sd-r20"/>
+                        <outlet property="txt_vehicleType" destination="f9K-df-8vr" id="DrW-9Q-Rye"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nr9-kt-lr9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1965.5999999999999" y="1597.1514242878561"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back" width="12" height="20"/>
@@ -1361,6 +1583,7 @@
         <image name="ic_add_user" width="36" height="36"/>
         <image name="ic_bell" width="75" height="75"/>
         <image name="main_bg" width="375" height="667"/>
+        <image name="placeholder" width="120" height="84"/>
         <image name="profile" width="24" height="24"/>
         <image name="slider_bg" width="375" height="667"/>
     </resources>
