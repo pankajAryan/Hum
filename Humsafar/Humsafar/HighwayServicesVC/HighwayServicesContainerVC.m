@@ -43,7 +43,7 @@
     [self setDataSource:self];
     [self setDelegate:self];
     [self reloadData];
-    
+    [self selectTabbarIndex:0];
 }
 
 - (void)didReceiveMemoryWarning {

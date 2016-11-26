@@ -38,6 +38,7 @@
 @property (nonatomic) NSArray *arrayList;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 
+@property (weak, nonatomic) IBOutlet UILabel *lbl_noDataToShow;
 @end
 
 @implementation MyIncentiveVC
@@ -89,6 +90,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+    if ([self.arrayList count] == 0) {
+        self.lbl_noDataToShow.hidden = NO;
+        tableView.hidden = YES;
+    }else{
+        self.lbl_noDataToShow.hidden = YES;
+        tableView.hidden = NO;
+    }
     return [self.arrayList count];
 }
 
