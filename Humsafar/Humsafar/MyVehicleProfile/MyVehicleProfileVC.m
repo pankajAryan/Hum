@@ -58,28 +58,6 @@
         
         [self hideProgressHudAfterDelay:.1];
         
-//        {
-//            "responseObject": {
-//                "vehicleNo": "DL9CAD1842",
-//                "vehicleType": "4 Wheeler",
-//                "licenseURL": "http://128.199.129.241/shield/image_uploads/license/photo_20161120_15_44_12_1479636853748.jpg",
-//                "rcURL": "http://128.199.129.241/shield/image_uploads/rc/photo_20161120_15_44_23_1479636864761.jpg",
-//                "approvalStatus": "T",
-//                "userMobile": "9999423173",
-//                "userId": "1"
-//            },
-//            "errorCode": 0,
-//            "errorMessage": "Success"
-//        }
-        
-//        @property (weak, nonatomic) IBOutlet UIImageView *imgView_qrCode;
-//        @property (weak, nonatomic) IBOutlet UITextField *txt_vehicleNo;
-//        @property (weak, nonatomic) IBOutlet UITextField *txt_vehicleType;
-//        @property (weak, nonatomic) IBOutlet UIImageView *imgView_license;
-//        @property (weak, nonatomic) IBOutlet UIImageView *imgView_rc;
-//        @property (weak, nonatomic) IBOutlet UIButton *btn_upload;
-        
-        
         if (responseType == eResponseTypeSuccessJSON) {
             
             if ([response[kKEY_ResponseObject][@"errorCode"] integerValue] == 0){
@@ -150,8 +128,6 @@
         return;
     }
     
-//Keys: userId, userMobile, vehicleNo, vehicleType, licenseURL, rcURL
-
     NSDictionary *paramsDict = @{@"userId":[UIViewController retrieveDataFromUserDefault:@"userId"],
                                  @"userMobile": [UIViewController retrieveDataFromUserDefault:@"mobile"],
                                  @"vehicleNo": _txt_vehicleNo.text,
@@ -170,15 +146,12 @@
         {
             [self showAlert:@"Uploaded successfully!"];
             
-            if ([response[kKEY_ResponseObject][@"errorCode"] integerValue] == 0){
-                
-                self.txt_vehicleNo.userInteractionEnabled = NO;
-                self.txt_vehicleType.userInteractionEnabled = NO;
-                self.btn_vehicleType.userInteractionEnabled = NO;
-                self.btn_uploadLicense.hidden = YES;
-                self.btn_uploadRC.hidden = YES;
-                self.btn_upload.hidden = YES;
-            }
+            self.txt_vehicleNo.userInteractionEnabled = NO;
+            self.txt_vehicleType.userInteractionEnabled = NO;
+            self.btn_vehicleType.userInteractionEnabled = NO;
+            self.btn_uploadLicense.hidden = YES;
+            self.btn_uploadRC.hidden = YES;
+            self.btn_upload.hidden = YES;
         }
         else {
             if (responseType != eResponseTypeNoInternet)
@@ -210,10 +183,12 @@
        
         if (picker.view.tag == kRCImagePickerTag) {
             rcImage = image;
+            self.imgView_rc.image = image;
             [self api_uploadRCImage];
         }else{
             licenseImage = image;
             [self api_uploadLicenseImage];
+            self.imgView_license.image = image;
         }
     }];
 }

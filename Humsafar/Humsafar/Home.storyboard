@@ -142,13 +142,38 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IkO-01-NIJ">
+                                        <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="emergency" translatesAutoresizingMaskIntoConstraints="NO" id="lIR-Oq-Llb">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="DQh-73-KSu"/>
+                                                    <constraint firstAttribute="width" constant="24" id="S19-SS-73Z"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhG-zD-O4g">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="xhG-zD-O4g" firstAttribute="centerY" secondItem="IkO-01-NIJ" secondAttribute="centerY" id="FOr-bU-Fox"/>
+                                            <constraint firstItem="xhG-zD-O4g" firstAttribute="leading" secondItem="lIR-Oq-Llb" secondAttribute="trailing" constant="5" id="SLU-kb-e1u"/>
+                                            <constraint firstAttribute="height" constant="26" id="h7P-tp-lDJ"/>
+                                            <constraint firstItem="lIR-Oq-Llb" firstAttribute="leading" secondItem="IkO-01-NIJ" secondAttribute="leading" id="sYX-Am-56X"/>
+                                            <constraint firstItem="lIR-Oq-Llb" firstAttribute="centerY" secondItem="IkO-01-NIJ" secondAttribute="centerY" id="tff-B0-Np6"/>
+                                            <constraint firstAttribute="trailing" secondItem="xhG-zD-O4g" secondAttribute="trailing" constant="3" id="wej-8S-XxJ"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.84313725490000002" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="IkO-01-NIJ" firstAttribute="centerY" secondItem="HMB-KF-wjT" secondAttribute="centerY" id="EaS-Ka-11m"/>
                                     <constraint firstItem="RKL-2U-O2I" firstAttribute="top" secondItem="sdF-3L-rag" secondAttribute="top" constant="20" id="LB5-hZ-O83"/>
-                                    <constraint firstAttribute="trailing" secondItem="HMB-KF-wjT" secondAttribute="trailing" constant="15" id="Q6i-3w-n8S"/>
                                     <constraint firstItem="RKL-2U-O2I" firstAttribute="leading" secondItem="sdF-3L-rag" secondAttribute="leading" id="StC-n4-685"/>
                                     <constraint firstAttribute="bottom" secondItem="RKL-2U-O2I" secondAttribute="bottom" id="UaI-lc-nPm"/>
+                                    <constraint firstAttribute="trailing" secondItem="IkO-01-NIJ" secondAttribute="trailing" constant="8" id="coB-RU-I1q"/>
                                     <constraint firstAttribute="bottom" secondItem="HMB-KF-wjT" secondAttribute="bottom" constant="9" id="hH5-24-ZQU"/>
                                     <constraint firstAttribute="height" constant="60" id="lPm-2B-y3E"/>
                                     <constraint firstItem="HMB-KF-wjT" firstAttribute="leading" secondItem="RKL-2U-O2I" secondAttribute="trailing" constant="15" id="tzU-9w-mZW"/>
@@ -227,6 +252,8 @@
                     <connections>
                         <outlet property="alertBtn" destination="03N-6Z-IQb" id="0bB-DM-Ef3"/>
                         <outlet property="btn_menu" destination="RKL-2U-O2I" id="bn9-Vy-sEI"/>
+                        <outlet property="incentiveView" destination="IkO-01-NIJ" id="rF0-UC-pjb"/>
+                        <outlet property="lbl_incentiveAmount" destination="xhG-zD-O4g" id="WDN-8b-wew"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fh3-Dr-Gdu" userLabel="First Responder" sceneMemberID="firstResponder"/>
