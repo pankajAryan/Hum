@@ -16,13 +16,17 @@
 #import "EmergencyContactsVC.h"
 #import "GetAmbulanceViewController.h"
 #import "AboutViewController.h"
-
+#import "BarCodeScannerController.h"
 #import "RESideMenu.h"
 #import "UIViewController+RESideMenu.h"
-#import "UIImageView+AFNetworking.h"
 #import "MyFeedsVC.h"
 #import "MyIncentiveVC.h"
 #import "MyVehicleProfileVC.h"
+
+#import "UIImageView+AFNetworking.h"
+#import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
+
 
 static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
@@ -97,7 +101,7 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
         case 3:
             
             if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
-
+                [self pushQRcodeScannerController];
             }else{ // G+ login
                 
                 MyVehicleProfileVC *vc = (MyVehicleProfileVC *)[UIViewController instantiateViewControllerWithIdentifier:@"MyVehicleProfileVC" fromStoryboard:@"LeftMenuScenes"];
@@ -313,6 +317,27 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 }
 
 */
+
+- (void)pushQRcodeScannerController {
+    
+    NSString *mediaType = AVMediaTypeVideo; // Or AVMediaTypeAudio
+    
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
+    
+    if(authStatus == AVAuthorizationStatusDenied)
+    {
+        // The user has explicitly denied permission for media capture.
+        
+        //[self showErrorTSMessage:@"To use this feature you must allow camera access from the device settings."];
+    }
+    else {
+        //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        BarCodeScannerController *controller = (BarCodeScannerController*)[UIViewController instantiateViewControllerWithIdentifier:@"BarCodeScannerController" fromStoryboard:@"Other"]//[self.storyboard instantiateViewControllerWithIdentifier:@"BarCodeScannerController"]
+        ;
+        
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+}
 
 
 

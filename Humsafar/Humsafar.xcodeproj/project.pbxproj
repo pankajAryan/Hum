@@ -90,6 +90,8 @@
 		CE2B3A2C1DAE823D00B266E1 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B3A291DAE823D00B266E1 /* HexColor.m */; };
 		CE75FE831DD8C2B9002A97F8 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE75FE811DD8C2B9002A97F8 /* AboutViewController.m */; };
 		CE75FE841DD8C2B9002A97F8 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE75FE821DD8C2B9002A97F8 /* AboutViewController.xib */; };
+		CE8D5F521DE9AACF00D4846F /* beep1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE8D5F511DE9AACF00D4846F /* beep1.mp3 */; };
+		CE8D5F551DE9AADA00D4846F /* BarCodeScannerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D5F541DE9AADA00D4846F /* BarCodeScannerController.m */; };
 		CE9316421DBB7E6800A84A91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316351DBB7E6800A84A91 /* UIKit.framework */; };
 		CE9316431DBB7E6800A84A91 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316361DBB7E6800A84A91 /* SystemConfiguration.framework */; };
 		CE9316441DBB7E6800A84A91 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316371DBB7E6800A84A91 /* QuartzCore.framework */; };
@@ -277,6 +279,9 @@
 		CE75FE801DD8C2B9002A97F8 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		CE75FE811DD8C2B9002A97F8 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		CE75FE821DD8C2B9002A97F8 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		CE8D5F511DE9AACF00D4846F /* beep1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep1.mp3; sourceTree = "<group>"; };
+		CE8D5F531DE9AADA00D4846F /* BarCodeScannerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCodeScannerController.h; sourceTree = "<group>"; };
+		CE8D5F541DE9AADA00D4846F /* BarCodeScannerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarCodeScannerController.m; sourceTree = "<group>"; };
 		CE9316351DBB7E6800A84A91 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CE9316361DBB7E6800A84A91 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CE9316371DBB7E6800A84A91 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -580,6 +585,8 @@
 				CE75FE801DD8C2B9002A97F8 /* AboutViewController.h */,
 				CE75FE811DD8C2B9002A97F8 /* AboutViewController.m */,
 				CE75FE821DD8C2B9002A97F8 /* AboutViewController.xib */,
+				CE8D5F531DE9AADA00D4846F /* BarCodeScannerController.h */,
+				CE8D5F541DE9AADA00D4846F /* BarCodeScannerController.m */,
 				CE16DAF41DBB426400AB664C /* Assets.xcassets */,
 				CE2B398A1DAE6D1F00B266E1 /* LaunchScreen.storyboard */,
 				CE2B398D1DAE6D1F00B266E1 /* Info.plist */,
@@ -591,6 +598,7 @@
 		CE2B397C1DAE6D1F00B266E1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CE8D5F511DE9AACF00D4846F /* beep1.mp3 */,
 				CE9316661DBBC71B00A84A91 /* Humsafar.entitlements */,
 				CE93165B1DBBB69B00A84A91 /* GoogleSignIn.bundle */,
 				CE93165C1DBBB69B00A84A91 /* GoogleSignIn.framework */,
@@ -832,6 +840,7 @@
 				CE93165D1DBBB69B00A84A91 /* GoogleSignIn.bundle in Resources */,
 				CE16DB081DBB6E3B00AB664C /* GetAmbulanceViewController.xib in Resources */,
 				CE16DAF31DBB423500AB664C /* TSMessagesDefaultDesign.json in Resources */,
+				CE8D5F521DE9AACF00D4846F /* beep1.mp3 in Resources */,
 				CE9316651DBBB82400A84A91 /* GoogleService-Info.plist in Resources */,
 				CE2B39C81DAE7B7E00B266E1 /* Home.storyboard in Resources */,
 				CE75FE841DD8C2B9002A97F8 /* AboutViewController.xib in Resources */,
@@ -847,6 +856,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0596DF1DB665B5001E62A9 /* AFURLConnectionOperation.m in Sources */,
+				CE8D5F551DE9AADA00D4846F /* BarCodeScannerController.m in Sources */,
 				CE0596DA1DB665B5001E62A9 /* AFHTTPRequestOperation.m in Sources */,
 				CE2B39841DAE6D1F00B266E1 /* IntroViewController.m in Sources */,
 				CE2B39E71DAE7FCB00B266E1 /* CLLocationManager+blocks.m in Sources */,

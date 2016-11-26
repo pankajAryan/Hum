@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,12 +20,14 @@
                         <viewControllerLayoutGuide type="bottom" id="01S-aV-KGm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TU0-id-Ufc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihe-uX-v2g">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VO-cb-O2J">
+                                        <rect key="frame" x="0.0" y="20" width="56" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="56" id="EIt-mc-08l"/>
                                         </constraints>
@@ -42,6 +48,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eaC-Be-gVi">
+                                <rect key="frame" x="15" y="120" width="223" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Btd-cA-lLI"/>
                                 </constraints>
@@ -53,11 +60,13 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdw-E1-bsJ">
+                                <rect key="frame" x="15" y="120" width="223" height="30"/>
                                 <connections>
                                     <action selector="placeBtn:" destination="vpt-Vy-050" eventType="touchUpInside" id="pLu-dz-Dk1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gm-1H-tLv">
+                                <rect key="frame" x="253" y="117" width="36" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="mgQ-Qz-c9E"/>
                                     <constraint firstAttribute="height" constant="36" id="z3U-ZS-2Df"/>
@@ -90,7 +99,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="War-Fy-Zs5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2628" y="984.55772113943033"/>
+            <point key="canvasLocation" x="-6516" y="250"/>
+        </scene>
+        <!--Bar Code Scanner Controller-->
+        <scene sceneID="Esn-ue-h5u">
+            <objects>
+                <viewController storyboardIdentifier="BarCodeScannerController" id="Mga-nj-eeT" customClass="BarCodeScannerController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D2N-Ms-ypp"/>
+                        <viewControllerLayoutGuide type="bottom" id="R9N-VH-zGa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hFN-Qp-GSe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvS-P8-JBn">
+                                <rect key="frame" x="16" y="140" width="288" height="288"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OvS-P8-JBn" secondAttribute="height" id="4LY-Sc-oaQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14301215279999999" green="0.14301215279999999" blue="0.14301215279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OvS-P8-JBn" firstAttribute="centerY" secondItem="hFN-Qp-GSe" secondAttribute="centerY" id="HyV-BH-O7w"/>
+                            <constraint firstItem="OvS-P8-JBn" firstAttribute="centerX" secondItem="hFN-Qp-GSe" secondAttribute="centerX" id="LUw-a0-ZpH"/>
+                            <constraint firstItem="OvS-P8-JBn" firstAttribute="leading" secondItem="hFN-Qp-GSe" secondAttribute="leadingMargin" id="Pi4-2o-FRt"/>
+                            <constraint firstItem="OvS-P8-JBn" firstAttribute="trailing" secondItem="hFN-Qp-GSe" secondAttribute="trailingMargin" id="e3y-cn-2Qo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="z6a-oS-njZ"/>
+                    <connections>
+                        <outlet property="viewPreview" destination="OvS-P8-JBn" id="X0o-26-eRH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lMp-LG-fWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7466" y="250"/>
         </scene>
     </scenes>
     <resources>
