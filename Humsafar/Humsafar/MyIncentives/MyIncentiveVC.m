@@ -67,7 +67,7 @@
     
     [self showProgressHudWithMessage:@"Loading..."];
     
-    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetIncentivesForUser withParameter:@{@"userMobile" : @"9999423173"/*[UIViewController retrieveDataFromUserDefault:@"mobile"]*/} onCompletion:^(eResponseType responseType, id response) {
+    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetIncentivesForUser withParameter:@{@"userMobile" : [UIViewController retrieveDataFromUserDefault:@"mobile"]} onCompletion:^(eResponseType responseType, id response) {
         
         [self hideProgressHudAfterDelay:.1];
         

@@ -63,7 +63,7 @@
 
 -(void)fetchWalletBalanceForUserFromServer {
     
-    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetIncentiveWalletBalanceForUser withParameter:@{@"userMobile" : @"9999423173" /*[UIViewController retrieveDataFromUserDefault:@"mobile"]*/} onCompletion:^(eResponseType responseType, id response) {
+    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetIncentiveWalletBalanceForUser withParameter:@{@"userMobile" : [UIViewController retrieveDataFromUserDefault:@"mobile"]} onCompletion:^(eResponseType responseType, id response) {
         
         if (responseType == eResponseTypeSuccessJSON) {
             self.lbl_incentiveAmount.text = [NSString stringWithFormat:@"%@",response[@"responseObject"]];
