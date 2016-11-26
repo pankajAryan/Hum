@@ -516,7 +516,6 @@
 		CE2B39701DAE6D1F00B266E1 = {
 			isa = PBXGroup;
 			children = (
-				B7E8D3CE1DD3B264001F005C /* GooglePlaces.framework */,
 				CE2B39CF1DAE7FCB00B266E1 /* Categories */,
 				CE2B39B01DAE71CC00B266E1 /* TPKeyboardAvoiding */,
 				CE2B39F31DAE812A00B266E1 /* TSMessages */,
@@ -554,6 +553,8 @@
 				CE2B39C11DAE736B00B266E1 /* RegisterViewController.m */,
 				CE9316671DBC0B7200A84A91 /* OTPViewController.h */,
 				CE9316681DBC0B7200A84A91 /* OTPViewController.m */,
+				CE2B39C61DAE7B2F00B266E1 /* SideManuPanel */,
+				B781D6E01DBAB4BE001627F1 /* HomeVC */,
 				B7B6A4581DE8B8B0000B90E4 /* MyVehicleProfile */,
 				B71566161DE62B2800879AD6 /* MyIncentives */,
 				B71566121DE620BB00879AD6 /* MyFeeds */,
@@ -561,8 +562,6 @@
 				B755B1FF1DBB752300C5F329 /* EmergencyContactsVC */,
 				B755B1F21DBB59C100C5F329 /* RoadSafetyEducationVC */,
 				B75DAF591DBB444D008B2D0F /* HighwayServicesVC */,
-				CE2B39C61DAE7B2F00B266E1 /* SideManuPanel */,
-				B781D6E01DBAB4BE001627F1 /* HomeVC */,
 				CE2B39C31DAE7A1000B266E1 /* HomeViewController.h */,
 				CE2B39C41DAE7A1000B266E1 /* HomeViewController.m */,
 				CE0596BC1DB6628D001E62A9 /* HomePagerViewController.h */,
@@ -761,6 +760,7 @@
 		CE93165F1DBBB6D700A84A91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B7E8D3CE1DD3B264001F005C /* GooglePlaces.framework */,
 				B7E8D3CC1DD3B1B9001F005C /* GooglePlaces.framework */,
 				CE9316621DBBB6DD00A84A91 /* SafariServices.framework */,
 				CE9316601DBBB6D700A84A91 /* AddressBook.framework */,

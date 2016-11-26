@@ -138,7 +138,7 @@
     
     [self showProgressHudWithMessage:@"uploading profile"];
     
-    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:UpdateUserProfile withParameter:paramsDict onCompletion:^(eResponseType responseType, id response) {
+    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:AddVehicleDigitalIdentity withParameter:paramsDict onCompletion:^(eResponseType responseType, id response) {
         
         [self hideProgressHudAfterDelay:0.1];
         

@@ -63,9 +63,16 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    NSInteger index = indexPath.row;
+    
+    if ((index >=7) && ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"])) {// Department Login
+        
+        index++;
+    }
+
     HomeViewController *homeController = (HomeViewController*)self.sideMenuViewController.contentViewController;
 
-    switch (indexPath.row)
+    switch (index)
     {
         case 0: {
             
@@ -100,9 +107,28 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             
         case 3:
             
-            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
-                [self pushQRcodeScannerController];
-            }else{ // G+ login
+            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"])
+            {// Normal Login
+                
+                NSString *mediaType = AVMediaTypeVideo; // Or AVMediaTypeAudio
+                
+                AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
+                
+                if(authStatus == AVAuthorizationStatusDenied)
+                {
+                    // The user has explicitly denied permission for media capture.
+                    
+                    [self showErrorTSMessage:@"To use this feature you must allow camera access from the device settings."];
+                }
+                else {
+                    //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    BarCodeScannerController *controller = (BarCodeScannerController*)[UIViewController instantiateViewControllerWithIdentifier:@"BarCodeScannerController" fromStoryboard:@"Other"]//[self.storyboard instantiateViewControllerWithIdentifier:@"BarCodeScannerController"]
+                    ;
+                    
+                    [homeController.navigationController pushViewController:controller animated:YES];
+                }
+            }
+            else{ // G+ login
                 
                 MyVehicleProfileVC *vc = (MyVehicleProfileVC *)[UIViewController instantiateViewControllerWithIdentifier:@"MyVehicleProfileVC" fromStoryboard:@"LeftMenuScenes"];
                 [homeController.navigationController pushViewController:vc animated:YES];
@@ -157,8 +183,11 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
-    return 11;
+    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Department Login
+        return 10;
+    }else{ // G+ User login
+        return 11;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -187,6 +216,11 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 #pragma mark- Private Methods
 
 - (UIImage*)imageIconForMenuItemAtIndex:(NSInteger)index {
+    
+    if ((index >=7) && ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"])) {// Department Login
+        
+        index++;
+    }
     
     switch (index) {
         case 0:
@@ -241,6 +275,11 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
 - (NSString*)titleForMenuItemAtIndex:(NSInteger)index {
     
+    if ((index >=7) && ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"])) {// Department Login
+        
+        index++;
+    }
+
     switch (index) {
         case 0:
             return @"MY PROFILE";
@@ -317,27 +356,6 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 }
 
 */
-
-- (void)pushQRcodeScannerController {
-    
-    NSString *mediaType = AVMediaTypeVideo; // Or AVMediaTypeAudio
-    
-    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
-    
-    if(authStatus == AVAuthorizationStatusDenied)
-    {
-        // The user has explicitly denied permission for media capture.
-        
-        //[self showErrorTSMessage:@"To use this feature you must allow camera access from the device settings."];
-    }
-    else {
-        //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        BarCodeScannerController *controller = (BarCodeScannerController*)[UIViewController instantiateViewControllerWithIdentifier:@"BarCodeScannerController" fromStoryboard:@"Other"]//[self.storyboard instantiateViewControllerWithIdentifier:@"BarCodeScannerController"]
-        ;
-        
-        [self.navigationController pushViewController:controller animated:YES];
-    }
-}
 
 
 

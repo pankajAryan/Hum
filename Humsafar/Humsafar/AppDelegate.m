@@ -32,6 +32,7 @@
         RootViewController *rootVC = [RootViewController instantiateViewControllerWithIdentifier:@"RootViewController" fromStoryboard:@"Main"];
         
         self.rootNavController.viewControllers = @[rootVC];
+        
         [self.window makeKeyAndVisible];
     }
     

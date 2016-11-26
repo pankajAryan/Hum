@@ -3,10 +3,6 @@
 //
 //
 
-
-#define Mobile_Api_Version_Key        @"XINDFURMOBAPIVERSION"
-#define Mobile_Api_Version            @"v4" //ce25302eed61a8a9f2aef604d4b0c11f
-#define Mobile_Platform_Key           @"XFABMOBAPIPLATFORM"
 #define Mobile_Platform               @"ios"
 #define Mobile_lat                    @"lat"
 #define Mobile_long                   @"long"
@@ -59,16 +55,17 @@
 #define GetListOfReportedIssues         @"/getListOfReportedIssues/"
 #define GetListOfReportedEmergencies    @"/getListOfReportedEmergencies/"
 #define UpdateDepartmentUserProfile     @"/updateDepartmentUserProfile/"
-#define AddAlertForCategory     @"/addAlertForCategory/"
+#define AddAlertForCategory             @"/addAlertForCategory/"
 
-#define GetIncentivesForUser     @"/getIncentivesForUser/"
-#define GetIncentiveWalletBalanceForUser     @"/getIncentiveWalletBalanceForUser/"
-#define AddVehicleDigitalIdentity     @"/addVehicleDigitalIdentity/"
+#define GetIncentivesForUser            @"/getIncentivesForUser/"
+#define GetIncentiveWalletBalanceForUser            @"/getIncentiveWalletBalanceForUser/"
+#define AddVehicleDigitalIdentity       @"/addVehicleDigitalIdentity/"
+#define GetDepartmentUserFeed           @"/getDepartmentUserFeed/"
+#define UploadImageRC                   @"/uploadImageRC/"
+#define UploadImageLicense              @"/uploadImageLicense/"
+#define GetVehicleDigitalIdentity       @"/getVehicleDigitalIdentity/"
+
 #define GetVehicleDigitalIdentityApprovalStatus     @"/getVehicleDigitalIdentityApprovalStatus/"
-#define GetDepartmentUserFeed     @"/getDepartmentUserFeed/"
-#define UploadImageRC     @"/uploadImageRC/"
-#define UploadImageLicense     @"/uploadImageLicense/"
-#define GetVehicleDigitalIdentity     @"/getVehicleDigitalIdentity/"
 
 
 

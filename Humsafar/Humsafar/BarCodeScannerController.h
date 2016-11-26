@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *viewPreview;
 
-@property (nonatomic, copy)  void (^metadataCallback)(NSDictionary* infoDict);
+//@property (nonatomic, copy)  void (^metadataCallback)(NSDictionary* infoDict);
 
 
 @end

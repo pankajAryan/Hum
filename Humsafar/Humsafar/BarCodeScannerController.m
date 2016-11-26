@@ -102,114 +102,59 @@
 
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
     
-    if (metadataObjects != nil && [metadataObjects count] > 0) {
-        
+    if (metadataObjects != nil && [metadataObjects count] > 0)
+    {
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
         
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
-
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 [self stopReading];
-
+                
                 if (audioPlayer) {
                     [audioPlayer play];
                 }
-
-/*
-                public static final String SERVER_URL = "http://128.199.129.241:8080/QRAppServer/rest/service/";
-                public static final String QRCODESCAN_SUB_URL = "qrScanContent";
-                http://itwplus.niitnguru.com:8080/QRAppServer/rest/service/qrScanContent
                 
-                KEY
-                params.put("qrCode",qrCode); (Sample values: 12345678 & ABCDEFGH)
- 
- */
-                NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+                NSString *qrMobileString = [metadataObj stringValue];
                 
-                NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig];
-                
-                NSURLComponents *components = [[NSURLComponents alloc]init];
-                components.scheme = @"http";
-                components.host = @"itwplus.niitnguru.com";
-                components.port = [NSNumber numberWithInteger:8080];
-                components.path = @"/QRAppServer/rest/service/qrScanContent";
-                
-                NSURLQueryItem *item1 = [NSURLQueryItem
-                                         queryItemWithName:@"qrCode" value:[metadataObj stringValue]];
-                components.queryItems = @[item1];
-                
-                NSURL *url = components.URL;
-                
-                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
-                                                                       cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                                   timeoutInterval:10.0];
-                
-                [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-                [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-                [request setHTTPMethod:@"POST"];
-                
-                NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                if ((qrMobileString != nil) && (qrMobileString.length == 10)) { // correct mobile number
                     
-                    if (!error) {
-                        NSError *localError = nil;
-                        
-                        NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                        NSDictionary *scannedRecordDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&localError];
-                        
-                        if (localError == nil) {
-                            
-                            NSLog(@"Response = %@",scannedRecordDict);
-                            
-                            if ([[scannedRecordDict objectForKey:@"errorMessage"] isEqualToString:@"Success"]) {
-                                
-                                self.metadataCallback([scannedRecordDict objectForKey:@"responseObject"]);
-                                
-                                dispatch_async(dispatch_get_main_queue(), ^{
-                                    [self Back:nil];
-                                });
-                            }
-                        }
-                    }
-                }];
-                
-                [postDataTask resume];
+                    [self showProgressHudWithMessage:@"Loading..."];
+                    
+                    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetVehicleDigitalIdentityApprovalStatus
+                                    withParameter:@{@"userMobile" : qrMobileString}
+                                     onCompletion:^(eResponseType responseType, id response) {
+                                         
+                                         [self hideProgressHudAfterDelay:.1];
+                                         
+                                         if (responseType == eResponseTypeSuccessJSON) {
+                                             [self showAlert:@"User's vehicle identity is successfully authenticated."];
+                                         }
+                                         else{
+                                             [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+                                         }
+                                         
+                                         [self Back:nil];
+                                     }];
+                }
+                else {
+                    [UIViewController showAlert:@"QR code data is wrong."];
+                    [self Back:nil];
+                }
             });
         }
+        else {
+            [UIViewController showAlert:@"QR code data is wrong."];
+            [self Back:nil];
+        }
+    }
+    else {
+        [UIViewController showAlert:@"QR code data is wrong."];
+        [self Back:nil];
     }
 }
 
-
-/*
-- (void)playMovie:(NSURL*)videoUrl
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        MPMoviePlayerController *moviePlayerController = [[MPMoviePlayerController alloc] initWithContentURL:videoUrl];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(moviePlaybackComplete:)
-                                                     name:MPMoviePlayerPlaybackDidFinishNotification
-                                                   object:moviePlayerController];
-        
-        [self.view addSubview:moviePlayerController.view];
-        moviePlayerController.fullscreen = YES;
-        moviePlayerController.movieSourceType = MPMovieSourceTypeStreaming;
-
-        [moviePlayerController play];
-    });
-}
-
-- (void)moviePlaybackComplete:(NSNotification *)notification
-{
-    MPMoviePlayerController *moviePlayerController = [notification object];
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:MPMoviePlayerPlaybackDidFinishNotification
-                                                  object:moviePlayerController];
-    
-    [moviePlayerController.view removeFromSuperview];
-}
-*/
 
 -(void)Back:(id)sender
 {
