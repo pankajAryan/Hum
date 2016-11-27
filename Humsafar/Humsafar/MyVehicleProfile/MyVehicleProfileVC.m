@@ -32,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn_uploadLicense;
 @property (weak, nonatomic) IBOutlet UIButton *btn_uploadRC;
 @property (weak, nonatomic) IBOutlet UIButton *btn_upload;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *qrCodeImgViewHeigthConstraints;
 
 @end
 
@@ -68,6 +69,7 @@
                 [self.imgView_license setImageWithURL:[NSURL URLWithString:response[kKEY_ResponseObject][@"licenseURL"]] placeholderImage:[UIImage imageNamed:@"placeholder"]];
                 [self.imgView_rc setImageWithURL:[NSURL URLWithString:response[kKEY_ResponseObject][@"rcURL"]] placeholderImage:[UIImage imageNamed:@"placeholder"]];
                 
+                self.qrCodeImgViewHeigthConstraints.constant = 100;
                 self.txt_vehicleNo.userInteractionEnabled = NO;
                 self.txt_vehicleType.userInteractionEnabled = NO;
                 self.btn_vehicleType.userInteractionEnabled = NO;
@@ -146,6 +148,7 @@
         {
             [self showAlert:@"Uploaded successfully!"];
             
+            self.qrCodeImgViewHeigthConstraints.constant = 100;
             self.txt_vehicleNo.userInteractionEnabled = NO;
             self.txt_vehicleType.userInteractionEnabled = NO;
             self.btn_vehicleType.userInteractionEnabled = NO;

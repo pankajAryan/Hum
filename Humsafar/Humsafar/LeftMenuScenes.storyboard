@@ -1407,7 +1407,7 @@
                                     <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_bg" translatesAutoresizingMaskIntoConstraints="NO" id="pcQ-qx-Iq1"/>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="7Ey-Cr-gy8">
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="3a5-Do-nc1"/>
+                                            <constraint firstAttribute="height" id="3a5-Do-nc1"/>
                                             <constraint firstAttribute="width" constant="100" id="Zqh-Xo-oGt"/>
                                         </constraints>
                                     </imageView>
@@ -1573,6 +1573,7 @@
                         <outlet property="imgView_license" destination="7Zo-H4-Zn6" id="06U-lC-RKQ"/>
                         <outlet property="imgView_qrCode" destination="7Ey-Cr-gy8" id="67X-XF-BSg"/>
                         <outlet property="imgView_rc" destination="lf9-uk-6Fc" id="weN-iJ-2b5"/>
+                        <outlet property="qrCodeImgViewHeigthConstraints" destination="3a5-Do-nc1" id="t0a-w2-R9e"/>
                         <outlet property="txt_vehicleNo" destination="twu-qn-hJy" id="new-Sd-r20"/>
                         <outlet property="txt_vehicleType" destination="f9K-df-8vr" id="DrW-9Q-Rye"/>
                     </connections>
