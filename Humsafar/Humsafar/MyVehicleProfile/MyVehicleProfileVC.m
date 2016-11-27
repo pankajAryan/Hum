@@ -69,6 +69,8 @@
                 [self.imgView_license setImageWithURL:[NSURL URLWithString:response[kKEY_ResponseObject][@"licenseURL"]] placeholderImage:[UIImage imageNamed:@"placeholder"]];
                 [self.imgView_rc setImageWithURL:[NSURL URLWithString:response[kKEY_ResponseObject][@"rcURL"]] placeholderImage:[UIImage imageNamed:@"placeholder"]];
                 
+                self.imgView_qrCode.image = [UIImage imageWithCIImage:[self createQRForString:[UIViewController retrieveDataFromUserDefault:@"mobile"]]];
+
                 self.qrCodeImgViewHeigthConstraints.constant = 100;
                 self.txt_vehicleNo.userInteractionEnabled = NO;
                 self.txt_vehicleType.userInteractionEnabled = NO;
@@ -148,6 +150,7 @@
         {
             [self showAlert:@"Uploaded successfully!"];
             
+            self.imgView_qrCode.image = [UIImage imageWithCIImage:[self createQRForString:[UIViewController retrieveDataFromUserDefault:@"mobile"]]];
             self.qrCodeImgViewHeigthConstraints.constant = 100;
             self.txt_vehicleNo.userInteractionEnabled = NO;
             self.txt_vehicleType.userInteractionEnabled = NO;
@@ -231,6 +234,17 @@
     }];
 }
 
+#pragma mark -
+
+- (CIImage *)createQRForString:(NSString *)qrString {
+    
+    NSData *stringData = [qrString dataUsingEncoding: NSISOLatin1StringEncoding];
+    
+    CIFilter *qrFilter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
+    [qrFilter setValue:stringData forKey:@"inputMessage"];
+    
+    return qrFilter.outputImage;
+}
 
 
 @end
