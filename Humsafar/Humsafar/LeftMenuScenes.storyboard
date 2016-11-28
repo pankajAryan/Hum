@@ -496,7 +496,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergency Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHj-dg-CXs">
-                                        <rect key="frame" x="45" y="29.5" width="315" height="21.5"/>
+                                        <rect key="frame" x="45" y="29" width="315" height="22"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -523,14 +523,14 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bell" translatesAutoresizingMaskIntoConstraints="NO" id="LYh-EG-5md">
-                                            <rect key="frame" x="152.5" y="28" width="70" height="70"/>
+                                            <rect key="frame" x="153" y="28" width="70" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="70" id="c5O-tR-8gm"/>
                                                 <constraint firstAttribute="width" constant="70" id="fgx-rP-hj5"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Emergency Contacts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHR-IT-pIp">
-                                            <rect key="frame" x="61.5" y="108" width="252" height="23"/>
+                                            <rect key="frame" x="62" y="108" width="252" height="23"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -549,7 +549,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I53-dM-K9B">
-                                            <rect key="frame" x="127.5" y="14.5" width="120" height="40"/>
+                                            <rect key="frame" x="128" y="15" width="120" height="40"/>
                                             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="C52-oD-ZXN"/>
@@ -582,25 +582,25 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="132"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIu-S0-XIM">
-                                                            <rect key="frame" x="15" y="15" width="73" height="20.5"/>
+                                                            <rect key="frame" x="15" y="15" width="73" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.99607843139999996" green="0.84313725490000002" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cWc-md-nQv">
-                                                            <rect key="frame" x="15" y="45.5" width="274" height="30"/>
+                                                            <rect key="frame" x="15" y="46" width="274" height="30"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pj8-wG-NUw">
-                                                            <rect key="frame" x="15" y="85.5" width="274" height="30"/>
+                                                            <rect key="frame" x="15" y="86" width="274" height="30"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         </textField>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA6-4d-uRt">
-                                                            <rect key="frame" x="304" y="38.5" width="56" height="77"/>
+                                                            <rect key="frame" x="304" y="39" width="56" height="77"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="56" id="AT1-Cg-BLF"/>
                                                                 <constraint firstAttribute="height" constant="77" id="HGx-Y2-uSJ"/>
@@ -1581,7 +1581,7 @@
                                             <constraint firstAttribute="width" constant="56" id="Qyo-wV-5kP"/>
                                             <constraint firstAttribute="height" constant="77" id="cYk-3E-CgE"/>
                                         </constraints>
-                                        <state key="normal" image="ic_add_user">
+                                        <state key="normal" image="upload_icon">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1607,7 +1607,7 @@
                                             <constraint firstAttribute="width" constant="56" id="A7T-3m-24p"/>
                                             <constraint firstAttribute="height" constant="77" id="cPf-ga-sP8"/>
                                         </constraints>
-                                        <state key="normal" image="ic_add_user">
+                                        <state key="normal" image="upload_icon">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1716,5 +1716,6 @@
         <image name="placeholder" width="120" height="84"/>
         <image name="profile" width="24" height="24"/>
         <image name="slider_bg" width="375" height="667"/>
+        <image name="upload_icon" width="50" height="50"/>
     </resources>
 </document>
