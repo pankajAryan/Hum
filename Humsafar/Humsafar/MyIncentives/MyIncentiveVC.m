@@ -28,7 +28,7 @@
     
     self.lbl_title.font = [UIFont boldSystemFontOfSize:16];
     self.lbl_subTitle.font = [UIFont systemFontOfSize:12];
-    self.lbl_date.font = [UIFont systemFontOfSize:10];
+    self.lbl_date.font = [UIFont systemFontOfSize:12];
 }
 
 @end
