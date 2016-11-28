@@ -156,7 +156,7 @@
 }
 
 
--(void)Back:(id)sender
+-(IBAction)Back:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
 }

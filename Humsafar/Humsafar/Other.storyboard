@@ -114,19 +114,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvS-P8-JBn">
-                                <rect key="frame" x="16" y="140" width="288" height="288"/>
+                                <rect key="frame" x="16" y="170" width="288" height="288"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OvS-P8-JBn" secondAttribute="height" id="4LY-Sc-oaQ"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H42-0I-5ea">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGf-RT-5i5">
+                                        <rect key="frame" x="0.0" y="20" width="30" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="ZtR-kS-2oV"/>
+                                        </constraints>
+                                        <state key="normal" image="back">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Back:" destination="Mga-nj-eeT" eventType="touchUpInside" id="Zmg-kb-uZd"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan QR code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pev-TJ-hqZ">
+                                        <rect key="frame" x="45" y="29" width="260" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.84313725490000002" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="pev-TJ-hqZ" secondAttribute="bottom" constant="9" id="3YB-aO-ST8"/>
+                                    <constraint firstItem="TGf-RT-5i5" firstAttribute="leading" secondItem="H42-0I-5ea" secondAttribute="leading" id="4jv-Sc-UKL"/>
+                                    <constraint firstAttribute="bottom" secondItem="TGf-RT-5i5" secondAttribute="bottom" id="Er8-U4-Sd2"/>
+                                    <constraint firstItem="pev-TJ-hqZ" firstAttribute="leading" secondItem="TGf-RT-5i5" secondAttribute="trailing" constant="15" id="KjO-bC-bkj"/>
+                                    <constraint firstAttribute="height" constant="60" id="MFk-P6-cfE"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="WUT-wc-Zos"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="ZX3-fe-3NI"/>
+                                    <constraint firstAttribute="trailing" secondItem="pev-TJ-hqZ" secondAttribute="trailing" constant="15" id="iuk-OM-BlG"/>
+                                    <constraint firstItem="TGf-RT-5i5" firstAttribute="top" secondItem="H42-0I-5ea" secondAttribute="top" constant="20" id="zVl-nC-POe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.14301215279999999" green="0.14301215279999999" blue="0.14301215279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="OvS-P8-JBn" firstAttribute="centerY" secondItem="hFN-Qp-GSe" secondAttribute="centerY" id="HyV-BH-O7w"/>
+                            <constraint firstItem="H42-0I-5ea" firstAttribute="leading" secondItem="hFN-Qp-GSe" secondAttribute="leading" id="AGT-K1-fLD"/>
+                            <constraint firstItem="H42-0I-5ea" firstAttribute="top" secondItem="hFN-Qp-GSe" secondAttribute="top" id="Gdy-eW-JVO"/>
+                            <constraint firstItem="OvS-P8-JBn" firstAttribute="centerY" secondItem="hFN-Qp-GSe" secondAttribute="centerY" constant="30" id="HyV-BH-O7w"/>
                             <constraint firstItem="OvS-P8-JBn" firstAttribute="centerX" secondItem="hFN-Qp-GSe" secondAttribute="centerX" id="LUw-a0-ZpH"/>
                             <constraint firstItem="OvS-P8-JBn" firstAttribute="leading" secondItem="hFN-Qp-GSe" secondAttribute="leadingMargin" id="Pi4-2o-FRt"/>
                             <constraint firstItem="OvS-P8-JBn" firstAttribute="trailing" secondItem="hFN-Qp-GSe" secondAttribute="trailingMargin" id="e3y-cn-2Qo"/>
+                            <constraint firstAttribute="trailing" secondItem="H42-0I-5ea" secondAttribute="trailing" id="v4I-qz-j4i"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="z6a-oS-njZ"/>
