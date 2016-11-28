@@ -26,7 +26,7 @@
     self.bgView.layer.cornerRadius = 8.0;
     self.bgView.layer.masksToBounds = YES;
     
-    self.lbl_title.font = [UIFont systemFontOfSize:14];
+    self.lbl_title.font = [UIFont systemFontOfSize:16];
     self.lbl_subTitle.font = [UIFont systemFontOfSize:12];
     self.lbl_date.font = [UIFont systemFontOfSize:10];
 }
@@ -130,7 +130,7 @@
     
     height += 10;
     
-    height += [dict[@"title"] boundingRectWithSize:CGSizeMake(ScreenWidth-50, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]} context:nil].size.height;
+    height += [dict[@"title"] boundingRectWithSize:CGSizeMake(ScreenWidth-50, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]} context:nil].size.height;
     
     height += 10;
 
