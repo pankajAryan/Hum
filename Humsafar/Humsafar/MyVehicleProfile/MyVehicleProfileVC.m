@@ -75,8 +75,10 @@
                 self.txt_vehicleNo.userInteractionEnabled = NO;
                 self.txt_vehicleType.userInteractionEnabled = NO;
                 self.btn_vehicleType.userInteractionEnabled = NO;
-                self.btn_uploadLicense.hidden = YES;
-                self.btn_uploadRC.hidden = YES;
+                self.btn_uploadLicense.selected = YES;
+                self.btn_uploadLicense.userInteractionEnabled = NO;
+                self.btn_uploadRC.selected = YES;
+                self.btn_uploadRC.userInteractionEnabled = NO;
                 self.btn_upload.hidden = YES;
             }
             
@@ -155,8 +157,10 @@
             self.txt_vehicleNo.userInteractionEnabled = NO;
             self.txt_vehicleType.userInteractionEnabled = NO;
             self.btn_vehicleType.userInteractionEnabled = NO;
-            self.btn_uploadLicense.hidden = YES;
-            self.btn_uploadRC.hidden = YES;
+            self.btn_uploadLicense.selected = YES;
+            self.btn_uploadLicense.userInteractionEnabled = NO;
+            self.btn_uploadRC.selected = YES;
+            self.btn_uploadRC.userInteractionEnabled = NO;
             self.btn_upload.hidden = YES;
         }
         else {
