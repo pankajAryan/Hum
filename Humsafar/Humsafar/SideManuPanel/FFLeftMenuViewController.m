@@ -22,6 +22,7 @@
 #import "MyFeedsVC.h"
 #import "MyIncentiveVC.h"
 #import "MyVehicleProfileVC.h"
+#import "FaqViewController.h"
 
 #import "UIImageView+AFNetworking.h"
 #import <MediaPlayer/MediaPlayer.h>
@@ -74,7 +75,8 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
     switch (index)
     {
-        case 0: {
+        case 0:
+        {
             
             if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
                 
@@ -87,7 +89,8 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             }
         }
             break;
-        case 1: {
+        case 1:
+        {
             EmergencyContactsVC *vc = (EmergencyContactsVC *)[UIViewController instantiateViewControllerWithIdentifier:@"EmergencyContactsVC" fromStoryboard:@"LeftMenuScenes"];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
@@ -121,9 +124,7 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
                     [self showErrorTSMessage:@"To use this feature you must allow camera access from the device settings."];
                 }
                 else {
-                    //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                    BarCodeScannerController *controller = (BarCodeScannerController*)[UIViewController instantiateViewControllerWithIdentifier:@"BarCodeScannerController" fromStoryboard:@"Other"]//[self.storyboard instantiateViewControllerWithIdentifier:@"BarCodeScannerController"]
-                    ;
+                    BarCodeScannerController *controller = (BarCodeScannerController*)[UIViewController instantiateViewControllerWithIdentifier:@"BarCodeScannerController" fromStoryboard:@"Other"];
                     
                     [homeController.navigationController pushViewController:controller animated:YES];
                 }
@@ -136,19 +137,22 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             
             break;
 
-        case 4: {
+        case 4:
+        {
             RoadSafetyEducationHomeVC *vc = (RoadSafetyEducationHomeVC *)[UIViewController instantiateViewControllerWithIdentifier:@"RoadSafetyEducationHomeVC" fromStoryboard:@"LeftMenuScenes"];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
             
-        case 5: {
+        case 5:
+        {
             GetAmbulanceViewController *vc = [[GetAmbulanceViewController alloc] initWithNibName:@"GetAmbulanceViewController" bundle:nil];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
 
-        case 6: {
+        case 6:
+        {
             HighwayServicesHomeVC *vc = (HighwayServicesHomeVC *)[UIViewController instantiateViewControllerWithIdentifier:@"HighwayServicesHomeVC" fromStoryboard:@"LeftMenuScenes"];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
@@ -159,10 +163,15 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             break;
             
         case 8:
-            //return [UIImage imageNamed:@"faq"];
+        {
+            FaqViewController *controller = (FaqViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"FaqViewController" fromStoryboard:@"Other"];
+            
+            [homeController.navigationController pushViewController:controller animated:YES];
+        }
             break;
             
-        case 9: {
+        case 9:
+        {
             AboutViewController *vc = [AboutViewController new];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
@@ -232,11 +241,21 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             break;
             
         case 2:
-            return [UIImage imageNamed:@"signout"];
+            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
+                return [UIImage imageNamed:@"my_feeds"];
+            }else{ // G+ login
+                return [UIImage imageNamed:@"my_incentives"];
+            }
+
             break;
 
         case 3:
-            return [UIImage imageNamed:@"signout"];
+            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
+                return [UIImage imageNamed:@"QR_Icon"];
+            }else{ // G+ login
+                return [UIImage imageNamed:@"vehicle_profile"];
+            }
+            
             break;
 
         case 4:

@@ -160,7 +160,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IkO-01-NIJ">
                                         <rect key="frame" x="326" y="27.5" width="41" height="26"/>
                                         <subviews>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="emergency" translatesAutoresizingMaskIntoConstraints="NO" id="lIR-Oq-Llb">
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="icon_reward_new" translatesAutoresizingMaskIntoConstraints="NO" id="lIR-Oq-Llb">
                                                 <rect key="frame" x="0.0" y="1" width="24" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="DQh-73-KSu"/>
@@ -170,7 +170,6 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhG-zD-O4g">
                                                 <rect key="frame" x="29" y="4.5" width="9" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -1291,6 +1290,7 @@
         <image name="emergency" width="86" height="53"/>
         <image name="ic_action_directions" width="29" height="29"/>
         <image name="ic_check_black_24dp" width="21" height="21"/>
+        <image name="icon_reward_new" width="29" height="29"/>
         <image name="profile" width="24" height="24"/>
         <image name="report" width="86" height="53"/>
         <image name="slider_bg" width="375" height="667"/>
