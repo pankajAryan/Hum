@@ -79,7 +79,7 @@
     // Map Setup
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:[lat floatValue]
                                                             longitude:[lon floatValue]
-                                                                 zoom:8];
+                                                                 zoom:4];
     
     // _mapView = [GMSMapView mapWithFrame:_mapView.bounds camera:camera]; Use if mapView is not created in xib
     _mapView.camera = camera;
@@ -100,16 +100,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (void)drawAmbulancesAtMap {
     
     for (NSDictionary *dict in self.arrayList) {
@@ -124,7 +114,6 @@
         marker.appearAnimation = kGMSMarkerAnimationPop;
 //        marker.userData = fuelStationPin;
         marker.map = _mapView;
-        
     }
 }
 

@@ -187,14 +187,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rbW-hv-uTB">
-                                <rect key="frame" x="0.0" y="60" width="320" height="508"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Eby-3d-nif" id="YBU-GF-tgh"/>
-                                </connections>
-                            </webView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRV-hf-0Ae">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                 <subviews>
@@ -228,17 +220,23 @@
                                     <constraint firstAttribute="trailing" secondItem="ET0-Ub-RbH" secondAttribute="trailing" constant="15" id="jh3-7W-2kF"/>
                                 </constraints>
                             </view>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQk-j1-qvF">
+                                <rect key="frame" x="0.0" y="60" width="320" height="508"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Eby-3d-nif" id="nVL-lW-M7J"/>
+                                </connections>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cRV-hf-0Ae" firstAttribute="leading" secondItem="djP-Ex-mXr" secondAttribute="leading" id="2uO-xp-mYp"/>
-                            <constraint firstItem="rbW-hv-uTB" firstAttribute="leading" secondItem="djP-Ex-mXr" secondAttribute="leading" id="H7p-JG-CQw"/>
+                            <constraint firstItem="RQk-j1-qvF" firstAttribute="leading" secondItem="djP-Ex-mXr" secondAttribute="leading" id="Hih-pH-w4z"/>
                             <constraint firstAttribute="trailing" secondItem="cRV-hf-0Ae" secondAttribute="trailing" id="MrE-CI-U00"/>
                             <constraint firstItem="cRV-hf-0Ae" firstAttribute="top" secondItem="djP-Ex-mXr" secondAttribute="top" id="Qx0-fi-dB7"/>
-                            <constraint firstItem="rbW-hv-uTB" firstAttribute="top" secondItem="cRV-hf-0Ae" secondAttribute="bottom" id="SCk-CG-ny8"/>
-                            <constraint firstItem="rbW-hv-uTB" firstAttribute="top" secondItem="cRV-hf-0Ae" secondAttribute="bottom" id="hND-4l-bL3"/>
-                            <constraint firstAttribute="trailing" secondItem="rbW-hv-uTB" secondAttribute="trailing" id="nkE-gc-i6Z"/>
-                            <constraint firstItem="b73-t3-Gj0" firstAttribute="top" secondItem="rbW-hv-uTB" secondAttribute="bottom" id="zxd-Hu-bUE"/>
+                            <constraint firstItem="b73-t3-Gj0" firstAttribute="top" secondItem="RQk-j1-qvF" secondAttribute="bottom" id="aEc-bv-fEw"/>
+                            <constraint firstAttribute="trailing" secondItem="RQk-j1-qvF" secondAttribute="trailing" id="sgZ-dK-zPb"/>
+                            <constraint firstItem="RQk-j1-qvF" firstAttribute="top" secondItem="cRV-hf-0Ae" secondAttribute="bottom" id="zlc-9K-e0k"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
@@ -246,12 +244,12 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
-                        <outlet property="vwWeb" destination="rbW-hv-uTB" id="Nv8-QW-cPA"/>
+                        <outlet property="vwWeb" destination="RQk-j1-qvF" id="063-qs-edx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z87-lA-rsj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5762" y="249"/>
+            <point key="canvasLocation" x="-5763.75" y="248.2394366197183"/>
         </scene>
     </scenes>
     <resources>
