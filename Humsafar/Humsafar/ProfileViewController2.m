@@ -73,7 +73,7 @@
             }
             else {
                 
-                [self showAlert:@"Somthing went worng!"];
+                [self showAlert:@"Something went wrong!"];
 
 //                if (responseType != eResponseTypeNoInternet)
 //                {

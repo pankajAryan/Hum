@@ -62,6 +62,23 @@
     // Do any additional setup after loading the view.
     
     self.arrayList = [NSArray arrayWithObjects:[ContactModel new],[ContactModel new],[ContactModel new], nil];
+    
+    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"])
+    {
+        arrayRetrievedEmContacts = [UIViewController retrieveDataFromUserDefault:@"emergencyContacts_dept"];
+    }
+    else {
+        arrayRetrievedEmContacts = [UIViewController retrieveDataFromUserDefault:@"emergencyContacts_user"];
+    }
+    
+    int i =0;
+    for (NSDictionary *contactDict in arrayRetrievedEmContacts)
+    {
+        ContactModel *model = self.arrayList[i];
+        model.name = [contactDict objectForKey:@"name"];
+        model.number = [contactDict objectForKey:@"number"];
+        i++;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -168,6 +185,8 @@
     NSString *cont2 = @"";
     NSString *cont3 = @"";
     
+    NSMutableArray *emergencyContactsArray = [NSMutableArray new];
+
     for (int i =0 ; i<self.arrayList.count;i++) {
         
         ContactModel *model = self.arrayList[i];
@@ -183,6 +202,9 @@
                 [self showAlert:@"Mobile must contain 10 characters!"];
                 return;
             }
+            
+            NSDictionary *contactDict = @{@"name":model.name, @"number":model.number};
+            [emergencyContactsArray addObject:contactDict];
             
             switch (i) {
                 case 0:
@@ -206,8 +228,6 @@
         return;
     }
     
-    
-    
     // hit API
     [self showProgressHudWithMessage:@"Loading..."];
 
@@ -216,8 +236,17 @@
         [self hideProgressHudAfterDelay:.1];
 
         if (responseType == eResponseTypeSuccessJSON) {
-             [self showAlert:@"Updated successfully!"];
-        }else{
+            [self showAlert:@"Updated successfully!"];
+            
+            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"])
+            {
+                [UIViewController saveDatatoUserDefault:emergencyContactsArray forKey:@"emergencyContacts_dept"];
+            }
+            else {
+                [UIViewController saveDatatoUserDefault:emergencyContactsArray forKey:@"emergencyContacts_user"];
+            }
+        }
+        else{
             [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
         }
     }];

@@ -37,8 +37,14 @@
         self.incentiveView.hidden = YES;
     }else{
         [self.alertBtn setBackgroundImage:[UIImage imageNamed:@"route"] forState:UIControlStateNormal];
-        [self fetchWalletBalanceForUserFromServer];
         self.incentiveView.hidden = NO;
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    if (! [[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
+        [self fetchWalletBalanceForUserFromServer];
     }
 }
 
@@ -68,7 +74,7 @@
         if (responseType == eResponseTypeSuccessJSON) {
             self.lbl_incentiveAmount.text = [NSString stringWithFormat:@"%@",response[@"responseObject"]];
         }else{
-            [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+            //[self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
         }
     }];
 }

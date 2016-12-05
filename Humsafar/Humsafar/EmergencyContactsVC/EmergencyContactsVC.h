@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EmergencyContactsVC : UIViewController
+@interface EmergencyContactsVC : UIViewController {
+    
+    NSArray *arrayRetrievedEmContacts;
+}
 
 @end

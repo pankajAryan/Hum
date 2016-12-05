@@ -34,14 +34,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self.imageView setCornerRadius:self.imageView.frame.size.height/2 borderWidth:3.0 borderColor:[UIColor orangeColor].CGColor];
+    
     _txtFieldName.text = self.name;
     _txtFieldEmail.text = self.email;
     _imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:_imageUrl]];
-
-    self.imageView.layer.cornerRadius = 28;
-    self.imageView.layer.masksToBounds = YES;
-    self.imageView.layer.borderColor = [UIColor orangeColor].CGColor;
-    self.imageView.layer.borderWidth = 3;
     
     [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetStates withParameter:nil onCompletion:^(eResponseType responseType, id response) {
         

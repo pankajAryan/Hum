@@ -82,7 +82,9 @@
             break;
     }
     
-    [self showProgressHudWithMessage:@"Loading..."];
+    if (!_arrayList.count) {
+        [self showProgressHudWithMessage:@"Loading..."];
+    }
 
     [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetAlertsForCategory withParameter:@{@"category" : strCat, @"stateId" : [UIViewController retrieveDataFromUserDefault:@"selectedStateDict"][@"stateId"], @"districtId" : [UIViewController retrieveDataFromUserDefault:@"selectedDistrictDict"][@"districtId"]} onCompletion:^(eResponseType responseType, id response) {
         

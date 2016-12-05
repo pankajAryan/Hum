@@ -23,6 +23,7 @@
 #import "MyIncentiveVC.h"
 #import "MyVehicleProfileVC.h"
 #import "FaqViewController.h"
+#import "SAViewController.h"
 
 #import "UIImageView+AFNetworking.h"
 #import <MediaPlayer/MediaPlayer.h>
@@ -56,7 +57,7 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    self.lbl_name.text = [UIViewController retrieveDataFromUserDefault:@"name"];
+    self.lbl_name.text = [[UIViewController retrieveDataFromUserDefault:@"name"] uppercaseString];
     [self.imgVw_userImg setImageWithURL:[NSURL URLWithString:[UIViewController retrieveDataFromUserDefault:@"userImageUrl"]] placeholderImage:nil];
 }
 
@@ -159,7 +160,11 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             break;
         
         case 7:
-            //return [UIImage imageNamed:@"speed_analysis"];
+        {
+            SAViewController *controller = (SAViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"SAViewController" fromStoryboard:@"Other"];
+            
+            [homeController.navigationController pushViewController:controller animated:YES];
+        }
             break;
             
         case 8:
