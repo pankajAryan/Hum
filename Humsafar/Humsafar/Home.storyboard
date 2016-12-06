@@ -848,7 +848,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A7P-AZ-3YG">
                                                     <rect key="frame" x="10" y="5" width="355" height="390"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AgF-lU-7WV">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="AgF-lU-7WV">
                                                             <rect key="frame" x="15" y="10" width="325" height="277"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCr-AG-uc7">
@@ -1291,6 +1291,7 @@
         <image name="ic_action_directions" width="29" height="29"/>
         <image name="ic_check_black_24dp" width="21" height="21"/>
         <image name="icon_reward_new" width="29" height="29"/>
+        <image name="placeholder" width="120" height="84"/>
         <image name="profile" width="24" height="24"/>
         <image name="report" width="86" height="53"/>
         <image name="slider_bg" width="375" height="667"/>

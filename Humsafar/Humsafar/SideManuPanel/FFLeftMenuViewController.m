@@ -67,9 +67,13 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
     
     NSInteger index = indexPath.row;
     
-    if ((index >=7) && ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"])) {// Department Login
+    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Department Login
         
         index++;
+        
+        if (index >=7) {
+            index ++;
+        }
     }
 
     HomeViewController *homeController = (HomeViewController*)self.sideMenuViewController.contentViewController;
@@ -231,9 +235,13 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
 - (UIImage*)imageIconForMenuItemAtIndex:(NSInteger)index {
     
-    if ((index >=7) && ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"])) {// Department Login
+    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Department Login
         
         index++;
+        
+        if (index >=7) {
+            index ++;
+        }
     }
     
     switch (index) {
@@ -299,9 +307,13 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
 - (NSString*)titleForMenuItemAtIndex:(NSInteger)index {
     
-    if ((index >=7) && ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"])) {// Department Login
+    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Department Login
         
         index++;
+        
+        if (index >=7) {
+            index ++;
+        }
     }
 
     switch (index) {

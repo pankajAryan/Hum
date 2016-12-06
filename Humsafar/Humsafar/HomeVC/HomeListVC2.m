@@ -83,7 +83,9 @@
             break;
     }
     
-    [self showProgressHudWithMessage:@"Loading..."];
+    if (!_arrayList.count) {
+        [self showProgressHudWithMessage:@"Loading..."];
+    }
     
     [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:strURL withParameter:@{@"stateId" :  [UIViewController retrieveDataFromUserDefault:@"selectedStateDict"][@"stateId"]} onCompletion:^(eResponseType responseType, id response) {
         
