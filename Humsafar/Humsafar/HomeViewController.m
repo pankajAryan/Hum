@@ -11,6 +11,8 @@
 #import "ReportViewController.h"
 #import "AddTrafficAlertVC.h"
 #import "PlacesSearchVC.h"
+#import "MyIncentiveVC.h"
+
 #import <GooglePlaces/GooglePlaces.h>
 
 @interface HomeViewController ()<GMSAutocompleteViewControllerDelegate>
@@ -53,6 +55,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)walletButtonAction:(id)sender {
+    MyIncentiveVC *vc = (MyIncentiveVC *)[UIViewController instantiateViewControllerWithIdentifier:@"MyIncentiveVC" fromStoryboard:@"LeftMenuScenes"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
@@ -170,25 +176,27 @@ didAutocompleteWithPlace:(GMSPlace *)place {
     NSLog(@"Place address %@", place.formattedAddress);
     NSLog(@"Place attributions %@", place.attributions.string);
     
+    NSString *urlString;
+    
     if ([[UIApplication sharedApplication] canOpenURL:
          [NSURL URLWithString:@"comgooglemaps://"]])
     {
-        NSString *urlString=[NSString stringWithFormat:@"comgooglemaps://?daddr=%f,%f&zoom=14&directionsmode=driving",place.coordinate.latitude,place.coordinate.longitude];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+        urlString = [NSString stringWithFormat:@"comgooglemaps://?daddr=%f,%f&zoom=14&directionsmode=driving",place.coordinate.latitude,place.coordinate.longitude];
     }
     else
     {
-        NSString *string = [NSString stringWithFormat:@"http://maps.apple.com/?ll=%f,%f&q=%@",place.coordinate.latitude, place.coordinate.longitude,[place.name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:string]];
+        urlString = [NSString stringWithFormat:@"http://maps.apple.com/?ll=%f,%f&q=%@",place.coordinate.latitude, place.coordinate.longitude,[place.name stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]];
     }
     
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString] options:@{} completionHandler:nil];
+
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewController:(GMSAutocompleteViewController *)viewController
 didFailAutocompleteWithError:(NSError *)error {
     // TODO: handle the error.
-    NSLog(@"error: %ld", [error code]);
+    NSLog(@"error: %ld", (long)[error code]);
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
