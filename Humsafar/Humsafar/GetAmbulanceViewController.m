@@ -29,10 +29,23 @@
     
     self.manager = [CLLocationManager updateManagerWithAccuracy:100.0 locationAge:15.0 authorizationDesciption:CLLocationUpdateAuthorizationDescriptionWhenInUse];
     
+    if (CLLocationManager.authorizationStatus != kCLAuthorizationStatusNotDetermined) {
+        [self showProgressHudWithMessage:@"Please wait..."];
+    }
+    else {
+        [self.manager didChangeAuthorizationStatusWithBlock:^(CLLocationManager *manager, CLAuthorizationStatus status)
+         {
+             if (CLLocationManager.authorizationStatus != kCLAuthorizationStatusNotDetermined)
+                 [self showProgressHudWithMessage:@"Please wait..."];
+         }];
+    }
+
     [self fetchLocation];
 }
 
 -(void)fetchLocation {
+    
+    NSLog(@"entered into fetch location");
     
     if ([CLLocationManager isLocationUpdatesAvailable]) {
         
@@ -49,8 +62,9 @@
                     [self setupMapView];
                 });
                 
-                //TODO: Fetch ambulance list
                 [self fetchAmbulanceData];
+                
+                return;
             }
             else
                 [self showAlert:@"Could not determine your location. Please check location settings."];
@@ -59,6 +73,8 @@
     else {
         [self showAlert:@"Please enable location services from settings."];
     }
+    
+    [self hideProgressHudAfterDelay:0.0];
 }
 
 -(void)fetchAmbulanceData {
@@ -68,10 +84,13 @@
         if (responseType == eResponseTypeSuccessJSON) {
             self.arrayList = [response objectForKey:kKEY_ResponseObject];
             [self drawAmbulancesAtMap];
-        }else{
+        }
+        else {
             [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
             // [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
         }
+        
+        [self hideProgressHudAfterDelay:0.0];
     }];
 }
 
@@ -108,11 +127,10 @@
         GMSMarker *marker = [[GMSMarker alloc] init];
         marker.position = CLLocationCoordinate2DMake([dict[@"lat"] doubleValue], [dict[@"lon"] doubleValue]);
 
-        marker.title = @"Ambulance";
+        marker.title = [dict objectForKey:@"driverName"];
+        marker.snippet = [dict objectForKey:@"driverNumber"];
         marker.icon = [UIImage imageNamed:@"ic_ambulance"];
-        marker.snippet = nil;//[NSString stringWithFormat:@"%@",]; // ambulance text details as per android
         marker.appearAnimation = kGMSMarkerAnimationPop;
-//        marker.userData = fuelStationPin;
         marker.map = _mapView;
     }
 }
